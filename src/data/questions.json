@@ -1,0 +1,74 @@
+[
+  {
+    "id": "q1",
+    "topic": "Transit Funding",
+    "scope": "state",
+    "text": "Should the Pennsylvania legislature grant Philadelphia local taxing authority to fund SEPTA’s deficit directly?",
+    "options": ["Support", "Oppose", "Neutral"],
+    "weight": 1,
+    "relevantOfficeIds": ["governor", "u-s-house-district-3"]
+  },
+  {
+    "id": "q2",
+    "topic": "Housing Strategy",
+    "scope": "local_shared",
+    "text": "Should federal and state grants be conditioned on Philadelphia overriding local zoning to build high-density housing?",
+    "options": ["Support", "Oppose", "Neutral"],
+    "weight": 1,
+    "relevantOfficeIds": ["governor", "u-s-house-district-3"]
+  },
+  {
+    "id": "q3",
+    "topic": "Health Equity",
+    "scope": "federal",
+    "text": "Should the U.S. Congress prioritize funding for community-led health consortiums over traditional insurance subsidies?",
+    "options": ["Support", "Oppose", "Neutral"],
+    "weight": 1,
+    "relevantOfficeIds": ["u-s-house-district-3"]
+  },
+  {
+    "id": "q4",
+    "topic": "Economic Policy",
+    "scope": "state",
+    "text": "Should Pennsylvania increase the state minimum wage specifically to a $15 per hour floor immediately?",
+    "options": ["Support", "Oppose", "Neutral"],
+    "weight": 1,
+    "relevantOfficeIds": ["governor", "u-s-house-district-3"]
+  },
+  {
+    "id": "q5",
+    "topic": "Political Reform",
+    "scope": "state",
+    "text": "Do you support implementing Ranked-Choice Voting in Philadelphia to reduce the influence of party ward leaders?",
+    "options": ["Support", "Oppose", "Neutral"],
+    "weight": 1,
+    "relevantOfficeIds": ["governor"]
+  },
+  {
+    "id": "q6",
+    "topic": "Immigration",
+    "scope": "federal",
+    "text": "Should the federal government abolish or fundamentally restructure ICE (Immigration and Customs Enforcement)?",
+    "options": ["Support", "Oppose", "Neutral"],
+    "weight": 1,
+    "relevantOfficeIds": ["u-s-house-district-3"]
+  },
+  {
+    "id": "q7",
+    "topic": "Student Debt",
+    "scope": "federal",
+    "text": "Do you support the federal cancellation of student loan debt for families earning under $125,000 annually?",
+    "options": ["Support", "Oppose", "Neutral"],
+    "weight": 1,
+    "relevantOfficeIds": ["u-s-house-district-3"]
+  },
+  {
+    "id": "q8",
+    "topic": "Healthcare System",
+    "scope": "federal",
+    "text": "Should Congress transition the United States to a single-payer 'Medicare for All' system?",
+    "options": ["Support", "Oppose", "Neutral"],
+    "weight": 1,
+    "relevantOfficeIds": ["u-s-house-district-3"]
+  }
+]
