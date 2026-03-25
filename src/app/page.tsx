@@ -1,3 +1,4 @@
+// fix build
 import Link from "next/link";
 import { getElection, getOffices } from "../lib/loadData";
 
