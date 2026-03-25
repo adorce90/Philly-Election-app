@@ -7,9 +7,9 @@ import {
   getCandidatesByOffice,
   getOffices,
   getQuestionsByOffice
-} from "@/lib/loadData";
-import { loadQuizAnswers } from "@/lib/quizStorage";
-import { rankCandidates } from "@/lib/match";
+} from "../../lib/loadData";
+import { loadQuizAnswers } from "../../lib/quizStorage";
+import { rankCandidates } from "../../lib/match";
 
 export default function ResultsPage() {
   const searchParams = useSearchParams();
