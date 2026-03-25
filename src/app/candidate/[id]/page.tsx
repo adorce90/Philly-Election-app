@@ -1,8 +1,11 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import {
   getCandidateById,
   getOffices,
   getQuestionsByOffice
 } from "../../../lib/loadData";
+
 
 function stanceTone(label?: string) {
   switch (label) {
