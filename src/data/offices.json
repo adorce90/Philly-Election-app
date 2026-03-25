@@ -1,0 +1,12 @@
+[
+  {
+    "id": "governor",
+    "name": "Governor",
+    "level": "state"
+  },
+  {
+    "id": "u-s-house-district-3",
+    "name": "U.S. House District 3",
+    "level": "federal"
+  }
+]
