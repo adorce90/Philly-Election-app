@@ -1,8 +1,7 @@
-// fix build
 "use client";
 
 import Link from "next/link";
-import { useMemo } from "react";
+import { Suspense, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   getCandidatesByOffice,
@@ -12,7 +11,7 @@ import {
 import { loadQuizAnswers } from "../../lib/quizStorage";
 import { rankCandidates } from "../../lib/match";
 
-export default function ResultsPage() {
+function ResultsPageInner() {
   const searchParams = useSearchParams();
   const officeId = searchParams.get("office") || "governor";
 
@@ -216,6 +215,14 @@ export default function ResultsPage() {
         )}
       </section>
     </main>
+  );
+}
+
+export default function ResultsPage() {
+  return (
+    <Suspense fallback={<main style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>Loading results...</main>}>
+      <ResultsPageInner />
+    </Suspense>
   );
 }
 
