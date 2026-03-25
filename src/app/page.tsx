@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getElection, getOffices } from "../lib/loadData";
 
 export default function HomePage() {
@@ -26,7 +27,7 @@ export default function HomePage() {
       </h2>
 
       <div style={{ marginTop: "1rem", display: "flex", gap: "1rem" }}>
-        {offices.map((office) => (
+        {offices.map((office: any) => (
           <Link key={office.id} href={`/quiz?office=${office.id}`}>
             <button
               style={{
