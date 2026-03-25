@@ -1,0 +1,142 @@
+[
+  {
+    "id": "josh-shapiro",
+    "name": "Josh Shapiro",
+    "officeId": "governor",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Incumbent Governor focused on bipartisan infrastructure deals and economic growth.",
+    "image": "/images/candidates/josh-shapiro.jpg",
+    "positions": {
+      "q1": { "stance": 1, "label": "Support" },
+      "q2": { "stance": 1, "label": "Support" },
+      "q3": { "stance": 0, "label": "Neutral" },
+      "q4": { "stance": 1, "label": "Support" },
+      "q5": { "stance": 0, "label": "Neutral" },
+      "q6": { "stance": 0, "label": "Neutral" },
+      "q7": { "stance": 1, "label": "Support" },
+      "q8": { "stance": 0, "label": "Neutral" }
+    }
+  },
+  {
+    "id": "stacy-garrity",
+    "name": "Stacy Garrity",
+    "officeId": "governor",
+    "officeLevel": "state",
+    "party": "Republican",
+    "partyColor": "red",
+    "bio": "State Treasurer running on fiscal accountability and government efficiency.",
+    "image": "/images/candidates/stacy-garrity.jpg",
+    "positions": {
+      "q1": { "stance": 0, "label": "Neutral" },
+      "q2": { "stance": -1, "label": "Oppose" },
+      "q3": { "stance": 0, "label": "Neutral" },
+      "q4": { "stance": -1, "label": "Oppose" },
+      "q5": { "stance": -1, "label": "Oppose" },
+      "q6": { "stance": -1, "label": "Oppose" },
+      "q7": { "stance": -1, "label": "Oppose" },
+      "q8": { "stance": -1, "label": "Oppose" }
+    }
+  },
+  {
+    "id": "ala-stanford",
+    "name": "Dr. Ala Stanford",
+    "officeId": "u-s-house-district-3",
+    "officeLevel": "federal",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Founder of the Black Doctors Consortium, running on health equity and federal accountability.",
+    "image": "/images/candidates/ala-stanford.jpg",
+    "positions": {
+      "q1": { "stance": 1, "label": "Support" },
+      "q2": { "stance": 1, "label": "Support" },
+      "q3": { "stance": 1, "label": "Support" },
+      "q4": { "stance": 1, "label": "Support" },
+      "q5": { "stance": 0, "label": "Neutral" },
+      "q6": { "stance": 1, "label": "Support" },
+      "q7": { "stance": 1, "label": "Support" },
+      "q8": { "stance": 1, "label": "Support" }
+    }
+  },
+  {
+    "id": "chris-rabb",
+    "name": "Chris Rabb",
+    "officeId": "u-s-house-district-3",
+    "officeLevel": "federal",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "State Representative and progressive champion for restorative justice and structural reform.",
+    "image": "/images/candidates/chris-rabb.jpg",
+    "positions": {
+      "q1": { "stance": 1, "label": "Support" },
+      "q2": { "stance": 0, "label": "Neutral" },
+      "q3": { "stance": 1, "label": "Support" },
+      "q4": { "stance": 1, "label": "Support" },
+      "q5": { "stance": 1, "label": "Support" },
+      "q6": { "stance": 1, "label": "Support" },
+      "q7": { "stance": 1, "label": "Support" },
+      "q8": { "stance": 1, "label": "Support" }
+    }
+  },
+  {
+    "id": "morgan-cephas",
+    "name": "Morgan Cephas",
+    "officeId": "u-s-house-district-3",
+    "officeLevel": "federal",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA House Delegation chair focused on millennial message and maternal health results.",
+    "image": "/images/candidates/morgan-cephas.jpg",
+    "positions": {
+      "q1": { "stance": 1, "label": "Support" },
+      "q2": { "stance": 1, "label": "Support" },
+      "q3": { "stance": 1, "label": "Support" },
+      "q4": { "stance": 1, "label": "Support" },
+      "q5": { "stance": -1, "label": "Oppose" },
+      "q6": { "stance": 0, "label": "Neutral" },
+      "q7": { "stance": 1, "label": "Support" },
+      "q8": { "stance": 0, "label": "Neutral" }
+    }
+  },
+  {
+    "id": "sharif-street",
+    "name": "Sharif Street",
+    "officeId": "u-s-house-district-3",
+    "officeLevel": "federal",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "State Senator and former PA Democratic Party Chair, prioritizing economic opportunity and cannabis reform.",
+    "image": "/images/candidates/sharif-street.jpg",
+    "positions": {
+      "q1": { "stance": 0, "label": "Neutral" },
+      "q2": { "stance": 1, "label": "Support" },
+      "q3": { "stance": 1, "label": "Support" },
+      "q4": { "stance": 1, "label": "Support" },
+      "q5": { "stance": -1, "label": "Oppose" },
+      "q6": { "stance": 1, "label": "Support" },
+      "q7": { "stance": 1, "label": "Support" },
+      "q8": { "stance": 0, "label": "Neutral" }
+    }
+  },
+  {
+    "id": "cole-carter",
+    "name": "Cole Carter",
+    "officeId": "u-s-house-district-3",
+    "officeLevel": "federal",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Anti-establishment progressive advocate for $20 minimum wage and tuition-free college.",
+    "image": "/images/candidates/cole-carter.jpg",
+    "positions": {
+      "q1": { "stance": 1, "label": "Support" },
+      "q2": { "stance": -1, "label": "Oppose" },
+      "q3": { "stance": 1, "label": "Support" },
+      "q4": { "stance": 1, "label": "Support" },
+      "q5": { "stance": 1, "label": "Support" },
+      "q6": { "stance": 1, "label": "Support" },
+      "q7": { "stance": 1, "label": "Support" },
+      "q8": { "stance": 1, "label": "Support" }
+    }
+  }
+]
