@@ -110,7 +110,7 @@ export default function CandidateDetailPage({
                 {candidate.bio}
               </p>
 
-             {"website" in candidate && candidate.website ? (
+             {"website" in candidate && typeof candidate.website === "string" && candidate.website ? (
   <a
     href={candidate.website}
     target="_blank"
@@ -126,6 +126,10 @@ export default function CandidateDetailPage({
       textDecoration: "none",
       fontWeight: 600
     }}
+  >
+    Visit campaign website
+  </a>
+) : null}
   >
     Visit campaign website
   </a>
