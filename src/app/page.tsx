@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { getElection, getOffices } from "@/lib/loadData";
+import { getElection, getOffices } from "../lib/loadData";
 
 export default function HomePage() {
   const election = getElection();
