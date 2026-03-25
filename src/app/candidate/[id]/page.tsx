@@ -4,7 +4,7 @@ import {
   getCandidateById,
   getOffices,
   getQuestionsByOffice
-} from "@/lib/loadData";
+} from "../../../lib/loadData";
 
 function stanceTone(label?: string) {
   switch (label) {
