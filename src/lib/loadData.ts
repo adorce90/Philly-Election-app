@@ -1,7 +1,7 @@
-import election from "@/data/election.json";
-import offices from "@/data/offices.json";
-import questions from "@/data/questions.json";
-import candidates from "@/data/candidates.json";
+import election from "../data/election.json";
+import offices from "../data/offices.json";
+import questions from "../data/questions.json";
+import candidates from "../data/candidates.json";
 
 export function getElection() {
   return election;
