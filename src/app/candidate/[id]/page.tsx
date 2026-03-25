@@ -110,26 +110,26 @@ export default function CandidateDetailPage({
                 {candidate.bio}
               </p>
 
-              {candidate.website ? (
-                <a
-                  href={candidate.website}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    display: "inline-block",
-                    marginTop: "1.25rem",
-                    padding: "0.75rem 1rem",
-                    borderRadius: 10,
-                    border: "1px solid #ccc",
-                    background: "#fff",
-                    color: "#111",
-                    textDecoration: "none",
-                    fontWeight: 600
-                  }}
-                >
-                  Visit campaign website
-                </a>
-              ) : null}
+             {"website" in candidate && candidate.website ? (
+  <a
+    href={candidate.website}
+    target="_blank"
+    rel="noreferrer"
+    style={{
+      display: "inline-block",
+      marginTop: "1.25rem",
+      padding: "0.75rem 1rem",
+      borderRadius: 10,
+      border: "1px solid #ccc",
+      background: "#fff",
+      color: "#111",
+      textDecoration: "none",
+      fontWeight: 600
+    }}
+  >
+    Visit campaign website
+  </a>
+) : null}
             </div>
 
             <div
