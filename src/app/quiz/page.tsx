@@ -2,13 +2,13 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { getOffices, getQuestionsByOffice } from "@/lib/loadData";
+import { getOffices, getQuestionsByOffice } from "../../lib/loadData";
 import {
   loadQuizAnswers,
   loadSelectedOffice,
   saveQuizAnswers,
   saveSelectedOffice
-} from "@/lib/quizStorage";
+} from "../../lib/quizStorage";
 
 const optionMap: Record<string, number> = {
   Support: 1,
