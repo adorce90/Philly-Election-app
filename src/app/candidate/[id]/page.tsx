@@ -6,7 +6,6 @@ import {
   getQuestionsByOffice
 } from "../../../lib/loadData";
 
-
 function stanceTone(label?: string) {
   switch (label) {
     case "Support":
@@ -110,30 +109,28 @@ export default function CandidateDetailPage({
                 {candidate.bio}
               </p>
 
-             {"website" in candidate && typeof candidate.website === "string" && candidate.website ? (
-  <a
-    href={candidate.website}
-    target="_blank"
-    rel="noreferrer"
-    style={{
-      display: "inline-block",
-      marginTop: "1.25rem",
-      padding: "0.75rem 1rem",
-      borderRadius: 10,
-      border: "1px solid #ccc",
-      background: "#fff",
-      color: "#111",
-      textDecoration: "none",
-      fontWeight: 600
-    }}
-  >
-    Visit campaign website
-  </a>
-) : null}
-  >
-    Visit campaign website
-  </a>
-) : null}
+              {"website" in candidate &&
+              typeof candidate.website === "string" &&
+              candidate.website ? (
+                <a
+                  href={candidate.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    display: "inline-block",
+                    marginTop: "1.25rem",
+                    padding: "0.75rem 1rem",
+                    borderRadius: 10,
+                    border: "1px solid #ccc",
+                    background: "#fff",
+                    color: "#111",
+                    textDecoration: "none",
+                    fontWeight: 600
+                  }}
+                >
+                  Visit campaign website
+                </a>
+              ) : null}
             </div>
 
             <div
@@ -293,10 +290,14 @@ export default function CandidateDetailPage({
                   >
                     <p style={{ fontSize: "0.85rem", color: "#666" }}>Source</p>
                     <p style={{ marginTop: "0.5rem", fontSize: "0.95rem", fontWeight: 700 }}>
-                      {position?.sourceLabel ?? "No source available"}
+                      {"sourceLabel" in position && typeof position.sourceLabel === "string"
+                        ? position.sourceLabel
+                        : "No source available"}
                     </p>
 
-                    {position?.sourceUrl ? (
+                    {"sourceUrl" in position &&
+                    typeof position.sourceUrl === "string" &&
+                    position.sourceUrl ? (
                       <a
                         href={position.sourceUrl}
                         target="_blank"
