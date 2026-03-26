@@ -28,191 +28,97 @@ function ResultsPageInner() {
   }, [questions]);
 
   return (
-    <main style={{ minHeight: "100vh", background: "#fafafa", fontFamily: "Arial, sans-serif" }}>
-      <section style={{ borderBottom: "1px solid #e5e5e5", background: "#fff" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto", padding: "2rem 1.5rem" }}>
-          <p style={{ fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "#1d4ed8" }}>
-            Results
+    <main className="page-shell results-shell">
+      <section className="header-band">
+        <div className="container">
+          <span className="eyebrow">Results</span>
+          <h1 className="header-title">Your candidate matches</h1>
+          <p className="section-copy">
+            Ranked by how closely each candidate aligns with your answers for{" "}
+            {office?.name ?? officeId}. Office-relevant issues count more heavily.
           </p>
 
-          <h1 style={{ marginTop: "0.5rem", fontSize: "2rem", fontWeight: 700 }}>
-            Your Candidate Matches
-          </h1>
-
-          <p style={{ marginTop: "0.75rem", maxWidth: 700, color: "#666", lineHeight: 1.6 }}>
-            Ranked by how closely each candidate’s positions align with your
-            answers for {office?.name ?? officeId}. Questions tied most directly
-            to the office’s real governing power are weighted more heavily.
-          </p>
-
-          <div style={{ marginTop: "1.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+          <div className="chip-row">
             <Link href={`/quiz?office=${officeId}`}>
-              <button
-                style={{
-                  padding: "0.75rem 1rem",
-                  borderRadius: 10,
-                  border: "1px solid #ccc",
-                  background: "#fff",
-                  cursor: "pointer"
-                }}
-              >
-                Retake quiz
-              </button>
+              <span className="btn-secondary">Retake quiz</span>
             </Link>
-
             <Link href="/">
-              <button
-                style={{
-                  padding: "0.75rem 1rem",
-                  borderRadius: 10,
-                  border: "1px solid #ccc",
-                  background: "#fff",
-                  cursor: "pointer"
-                }}
-              >
-                Change office
-              </button>
+              <span className="btn-secondary">Change office</span>
             </Link>
           </div>
         </div>
       </section>
 
-      <section style={{ maxWidth: 1000, margin: "0 auto", padding: "2rem 1.5rem" }}>
-        {results.length === 0 ? (
-          <div
-            style={{
-              border: "1px solid #e5e5e5",
-              borderRadius: 16,
-              background: "#fff",
-              padding: "2rem"
-            }}
-          >
-            <h2 style={{ fontSize: "1.25rem", fontWeight: 700 }}>No candidates found</h2>
-            <p style={{ marginTop: "0.5rem", color: "#666" }}>
-              Add candidate entries for this office to see ranked matches.
-            </p>
-          </div>
-        ) : (
-          <div style={{ display: "grid", gap: "1.25rem" }}>
-            {results.map((result: any, idx: number) => {
-              const candidate = candidates.find((c: any) => c.id === result.candidateId);
-              if (!candidate) return null;
+      <section className="section">
+        <div className="container">
+          {results.length === 0 ? (
+            <div className="panel panel-lg">No candidates found for this office.</div>
+          ) : (
+            <div className="results-list">
+              {results.map((result: any, idx: number) => {
+                const candidate = candidates.find((c: any) => c.id === result.candidateId);
+                if (!candidate) return null;
 
-              const agreementTopics = result.agreements
-                .map((id: string) => questionMap[id]?.topic)
-                .filter(Boolean)
-                .slice(0, 3);
+                const agreementTopics = result.agreements
+                  .map((id: string) => questionMap[id]?.topic)
+                  .filter(Boolean)
+                  .slice(0, 3);
 
-              const differenceTopics = result.differences
-                .map((id: string) => questionMap[id]?.topic)
-                .filter(Boolean)
-                .slice(0, 3);
+                const differenceTopics = result.differences
+                  .map((id: string) => questionMap[id]?.topic)
+                  .filter(Boolean)
+                  .slice(0, 3);
 
-              return (
-                <div
-                  key={candidate.id}
-                  style={{
-                    border: "1px solid #e5e5e5",
-                    borderRadius: 16,
-                    background: "#fff",
-                    padding: "1.5rem"
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      gap: "1rem",
-                      alignItems: "flex-start",
-                      flexWrap: "wrap"
-                    }}
-                  >
-                    <div style={{ maxWidth: 650 }}>
-                      <p style={{ color: "#777", fontSize: "0.9rem" }}>#{idx + 1} Match</p>
-                      <h2 style={{ marginTop: "0.25rem", fontSize: "1.6rem", fontWeight: 700 }}>
-                        {candidate.name}
-                      </h2>
-                      <p style={{ marginTop: "0.25rem", color: "#666" }}>
-                        {candidate.party} · {office?.name ?? candidate.officeId}
-                      </p>
-                      <p style={{ marginTop: "1rem", color: "#333", lineHeight: 1.6 }}>
-                        {candidate.bio}
-                      </p>
+                return (
+                  <div key={candidate.id} className="result-card">
+                    <div className="result-top">
+                      <div>
+                        <div className="rank-badge">#{idx + 1} Match</div>
+                        <h2 className="result-name">{candidate.name}</h2>
+                        <div className="party-line">
+                          {candidate.party} · {office?.name ?? candidate.officeId}
+                        </div>
+                        <p className="bio-copy">{candidate.bio}</p>
+                      </div>
+
+                      <div className="match-box">
+                        <div className="match-label">Match</div>
+                        <div className="match-value">{result.percentage}%</div>
+                      </div>
                     </div>
 
-                    <div
-                      style={{
-                        padding: "1rem 1.25rem",
-                        borderRadius: 16,
-                        background: "#eff6ff",
-                        textAlign: "center",
-                        minWidth: 120
-                      }}
-                    >
-                      <p style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", color: "#1d4ed8" }}>
-                        Match
-                      </p>
-                      <p style={{ marginTop: "0.25rem", fontSize: "2rem", fontWeight: 700, color: "#1e40af" }}>
-                        {result.percentage}%
-                      </p>
+                    <div className="metrics-grid">
+                      <ScopeScoreCard title="State-power alignment" item={result.scopeBreakdown.state} />
+                      <ScopeScoreCard title="Federal-power alignment" item={result.scopeBreakdown.federal} />
+                      <ScopeScoreCard title="Shared/local issues" item={result.scopeBreakdown.local_shared} />
+                    </div>
+
+                    <div className="topic-grid">
+                      <TopicCard
+                        title="Top alignment areas"
+                        items={agreementTopics}
+                        emptyText="No exact agreement topics recorded yet."
+                        tone="success"
+                      />
+                      <TopicCard
+                        title="Biggest differences"
+                        items={differenceTopics}
+                        emptyText="No major differences recorded yet."
+                        tone="danger"
+                      />
+                    </div>
+
+                    <div className="spacer-top">
+                      <Link href={`/candidate/${candidate.id}`}>
+                        <span className="btn-secondary">View candidate</span>
+                      </Link>
                     </div>
                   </div>
-
-                  <div
-                    style={{
-                      marginTop: "1.5rem",
-                      display: "grid",
-                      gap: "0.75rem",
-                      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))"
-                    }}
-                  >
-                    <ScopeScoreCard title="State-power alignment" item={result.scopeBreakdown.state} />
-                    <ScopeScoreCard title="Federal-power alignment" item={result.scopeBreakdown.federal} />
-                    <ScopeScoreCard title="Shared/local issues" item={result.scopeBreakdown.local_shared} />
-                  </div>
-
-                  <div
-                    style={{
-                      marginTop: "1.5rem",
-                      display: "grid",
-                      gap: "1rem",
-                      gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))"
-                    }}
-                  >
-                    <TopicCard
-                      title="Top alignment areas"
-                      items={agreementTopics}
-                      emptyText="No exact agreement topics recorded yet."
-                      tone="green"
-                    />
-                    <TopicCard
-                      title="Biggest differences"
-                      items={differenceTopics}
-                      emptyText="No major differences recorded yet."
-                      tone="red"
-                    />
-                  </div>
-
-                  <div style={{ marginTop: "1.5rem" }}>
-                    <Link href={`/candidate/${candidate.id}`}>
-                      <button
-                        style={{
-                          padding: "0.75rem 1rem",
-                          borderRadius: 10,
-                          border: "1px solid #ccc",
-                          background: "#fff",
-                          cursor: "pointer"
-                        }}
-                      >
-                        View candidate
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        )}
+                );
+              })}
+            </div>
+          )}
+        </div>
       </section>
     </main>
   );
@@ -220,7 +126,7 @@ function ResultsPageInner() {
 
 export default function ResultsPage() {
   return (
-    <Suspense fallback={<main style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>Loading results...</main>}>
+    <Suspense fallback={<main className="page-shell results-shell"><div className="container"><div className="panel panel-lg">Loading results...</div></div></main>}>
       <ResultsPageInner />
     </Suspense>
   );
@@ -230,23 +136,14 @@ function ScopeScoreCard({ title, item }: { title: string; item: any }) {
   const hasData = item.possible > 0;
 
   return (
-    <div
-      style={{
-        border: "1px solid #e5e5e5",
-        borderRadius: 16,
-        background: "#f5f5f5",
-        padding: "1rem"
-      }}
-    >
-      <p style={{ fontSize: "0.9rem", color: "#666" }}>{title}</p>
-      <p style={{ marginTop: "0.5rem", fontSize: "1.7rem", fontWeight: 700 }}>
-        {hasData ? `${item.percentage}%` : "—"}
-      </p>
-      <p style={{ marginTop: "0.25rem", fontSize: "0.8rem", color: "#777" }}>
+    <div className="metric-card">
+      <div className="metric-title">{title}</div>
+      <div className="metric-value">{hasData ? `${item.percentage}%` : "—"}</div>
+      <div className="muted" style={{ marginTop: "0.3rem", fontSize: "0.86rem" }}>
         {hasData
           ? `${item.earned} of ${item.possible} weighted points`
           : "No scored questions in this scope"}
-      </p>
+      </div>
     </div>
   );
 }
@@ -260,54 +157,17 @@ function TopicCard({
   title: string;
   items: string[];
   emptyText: string;
-  tone: "green" | "red";
+  tone: "success" | "danger";
 }) {
-  const styles =
-    tone === "green"
-      ? { background: "#f0fdf4", border: "#bbf7d0", text: "#166534" }
-      : { background: "#fef2f2", border: "#fecaca", text: "#991b1b" };
-
   return (
-    <div
-      style={{
-        border: `1px solid ${styles.border}`,
-        borderRadius: 16,
-        background: styles.background,
-        padding: "1rem"
-      }}
-    >
-      <h3
-        style={{
-          fontSize: "0.8rem",
-          fontWeight: 700,
-          textTransform: "uppercase",
-          letterSpacing: "0.04em",
-          color: styles.text
-        }}
-      >
-        {title}
-      </h3>
-
+    <div className={`topic-card ${tone}`}>
+      <h3>{title}</h3>
       {items.length === 0 ? (
-        <p style={{ marginTop: "0.75rem", fontSize: "0.9rem", color: styles.text }}>
-          {emptyText}
-        </p>
+        <p style={{ marginTop: "0.75rem" }}>{emptyText}</p>
       ) : (
-        <ul style={{ marginTop: "0.75rem", display: "grid", gap: "0.5rem", padding: 0, listStyle: "none" }}>
+        <ul className="topic-list">
           {items.map((item) => (
-            <li
-              key={item}
-              style={{
-                padding: "0.65rem 0.8rem",
-                borderRadius: 12,
-                background: "rgba(255,255,255,0.7)",
-                color: styles.text,
-                fontSize: "0.9rem",
-                fontWeight: 600
-              }}
-            >
-              {item}
-            </li>
+            <li key={item}>{item}</li>
           ))}
         </ul>
       )}
