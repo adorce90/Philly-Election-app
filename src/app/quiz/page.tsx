@@ -21,6 +21,7 @@ function QuizPageInner() {
   const searchParams = useSearchParams();
 
   const queryOfficeId = searchParams.get("office");
+  const mode = searchParams.get("mode");
   const rememberedOfficeId =
     typeof window !== "undefined" ? loadSelectedOffice() : null;
   const officeId = queryOfficeId || rememberedOfficeId || "governor";
@@ -28,7 +29,8 @@ function QuizPageInner() {
   const offices = getOffices();
   const office = offices.find((item: any) => item.id === officeId);
 
-  const questions = useMemo(() => getQuestionsByOffice(officeId), [officeId]);
+  const allQuestions = useMemo(() => getQuestionsByOffice(officeId), [officeId]);
+  const questions = mode === "extended" ? allQuestions : allQuestions.slice(0, 5);
 
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
@@ -117,6 +119,18 @@ function QuizPageInner() {
             Answer honestly. Your results will rank candidates by issue alignment
             and weight office-relevant questions more heavily.
           </p>
+
+          {mode === "extended" ? (
+            <p
+              style={{
+                marginTop: "0.75rem",
+                color: "#1d4ed8",
+                fontWeight: 700
+              }}
+            >
+              Extended mode: more questions for a more precise match.
+            </p>
+          ) : null}
         </div>
       </section>
 
@@ -134,6 +148,16 @@ function QuizPageInner() {
           </div>
 
           <div className="quiz-card">
+            <p
+              style={{
+                fontSize: "0.85rem",
+                color: "#64748b",
+                marginBottom: "0.5rem"
+              }}
+            >
+              Question {index + 1} of {questions.length}
+            </p>
+
             <div className="topic-label">{question.topic}</div>
             <h2 className="question-title">{question.text}</h2>
 
