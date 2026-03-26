@@ -6,26 +6,14 @@ import {
   getQuestionsByOffice
 } from "../../../lib/loadData";
 
-function stanceTone(label?: string) {
+function stanceClass(label?: string) {
   switch (label) {
     case "Support":
-      return {
-        bg: "#f0fdf4",
-        border: "#bbf7d0",
-        text: "#166534"
-      };
+      return "stance-pill support";
     case "Oppose":
-      return {
-        bg: "#fef2f2",
-        border: "#fecaca",
-        text: "#991b1b"
-      };
+      return "stance-pill oppose";
     default:
-      return {
-        bg: "#f5f5f5",
-        border: "#e5e5e5",
-        text: "#555"
-      };
+      return "stance-pill neutral";
   }
 }
 
@@ -49,316 +37,150 @@ export default function CandidateDetailPage({
   );
 
   return (
-    <main style={{ minHeight: "100vh", background: "#fafafa", fontFamily: "Arial, sans-serif" }}>
-      <section style={{ borderBottom: "1px solid #e5e5e5", background: "#fff" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto", padding: "2rem 1.5rem" }}>
+    <main className="page-shell detail-shell">
+      <section className="header-band">
+        <div className="container">
           <Link
             href={`/results?office=${candidate.officeId}`}
-            style={{ color: "#1d4ed8", fontSize: "0.95rem", fontWeight: 600, textDecoration: "none" }}
+            style={{ color: "#1d4ed8", fontWeight: 700 }}
           >
             ← Back to results
           </Link>
+        </div>
+      </section>
 
-          <div
-            style={{
-              marginTop: "1.5rem",
-              display: "flex",
-              justifyContent: "space-between",
-              gap: "1.5rem",
-              alignItems: "flex-start",
-              flexWrap: "wrap"
-            }}
-          >
-            <div style={{ maxWidth: 650 }}>
-              <p style={{ fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "#1d4ed8" }}>
-                {office?.name ?? candidate.officeId}
-              </p>
-
-              <h1 style={{ marginTop: "0.5rem", fontSize: "2.5rem", fontWeight: 700 }}>
+      <section className="section">
+        <div className="container">
+          <div className="detail-top">
+            <div className="panel panel-lg">
+              <span className="eyebrow">{office?.name ?? candidate.officeId}</span>
+              <h1 className="header-title" style={{ marginTop: "1rem" }}>
                 {candidate.name}
               </h1>
 
-              <div style={{ marginTop: "1rem", display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
-                <span
-                  style={{
-                    padding: "0.4rem 0.8rem",
-                    borderRadius: 999,
-                    border: "1px solid #ddd",
-                    background: "#f5f5f5",
-                    fontSize: "0.9rem",
-                    color: "#555"
-                  }}
-                >
-                  {candidate.party}
-                </span>
-                <span
-                  style={{
-                    padding: "0.4rem 0.8rem",
-                    borderRadius: 999,
-                    border: "1px solid #ddd",
-                    background: "#fff",
-                    fontSize: "0.9rem",
-                    color: "#555"
-                  }}
-                >
-                  {office?.level ?? "office"}
-                </span>
+              <div className="chip-row">
+                <span className="chip">{candidate.party}</span>
+                <span className="chip">{office?.level ?? "office"}</span>
               </div>
 
-              <p style={{ marginTop: "1.25rem", color: "#444", lineHeight: 1.7 }}>
+              <p className="section-copy" style={{ marginTop: "1rem" }}>
                 {candidate.bio}
               </p>
 
               {"website" in candidate &&
               typeof candidate.website === "string" &&
               candidate.website ? (
-                <a
-                  href={candidate.website}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    display: "inline-block",
-                    marginTop: "1.25rem",
-                    padding: "0.75rem 1rem",
-                    borderRadius: 10,
-                    border: "1px solid #ccc",
-                    background: "#fff",
-                    color: "#111",
-                    textDecoration: "none",
-                    fontWeight: 600
-                  }}
-                >
-                  Visit campaign website
-                </a>
+                <div className="spacer-top">
+                  <a
+                    href={candidate.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-secondary"
+                  >
+                    Visit campaign website
+                  </a>
+                </div>
               ) : null}
             </div>
 
-            <div
-              style={{
-                width: "100%",
-                maxWidth: 280,
-                border: "1px solid #e5e5e5",
-                borderRadius: 16,
-                background: "#fff",
-                padding: "1.25rem"
-              }}
-            >
-              <p style={{ fontSize: "0.9rem", color: "#666" }}>Candidate ID</p>
-              <p style={{ marginTop: "0.5rem", fontSize: "0.95rem", fontWeight: 700, wordBreak: "break-word" }}>
+            <div className="panel panel-lg">
+              <div className="detail-kicker">Candidate ID</div>
+              <div className="metric-value" style={{ fontSize: "1.05rem", marginTop: "0.6rem" }}>
                 {candidate.id}
-              </p>
+              </div>
 
-              <div
-                style={{
-                  marginTop: "1.25rem",
-                  borderRadius: 12,
-                  background: "#eff6ff",
-                  padding: "1rem"
-                }}
-              >
-                <p style={{ fontSize: "0.9rem", fontWeight: 700, color: "#1e40af" }}>
-                  Demo note
-                </p>
-                <p style={{ marginTop: "0.5rem", fontSize: "0.9rem", color: "#1e3a8a", lineHeight: 1.6 }}>
-                  This page is structured for sourced, issue-by-issue candidate comparisons.
+              <div className="detail-card spacer-top">
+                <div className="detail-kicker">Demo note</div>
+                <p className="section-copy" style={{ marginTop: "0.5rem" }}>
+                  This page is designed for sourced, issue-by-issue candidate comparisons
+                  and future accountability tracking.
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section style={{ maxWidth: 1000, margin: "0 auto", padding: "2rem 1.5rem" }}>
-        <div style={{ marginBottom: "1.5rem" }}>
-          <h2 style={{ fontSize: "1.8rem", fontWeight: 700 }}>Position breakdown</h2>
-          <p style={{ marginTop: "0.5rem", color: "#666", lineHeight: 1.6 }}>
-            These are the questions currently mapped to this candidate for the {office?.name ?? candidate.officeId} quiz.
-          </p>
-        </div>
+          <div className="spacer-top" style={{ marginTop: "2rem" }}>
+            <h2 className="section-title">Position breakdown</h2>
+            <p className="section-copy">
+              These are the quiz questions currently mapped to this candidate.
+            </p>
+          </div>
 
-        <div style={{ display: "grid", gap: "1rem" }}>
-          {candidateQuestions.map((question: any) => {
-            const position = candidate.positions?.[question.id];
-            const tone = stanceTone(position?.label);
+          <div className="position-list spacer-top">
+            {candidateQuestions.map((question: any) => {
+              const position = candidate.positions?.[question.id];
 
-            const weightedForOffice =
-              (candidate.officeLevel === "state" && question.scope === "state") ||
-              (candidate.officeLevel === "federal" && question.scope === "federal");
+              const weightedForOffice =
+                (candidate.officeLevel === "state" && question.scope === "state") ||
+                (candidate.officeLevel === "federal" && question.scope === "federal");
 
-            return (
-              <div
-                key={question.id}
-                style={{
-                  border: "1px solid #e5e5e5",
-                  borderRadius: 16,
-                  background: "#fff",
-                  padding: "1.5rem"
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    gap: "1rem",
-                    alignItems: "flex-start",
-                    flexWrap: "wrap"
-                  }}
-                >
-                  <div style={{ maxWidth: 650 }}>
-                    <p style={{ fontSize: "0.95rem", fontWeight: 600, color: "#1d4ed8" }}>
-                      {question.topic}
-                    </p>
-
-                    <div style={{ marginTop: "0.75rem", display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
-                      <span
-                        style={{
-                          padding: "0.35rem 0.75rem",
-                          borderRadius: 999,
-                          border: "1px solid #ddd",
-                          background: "#f5f5f5",
-                          fontSize: "0.75rem",
-                          color: "#555"
-                        }}
-                      >
-                        Scope: {question.scope}
-                      </span>
-
-                      {weightedForOffice ? (
-                        <span
-                          style={{
-                            padding: "0.35rem 0.75rem",
-                            borderRadius: 999,
-                            border: "1px solid #bfdbfe",
-                            background: "#eff6ff",
-                            fontSize: "0.75rem",
-                            color: "#1d4ed8",
-                            fontWeight: 600
-                          }}
-                        >
-                          Weighted 2x for this office
-                        </span>
-                      ) : null}
+              return (
+                <div key={question.id} className="position-card">
+                  <div className="position-head">
+                    <div>
+                      <div className="topic-label">{question.topic}</div>
+                      <div className="chip-row">
+                        <span className="chip">Scope: {question.scope}</span>
+                        {weightedForOffice ? (
+                          <span className="chip" style={{ color: "#1d4ed8", background: "#eff6ff", borderColor: "#bfdbfe" }}>
+                            Weighted 2x for this office
+                          </span>
+                        ) : null}
+                      </div>
+                      <h3 className="position-title">{question.text}</h3>
                     </div>
 
-                    <h3 style={{ marginTop: "1rem", fontSize: "1.2rem", fontWeight: 700, lineHeight: 1.6 }}>
-                      {question.text}
-                    </h3>
+                    <div className={stanceClass(position?.label)}>
+                      {position?.label ?? "No stance"}
+                    </div>
                   </div>
 
-                  <div
-                    style={{
-                      padding: "0.45rem 0.9rem",
-                      borderRadius: 999,
-                      border: `1px solid ${tone.border}`,
-                      background: tone.bg,
-                      color: tone.text,
-                      fontWeight: 700,
-                      fontSize: "0.9rem"
-                    }}
-                  >
-                    {position?.label ?? "No stance"}
-                  </div>
-                </div>
+                  <div className="tracker-grid spacer-top">
+                    <div className="detail-card">
+                      <div className="detail-kicker">Stored stance value</div>
+                      <div className="metric-value">{position?.stance ?? "N/A"}</div>
+                    </div>
 
-                <div
-                  style={{
-                    marginTop: "1.25rem",
-                    display: "grid",
-                    gap: "1rem",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))"
-                  }}
-                >
-                  <div
-                    style={{
-                      borderRadius: 12,
-                      background: "#f5f5f5",
-                      padding: "1rem"
-                    }}
-                  >
-                    <p style={{ fontSize: "0.85rem", color: "#666" }}>Stored stance value</p>
-                    <p style={{ marginTop: "0.5rem", fontSize: "1.4rem", fontWeight: 700 }}>
-                      {position?.stance ?? "N/A"}
-                    </p>
-                  </div>
+                    <div className="detail-card">
+                      <div className="detail-kicker">Source</div>
+                      <div className="spacer-top" style={{ marginTop: "0.5rem", fontWeight: 700 }}>
+                        {"sourceLabel" in position && typeof position.sourceLabel === "string"
+                          ? position.sourceLabel
+                          : "No source available"}
+                      </div>
 
-                  <div
-                    style={{
-                      borderRadius: 12,
-                      background: "#f5f5f5",
-                      padding: "1rem"
-                    }}
-                  >
-                    <p style={{ fontSize: "0.85rem", color: "#666" }}>Source</p>
-                    <p style={{ marginTop: "0.5rem", fontSize: "0.95rem", fontWeight: 700 }}>
-                      {"sourceLabel" in position && typeof position.sourceLabel === "string"
-                        ? position.sourceLabel
-                        : "No source available"}
-                    </p>
-
-                    {"sourceUrl" in position &&
-                    typeof position.sourceUrl === "string" &&
-                    position.sourceUrl ? (
-                      <a
-                        href={position.sourceUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        style={{
-                          display: "inline-block",
-                          marginTop: "0.5rem",
-                          color: "#1d4ed8",
-                          fontSize: "0.9rem",
-                          fontWeight: 600,
-                          textDecoration: "none"
-                        }}
-                      >
-                        Open source →
-                      </a>
-                    ) : null}
+                      {"sourceUrl" in position &&
+                      typeof position.sourceUrl === "string" &&
+                      position.sourceUrl ? (
+                        <div className="spacer-top" style={{ marginTop: "0.65rem" }}>
+                          <a
+                            href={position.sourceUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            style={{ color: "#1d4ed8", fontWeight: 700 }}
+                          >
+                            Open source →
+                          </a>
+                        </div>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+              );
+            })}
+          </div>
 
-      <section style={{ maxWidth: 1000, margin: "0 auto", padding: "0 1.5rem 2rem" }}>
-        <div
-          style={{
-            border: "1px solid #e5e5e5",
-            borderRadius: 16,
-            background: "#fff",
-            padding: "1.5rem"
-          }}
-        >
-          <h2 style={{ fontSize: "1.4rem", fontWeight: 700 }}>Promise tracker</h2>
-          <p style={{ marginTop: "0.5rem", color: "#666", lineHeight: 1.6 }}>
-            Placeholder for future tracking of promises, public actions, votes, and follow-through.
-          </p>
+          <div className="panel panel-lg spacer-top" style={{ marginTop: "2rem" }}>
+            <h2 className="section-title" style={{ fontSize: "1.4rem" }}>Promise tracker</h2>
+            <p className="section-copy">
+              Placeholder for future tracking of promises, public actions, votes, and follow-through.
+            </p>
 
-          <div
-            style={{
-              marginTop: "1.25rem",
-              display: "grid",
-              gap: "1rem",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))"
-            }}
-          >
-            <TrackerCard
-              title="Promises collected"
-              value="0"
-              note="To be added from campaign platforms"
-            />
-            <TrackerCard
-              title="Tracked actions"
-              value="0"
-              note="Bills, statements, and executive actions"
-            />
-            <TrackerCard
-              title="Status"
-              value="Coming soon"
-              note="This module can grow into accountability tracking"
-            />
+            <div className="tracker-grid spacer-top">
+              <TrackerCard title="Promises collected" value="0" note="To be added from campaign platforms" />
+              <TrackerCard title="Tracked actions" value="0" note="Bills, statements, and executive actions" />
+              <TrackerCard title="Status" value="Coming soon" note="This module can grow into accountability tracking" />
+            </div>
           </div>
         </div>
       </section>
@@ -376,19 +198,10 @@ function TrackerCard({
   note: string;
 }) {
   return (
-    <div
-      style={{
-        borderRadius: 16,
-        border: "1px solid #e5e5e5",
-        background: "#f5f5f5",
-        padding: "1rem"
-      }}
-    >
-      <p style={{ fontSize: "0.9rem", color: "#666" }}>{title}</p>
-      <p style={{ marginTop: "0.75rem", fontSize: "1.6rem", fontWeight: 700 }}>
-        {value}
-      </p>
-      <p style={{ marginTop: "0.5rem", fontSize: "0.9rem", color: "#666", lineHeight: 1.6 }}>
+    <div className="tracker-card">
+      <div className="detail-kicker">{title}</div>
+      <div className="metric-value">{value}</div>
+      <p className="section-copy" style={{ marginTop: "0.5rem" }}>
         {note}
       </p>
     </div>
