@@ -18,9 +18,7 @@ export function getQuestions() {
 
 export function getQuestionsByOffice(officeId: string) {
   return questions.filter((q: any) => {
-    if (!q.relevantOfficeIds || q.relevantOfficeIds.length === 0) {
-      return true;
-    }
+    if (!q.relevantOfficeIds) return true;
     return q.relevantOfficeIds.includes(officeId);
   });
 }
