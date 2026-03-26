@@ -1,17 +1,10 @@
 [
-  {
-    "id": "governor",
-    "name": "Governor",
-    "level": "state"
-  },
-  {
-    "id": "u-s-house-district-2",
-    "name": "U.S. House District 2",
-    "level": "federal"
-  },
-  {
-    "id": "u-s-house-district-3",
-    "name": "U.S. House District 3",
-    "level": "federal"
-  }
+  { "id": "governor", "name": "Governor", "level": "state" },
+  { "id": "u-s-house-district-2", "name": "U.S. House District 2", "level": "federal" },
+  { "id": "u-s-house-district-3", "name": "U.S. House District 3", "level": "federal" },
+  { "id": "u-s-house-district-5", "name": "U.S. House District 5", "level": "federal" },
+  { "id": "state-senate-district-2", "name": "State Senate District 2", "level": "state" },
+  { "id": "state-senate-district-4", "name": "State Senate District 4", "level": "state" },
+  { "id": "state-senate-district-8", "name": "State Senate District 8", "level": "state" },
+  { "id": "state-senate-district-26", "name": "State Senate District 26", "level": "state" }
 ]
