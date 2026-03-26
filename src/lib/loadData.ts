@@ -2,6 +2,7 @@ import election from "../data/election.json";
 import offices from "../data/offices.json";
 import questions from "../data/questions.json";
 import candidates from "../data/candidates.json";
+import promises from "../data/promises.json";
 
 export function getElection() {
   return election;
@@ -34,4 +35,12 @@ export function getCandidatesByOffice(officeId: string) {
 
 export function getCandidateById(id: string) {
   return candidates.find((c: any) => c.id === id);
+}
+
+export function getPromises() {
+  return promises;
+}
+
+export function getPromisesByCandidateId(candidateId: string) {
+  return promises.find((item: any) => item.candidateId === candidateId)?.promises ?? [];
 }
