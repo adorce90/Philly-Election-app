@@ -30,7 +30,10 @@ function QuizPageInner() {
   const office = offices.find((item: any) => item.id === officeId);
 
   const allQuestions = useMemo(() => getQuestionsByOffice(officeId), [officeId]);
-  const questions = mode === "extended" ? allQuestions : allQuestions.slice(0, 5);
+
+  const questions = useMemo(() => {
+    return mode === "extended" ? allQuestions : allQuestions.slice(0, 5);
+  }, [allQuestions, mode]);
 
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
@@ -73,12 +76,14 @@ function QuizPageInner() {
   function nextQuestion() {
     if (!question) return;
 
+    const updatedAnswers = answers;
+
     if (index < questions.length - 1) {
       setIndex((prev) => prev + 1);
       return;
     }
 
-    saveQuizAnswers(answers);
+    saveQuizAnswers(updatedAnswers);
     saveSelectedOffice(officeId);
     router.push(`/results?office=${officeId}`);
   }
