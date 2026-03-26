@@ -1,13 +1,22 @@
+
 export function getScopeMultiplier(candidate: any, question: any) {
+  let multiplier = 1;
+
+  // Boost if question is explicitly relevant to this office
+  if (question.relevantOfficeIds?.includes(candidate.officeId)) {
+    multiplier *= 2;
+  }
+
+  // Extra boost if scope matches actual power of office
   if (candidate.officeLevel === "state" && question.scope === "state") {
-    return 2;
+    multiplier *= 1.5;
   }
 
   if (candidate.officeLevel === "federal" && question.scope === "federal") {
-    return 2;
+    multiplier *= 1.5;
   }
 
-  return 1;
+  return multiplier;
 }
 
 function createEmptyScopeBreakdown() {
@@ -44,7 +53,11 @@ function finalizeBreakdown(breakdown: any) {
   };
 }
 
-export function scoreCandidate(candidate: any, questions: any[], userAnswers: Record<string, number>) {
+export function scoreCandidate(
+  candidate: any,
+  questions: any[],
+  userAnswers: Record<string, number>
+) {
   let earned = 0;
   let possible = 0;
 
@@ -80,7 +93,8 @@ export function scoreCandidate(candidate: any, questions: any[], userAnswers: Re
     if (gap >= 2) differences.push(question.id);
   }
 
-  const percentage = possible === 0 ? 0 : Math.round((earned / possible) * 100);
+  const percentage =
+    possible === 0 ? 0 : Math.round((earned / possible) * 100);
 
   return {
     candidateId: candidate.id,
@@ -93,7 +107,11 @@ export function scoreCandidate(candidate: any, questions: any[], userAnswers: Re
   };
 }
 
-export function rankCandidates(candidates: any[], questions: any[], userAnswers: Record<string, number>) {
+export function rankCandidates(
+  candidates: any[],
+  questions: any[],
+  userAnswers: Record<string, number>
+) {
   return candidates
     .map((candidate) => scoreCandidate(candidate, questions, userAnswers))
     .sort((a, b) => b.percentage - a.percentage || b.score - a.score);
