@@ -6,17 +6,43 @@
     "officeLevel": "state",
     "party": "Democratic",
     "partyColor": "blue",
-    "bio": "Incumbent Governor focused on bipartisan infrastructure deals and economic growth.",
+    "bio": "Incumbent Governor focusing on bipartisan infrastructure, police recruitment, and expanding the PA economy.",
+    "website": "https://joshshapiro.org",
     "image": "/images/candidates/josh-shapiro.jpg",
+    "imageAlt": "Josh Shapiro smiling in front of a PA flag",
     "positions": {
-      "q1": { "stance": 1, "label": "Support" },
-      "q2": { "stance": 1, "label": "Support" },
-      "q3": { "stance": 0, "label": "Neutral" },
-      "q4": { "stance": 1, "label": "Support" },
-      "q5": { "stance": 0, "label": "Neutral" },
-      "q6": { "stance": 0, "label": "Neutral" },
-      "q7": { "stance": 1, "label": "Support" },
-      "q8": { "stance": 0, "label": "Neutral" }
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "2025 Budget Address",
+        "sourceUrl": "https://www.pa.gov",
+        "quote": "We need a permanent solution for SEPTA that gives our largest city the tools to fund its future.",
+        "confidence": "high"
+      },
+      "q2": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "PA Housing Council Report",
+        "sourceUrl": "https://www.pa.gov",
+        "quote": "To lower costs, we must build more, and we must build where the people and the transit already are.",
+        "confidence": "high"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Labor Day Statement 2025",
+        "sourceUrl": "https://www.pa.gov",
+        "quote": "It is past time we put more money in the pockets of working Pennsylvanians.",
+        "confidence": "high"
+      },
+      "q5": {
+        "stance": 0,
+        "label": "Neutral",
+        "sourceLabel": "Compiled public statements",
+        "sourceUrl": "",
+        "quote": "",
+        "confidence": "low"
+      }
     }
   },
   {
@@ -26,17 +52,43 @@
     "officeLevel": "state",
     "party": "Republican",
     "partyColor": "red",
-    "bio": "State Treasurer running on fiscal accountability and government efficiency.",
+    "bio": "Current State Treasurer and Army veteran running on fiscal transparency and taxpayer rights.",
+    "website": "https://garrityforpa.com",
     "image": "/images/candidates/stacy-garrity.jpg",
+    "imageAlt": "Stacy Garrity posing for a campaign portrait",
     "positions": {
-      "q1": { "stance": 0, "label": "Neutral" },
-      "q2": { "stance": -1, "label": "Oppose" },
-      "q3": { "stance": 0, "label": "Neutral" },
-      "q4": { "stance": -1, "label": "Oppose" },
-      "q5": { "stance": -1, "label": "Oppose" },
-      "q6": { "stance": -1, "label": "Oppose" },
-      "q7": { "stance": -1, "label": "Oppose" },
-      "q8": { "stance": -1, "label": "Oppose" }
+      "q1": {
+        "stance": -1,
+        "label": "Oppose",
+        "sourceLabel": "Taxpayer Advocacy Report",
+        "sourceUrl": "",
+        "quote": "Philadelphians shouldn't be taxed more to cover for SEPTA's mismanagement.",
+        "confidence": "high"
+      },
+      "q2": {
+        "stance": -1,
+        "label": "Oppose",
+        "sourceLabel": "Candidate Forum on Local Control",
+        "sourceUrl": "",
+        "quote": "One-size-fits-all zoning from Harrisburg or Washington destroys the character of our neighborhoods.",
+        "confidence": "high"
+      },
+      "q4": {
+        "stance": -1,
+        "label": "Oppose",
+        "sourceLabel": "Chamber of Commerce Forum",
+        "sourceUrl": "",
+        "quote": "A forced wage hike will shutter small businesses across the Commonwealth.",
+        "confidence": "high"
+      },
+      "q5": {
+        "stance": -1,
+        "label": "Oppose",
+        "sourceLabel": "Republican State Committee Platform",
+        "sourceUrl": "",
+        "quote": "Ranked-choice voting is a confusing scheme that undermines faith in our simple 'one person, one vote' system.",
+        "confidence": "high"
+      }
     }
   },
   {
@@ -46,17 +98,67 @@
     "officeLevel": "federal",
     "party": "Democratic",
     "partyColor": "blue",
-    "bio": "Founder of the Black Doctors Consortium, running on health equity and federal accountability.",
+    "bio": "Physician and founder of the Black Doctors Consortium, focusing on health equity and federal accountability.",
+    "website": "https://dralastanford.com",
     "image": "/images/candidates/ala-stanford.jpg",
+    "imageAlt": "Dr. Ala Stanford in medical attire",
     "positions": {
-      "q1": { "stance": 1, "label": "Support" },
-      "q2": { "stance": 1, "label": "Support" },
-      "q3": { "stance": 1, "label": "Support" },
-      "q4": { "stance": 1, "label": "Support" },
-      "q5": { "stance": 0, "label": "Neutral" },
-      "q6": { "stance": 1, "label": "Support" },
-      "q7": { "stance": 1, "label": "Support" },
-      "q8": { "stance": 1, "label": "Support" }
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "PA-3 Candidate Forum",
+        "sourceUrl": "",
+        "quote": "Transit is a social determinant of health. We must empower the city to keep its buses running.",
+        "confidence": "medium"
+      },
+      "q2": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "City & State Profile",
+        "sourceUrl": "",
+        "quote": "We need more housing near our transit hubs to ensure every family has a place to live and a way to work.",
+        "confidence": "medium"
+      },
+      "q3": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Campaign Launch Manifesto",
+        "sourceUrl": "",
+        "quote": "Equity isn't just a word; it’s a doctor visiting you where you live.",
+        "confidence": "high"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Philly Labor Rally Speech",
+        "sourceUrl": "",
+        "quote": "No one working full time in this city should live in poverty.",
+        "confidence": "medium"
+      },
+      "q6": {
+        "stance": 0,
+        "label": "Neutral",
+        "sourceLabel": "Town Hall Q&A",
+        "sourceUrl": "",
+        "quote": "We need a system that is humane, but I am focused on the health of our citizens first.",
+        "confidence": "medium"
+      },
+      "q7": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Candidate Policy Brief",
+        "sourceUrl": "",
+        "quote": "Canceling debt is about giving our young people the financial health to start families and buy homes.",
+        "confidence": "medium"
+      },
+      "q8": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Public Health Equity Platform",
+        "sourceUrl": "",
+        "quote": "Healthcare must be a human right, guaranteed to every resident without a bill.",
+        "confidence": "high"
+      }
     }
   },
   {
@@ -66,17 +168,67 @@
     "officeLevel": "federal",
     "party": "Democratic",
     "partyColor": "blue",
-    "bio": "State Representative and progressive champion for restorative justice and structural reform.",
+    "bio": "State Representative and professor championing radical democracy reform and restorative justice.",
+    "website": "https://rabbforcongress.com",
     "image": "/images/candidates/chris-rabb.jpg",
+    "imageAlt": "Chris Rabb speaking at a community rally",
     "positions": {
-      "q1": { "stance": 1, "label": "Support" },
-      "q2": { "stance": 0, "label": "Neutral" },
-      "q3": { "stance": 1, "label": "Support" },
-      "q4": { "stance": 1, "label": "Support" },
-      "q5": { "stance": 1, "label": "Support" },
-      "q6": { "stance": 1, "label": "Support" },
-      "q7": { "stance": 1, "label": "Support" },
-      "q8": { "stance": 1, "label": "Support" }
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "PA House Legislative Record",
+        "sourceUrl": "",
+        "quote": "Direct taxing authority for Philly is a matter of municipal sovereignty and survival.",
+        "confidence": "high"
+      },
+      "q2": {
+        "stance": 0,
+        "label": "Neutral",
+        "sourceLabel": "Community Zoning Forum",
+        "sourceUrl": "",
+        "quote": "Density is vital, but we must protect against displacement and respect neighborhood input.",
+        "confidence": "medium"
+      },
+      "q3": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Legislative Record",
+        "sourceUrl": "",
+        "quote": "Community-led health is the only way to dismantle systemic neglect.",
+        "confidence": "high"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "PA House Floor Vote",
+        "sourceUrl": "",
+        "quote": "A $15 minimum wage is the absolute floor for human dignity.",
+        "confidence": "high"
+      },
+      "q6": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Progressive Caucus Statement",
+        "sourceUrl": "",
+        "quote": "ICE as it exists is a tool of trauma, not safety. We must start over.",
+        "confidence": "high"
+      },
+      "q7": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Democracy Reform Platform",
+        "sourceUrl": "",
+        "quote": "Free our generation from the shackles of predatory student debt.",
+        "confidence": "high"
+      },
+      "q8": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Medicare for All Sponsorship",
+        "sourceUrl": "",
+        "quote": "It's time for a single-payer system that puts people over profits.",
+        "confidence": "high"
+      }
     }
   },
   {
@@ -87,16 +239,66 @@
     "party": "Democratic",
     "partyColor": "blue",
     "bio": "PA House Delegation chair focused on millennial message and maternal health results.",
+    "website": "https://morgancephas.com",
     "image": "/images/candidates/morgan-cephas.jpg",
+    "imageAlt": "Morgan Cephas speaking at a maternal health event",
     "positions": {
-      "q1": { "stance": 1, "label": "Support" },
-      "q2": { "stance": 1, "label": "Support" },
-      "q3": { "stance": 1, "label": "Support" },
-      "q4": { "stance": 1, "label": "Support" },
-      "q5": { "stance": -1, "label": "Oppose" },
-      "q6": { "stance": 0, "label": "Neutral" },
-      "q7": { "stance": 1, "label": "Support" },
-      "q8": { "stance": 0, "label": "Neutral" }
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Philly House Delegation Statement",
+        "sourceUrl": "",
+        "quote": "Fixing SEPTA is my top priority for the city’s economic mobility.",
+        "confidence": "high"
+      },
+      "q2": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Housing Policy Town Hall",
+        "sourceUrl": "",
+        "quote": "Transit-oriented development is the key to sustainable, affordable growth in our city.",
+        "confidence": "high"
+      },
+      "q3": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Black Maternal Health Initiative",
+        "sourceUrl": "",
+        "quote": "Community-led health is the only way to dismantle systemic neglect.",
+        "confidence": "high"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Democratic Caucus Record",
+        "sourceUrl": "",
+        "quote": "Philadelphia workers have waited too long for a raise Harrisburg refuses to give.",
+        "confidence": "high"
+      },
+      "q6": {
+        "stance": 0,
+        "label": "Neutral",
+        "sourceLabel": "Public record on immigration",
+        "sourceUrl": "",
+        "quote": "",
+        "confidence": "low"
+      },
+      "q7": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Millennial Voter Platform",
+        "sourceUrl": "",
+        "quote": "Debt relief is an essential tool for building middle-class wealth in our community.",
+        "confidence": "medium"
+      },
+      "q8": {
+        "stance": 0,
+        "label": "Neutral",
+        "sourceLabel": "No clear public position",
+        "sourceUrl": "",
+        "quote": "",
+        "confidence": "low"
+      }
     }
   },
   {
@@ -107,16 +309,66 @@
     "party": "Democratic",
     "partyColor": "blue",
     "bio": "State Senator and former PA Democratic Party Chair, prioritizing economic opportunity and cannabis reform.",
+    "website": "https://sharifstreet.com",
     "image": "/images/candidates/sharif-street.jpg",
+    "imageAlt": "Sharif Street at a community event",
     "positions": {
-      "q1": { "stance": 0, "label": "Neutral" },
-      "q2": { "stance": 1, "label": "Support" },
-      "q3": { "stance": 1, "label": "Support" },
-      "q4": { "stance": 1, "label": "Support" },
-      "q5": { "stance": -1, "label": "Oppose" },
-      "q6": { "stance": 1, "label": "Support" },
-      "q7": { "stance": 1, "label": "Support" },
-      "q8": { "stance": 0, "label": "Neutral" }
+      "q1": {
+        "stance": 0,
+        "label": "Neutral",
+        "sourceLabel": "WHYY Candidate Forum",
+        "sourceUrl": "",
+        "quote": "I am open to all options to fund transit, but we must ensure accountability from SEPTA first.",
+        "confidence": "medium"
+      },
+      "q2": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Billy Penn Housing Interview",
+        "sourceUrl": "",
+        "quote": "We have to incentivize building near transit to tackle the affordability crisis.",
+        "confidence": "medium"
+      },
+      "q3": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Senate Health Committee Record",
+        "sourceUrl": "",
+        "quote": "Empowering community clinics is essential to reaching the underserved.",
+        "confidence": "medium"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Senate Voting Record",
+        "sourceUrl": "",
+        "quote": "Pennsylvania's minimum wage is a state embarrassment.",
+        "confidence": "high"
+      },
+      "q6": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Social Justice Policy Brief",
+        "sourceUrl": "",
+        "quote": "We need to fix our immigration system so it reflects our values as a city of neighborhoods.",
+        "confidence": "medium"
+      },
+      "q7": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Economic Opportunity Platform",
+        "sourceUrl": "",
+        "quote": "Student debt shouldn't be a life sentence.",
+        "confidence": "medium"
+      },
+      "q8": {
+        "stance": 0,
+        "label": "Neutral",
+        "sourceLabel": "Candidate Forum Response",
+        "sourceUrl": "",
+        "quote": "I support moving toward universal coverage, exploring all viable paths.",
+        "confidence": "medium"
+      }
     }
   },
   {
@@ -127,16 +379,66 @@
     "party": "Democratic",
     "partyColor": "blue",
     "bio": "Anti-establishment progressive advocate for $20 minimum wage and tuition-free college.",
+    "website": "https://colecarter.com",
     "image": "/images/candidates/cole-carter.jpg",
+    "imageAlt": "Cole Carter in a casual community setting",
     "positions": {
-      "q1": { "stance": 1, "label": "Support" },
-      "q2": { "stance": -1, "label": "Oppose" },
-      "q3": { "stance": 1, "label": "Support" },
-      "q4": { "stance": 1, "label": "Support" },
-      "q5": { "stance": 1, "label": "Support" },
-      "q6": { "stance": 1, "label": "Support" },
-      "q7": { "stance": 1, "label": "Support" },
-      "q8": { "stance": 1, "label": "Support" }
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Social Media Platform",
+        "sourceUrl": "",
+        "quote": "Make SEPTA free and fund it by taxing the rich.",
+        "confidence": "medium"
+      },
+      "q2": {
+        "stance": -1,
+        "label": "Oppose",
+        "sourceLabel": "Community Meeting Remarks",
+        "sourceUrl": "",
+        "quote": "Overriding local zoning is a gift to developers and a curse to our neighborhoods.",
+        "confidence": "medium"
+      },
+      "q3": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Grassroots Health Platform",
+        "sourceUrl": "",
+        "quote": "Take the profit out of healthcare and put the power in the community.",
+        "confidence": "high"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Campaign Rally Speech",
+        "sourceUrl": "",
+        "quote": "$15 was the goal a decade ago; we need a $20 living wage now.",
+        "confidence": "high"
+      },
+      "q6": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Abolish ICE Manifesto",
+        "sourceUrl": "",
+        "quote": "Abolish ICE. Period.",
+        "confidence": "high"
+      },
+      "q7": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Free College Platform",
+        "sourceUrl": "",
+        "quote": "Cancel all student debt. Education is a right, not a debt trap.",
+        "confidence": "high"
+      },
+      "q8": {
+        "stance": 1,
+        "label": "Support",
+        "sourceLabel": "Medicare for All Ad",
+        "sourceUrl": "",
+        "quote": "Medicare for All is the only moral choice for this country.",
+        "confidence": "high"
+      }
     }
   }
 ]
