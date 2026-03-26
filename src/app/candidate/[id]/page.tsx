@@ -87,28 +87,27 @@ export default function CandidateDetailPage({
                   flexWrap: "wrap"
                 }}
               >
-                {"image" in candidate &&
-                typeof candidate.image === "string" &&
-                candidate.image ? (
-                  <img
-                    src={candidate.image}
-                    alt={
-                      "imageAlt" in candidate &&
-                      typeof candidate.imageAlt === "string" &&
-                      candidate.imageAlt
-                        ? candidate.imageAlt
-                        : candidate.name
-                    }
-                    style={{
-                      width: 96,
-                      height: 96,
-                      borderRadius: "50%",
-                      objectFit: "cover",
-                      border: "1px solid #dbe3ef",
-                      background: "#f8fafc"
-                    }}
-                  />
-                ) : null}
+                <div
+  style={{
+    width: 96,
+    height: 96,
+    borderRadius: "50%",
+    background: "#e5e7eb",
+    border: "1px solid #dbe3ef",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontWeight: 800,
+    fontSize: "1.5rem",
+    color: "#374151"
+  }}
+>
+  {candidate.name
+    .split(" ")
+    .map((n: string) => n[0])
+    .join("")
+    .slice(0, 2)}
+</div>
 
                 <div>
                   <h1 className="header-title" style={{ margin: 0 }}>
