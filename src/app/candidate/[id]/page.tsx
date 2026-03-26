@@ -3,8 +3,10 @@ import { notFound } from "next/navigation";
 import {
   getCandidateById,
   getOffices,
+  getPromisesByCandidateId,
   getQuestionsByOffice
 } from "../../../lib/loadData";
+import PromiseTracker from "../../../components/PromiseTracker";
 
 function stanceClass(label?: string) {
   switch (label) {
@@ -54,6 +56,7 @@ export default function CandidateDetailPage({
   const offices = getOffices();
   const office = offices.find((item: any) => item.id === candidate.officeId);
   const questions = getQuestionsByOffice(candidate.officeId);
+  const promises = getPromisesByCandidateId(candidate.id);
 
   const candidateQuestions = questions.filter(
     (question: any) => candidate.positions?.[question.id]
@@ -88,26 +91,26 @@ export default function CandidateDetailPage({
                 }}
               >
                 <div
-  style={{
-    width: 96,
-    height: 96,
-    borderRadius: "50%",
-    background: "#e5e7eb",
-    border: "1px solid #dbe3ef",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontWeight: 800,
-    fontSize: "1.5rem",
-    color: "#374151"
-  }}
->
-  {candidate.name
-    .split(" ")
-    .map((n: string) => n[0])
-    .join("")
-    .slice(0, 2)}
-</div>
+                  style={{
+                    width: 96,
+                    height: 96,
+                    borderRadius: "50%",
+                    background: "#e5e7eb",
+                    border: "1px solid #dbe3ef",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontWeight: 800,
+                    fontSize: "1.5rem",
+                    color: "#374151"
+                  }}
+                >
+                  {candidate.name
+                    .split(" ")
+                    .map((n: string) => n[0])
+                    .join("")
+                    .slice(0, 2)}
+                </div>
 
                 <div>
                   <h1 className="header-title" style={{ margin: 0 }}>
@@ -278,54 +281,9 @@ export default function CandidateDetailPage({
             })}
           </div>
 
-          <div className="panel panel-lg spacer-top" style={{ marginTop: "2rem" }}>
-            <h2 className="section-title" style={{ fontSize: "1.4rem" }}>
-              Promise tracker
-            </h2>
-            <p className="section-copy">
-              Placeholder for future tracking of promises, public actions, votes, and follow-through.
-            </p>
-
-            <div className="tracker-grid spacer-top">
-              <TrackerCard
-                title="Promises collected"
-                value="0"
-                note="To be added from campaign platforms"
-              />
-              <TrackerCard
-                title="Tracked actions"
-                value="0"
-                note="Bills, statements, and executive actions"
-              />
-              <TrackerCard
-                title="Status"
-                value="Coming soon"
-                note="This module can grow into accountability tracking"
-              />
-            </div>
-          </div>
+          <PromiseTracker promises={promises} />
         </div>
       </section>
     </main>
-  );
-}
-
-function TrackerCard({
-  title,
-  value,
-  note
-}: {
-  title: string;
-  value: string;
-  note: string;
-}) {
-  return (
-    <div className="tracker-card">
-      <div className="detail-kicker">{title}</div>
-      <div className="metric-value">{value}</div>
-      <p className="section-copy" style={{ marginTop: "0.5rem" }}>
-        {note}
-      </p>
-    </div>
   );
 }
