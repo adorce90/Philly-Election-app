@@ -124,7 +124,9 @@ function QuizPageInner() {
         <div className="quiz-layout">
           <div className="progress-meta">
             <span>{questions.length} questions for {office?.name ?? officeId}</span>
-            <span>Question {index + 1} of {questions.length}</span>
+            <span>
+              Question {index + 1} of {questions.length}
+            </span>
           </div>
 
           <div className="progress-track">
@@ -134,31 +136,32 @@ function QuizPageInner() {
           <div className="quiz-card">
             <div className="topic-label">{question.topic}</div>
             <h2 className="question-title">{question.text}</h2>
-           {"description" in question && typeof question.description === "string" ? (
-  <p
-    style={{
-      marginTop: "0.75rem",
-      color: "#475569",
-      lineHeight: 1.6,
-      fontSize: "0.95rem"
-    }}
-  >
-    {question.description}
-  </p>
-) : null}
 
-{"whyItMatters" in question && typeof question.whyItMatters === "string" ? (
-  <p
-    style={{
-      marginTop: "0.5rem",
-      color: "#1d4ed8",
-      fontWeight: 600,
-      fontSize: "0.9rem"
-    }}
-  >
-    Why it matters: {question.whyItMatters}
-  </p>
-) : null}
+            {"description" in question && typeof question.description === "string" ? (
+              <p
+                style={{
+                  marginTop: "0.5rem",
+                  color: "#64748b",
+                  fontSize: "0.9rem",
+                  lineHeight: 1.5
+                }}
+              >
+                {question.description}
+              </p>
+            ) : null}
+
+            {"whyItMatters" in question && typeof question.whyItMatters === "string" ? (
+              <p
+                style={{
+                  marginTop: "0.5rem",
+                  color: "#1d4ed8",
+                  fontWeight: 600,
+                  fontSize: "0.9rem"
+                }}
+              >
+                Why it matters: {question.whyItMatters}
+              </p>
+            ) : null}
 
             <div className="chip-row">
               <span className="chip">Scope: {question.scope}</span>
@@ -203,7 +206,15 @@ function QuizPageInner() {
 
 export default function QuizPage() {
   return (
-    <Suspense fallback={<main className="page-shell quiz-shell"><div className="container"><div className="panel panel-lg">Loading quiz...</div></div></main>}>
+    <Suspense
+      fallback={
+        <main className="page-shell quiz-shell">
+          <div className="container">
+            <div className="panel panel-lg">Loading quiz...</div>
+          </div>
+        </main>
+      }
+    >
       <QuizPageInner />
     </Suspense>
   );
