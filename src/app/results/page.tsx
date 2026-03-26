@@ -28,15 +28,23 @@ function ResultsPageInner() {
   }, [questions]);
 
   return (
-    <main className="page-shell results-shell">
-      <section className="header-band">
-        <div className="container">
-          <span className="eyebrow">Results</span>
-          <h1 className="header-title">Your candidate matches</h1>
-          <p className="section-copy">
-            Ranked by how closely each candidate aligns with your answers for{" "}
-            {office?.name ?? officeId}. Office-relevant issues count more heavily.
-          </p>
+  <main className="page-shell results-shell">
+    <section className="header-band">
+      <div className="container">
+        <span className="eyebrow">Results</span>
+
+        <h1 className="header-title">
+          Your Best Match
+        </h1>
+
+        <p className="section-copy">
+          Based on your answers, here are the candidates who align most with your views for{" "}
+          {office?.name ?? officeId}.
+        </p>
+
+        <p style={{ marginTop: "0.5rem", fontSize: "0.9rem", color: "#64748b" }}>
+          Rankings prioritize issues relevant to this office and are based on public positions and statements.
+        </p>
 
           <div className="chip-row">
             <Link href={`/quiz?office=${officeId}`}>
