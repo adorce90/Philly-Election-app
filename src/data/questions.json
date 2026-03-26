@@ -1,74 +1,90 @@
 [
   {
     "id": "q1",
-    "topic": "Transit Funding",
+    "topic": "Buses and Trains (SEPTA)",
     "scope": "state",
-    "text": "Should the Pennsylvania legislature grant Philadelphia local taxing authority to fund SEPTA’s deficit directly?",
+    "text": "Should Philadelphia be allowed to pass its own taxes to pay for SEPTA buses and trains?",
     "options": ["Support", "Oppose", "Neutral"],
     "weight": 1,
-    "relevantOfficeIds": ["governor", "u-s-house-district-3"]
+    "relevantOfficeIds": ["governor", "u-s-house-district-2", "u-s-house-district-3"],
+    "description": "Right now, the city must ask the state for money. This would let the city pay for its own transit.",
+    "whyItMatters": "Without more money, SEPTA may have to cut many bus and train lines soon."
   },
   {
     "id": "q2",
-    "topic": "Housing Strategy",
+    "topic": "Housing",
     "scope": "local_shared",
-    "text": "Should federal and state grants be conditioned on Philadelphia overriding local zoning to build high-density housing?",
+    "text": "Should the government only give money to Philly if the city builds big apartment buildings near train stations?",
     "options": ["Support", "Oppose", "Neutral"],
     "weight": 1,
-    "relevantOfficeIds": ["governor", "u-s-house-district-3"]
+    "relevantOfficeIds": ["governor", "u-s-house-district-2", "u-s-house-district-3"],
+    "description": "Some people want more big buildings near trains to lower rent. Others want neighborhoods to stay the same.",
+    "whyItMatters": "This helps decide how many new apartments get built in your neighborhood."
   },
   {
     "id": "q3",
-    "topic": "Health Equity",
+    "topic": "Neighborhood Doctors",
     "scope": "federal",
-    "text": "Should the U.S. Congress prioritize funding for community-led health consortiums over traditional insurance subsidies?",
+    "text": "Should the government give more money to small neighborhood clinics instead of big insurance companies?",
     "options": ["Support", "Oppose", "Neutral"],
     "weight": 1,
-    "relevantOfficeIds": ["u-s-house-district-3"]
+    "relevantOfficeIds": ["u-s-house-district-2", "u-s-house-district-3"],
+    "description": "This would put more doctors and health vans directly in neighborhoods that need them most.",
+    "whyItMatters": "It changes how easy it is for you to see a doctor near your home."
   },
   {
     "id": "q4",
-    "topic": "Economic Policy",
+    "topic": "Minimum Wage",
     "scope": "state",
-    "text": "Should Pennsylvania increase the state minimum wage specifically to a $15 per hour floor immediately?",
+    "text": "Should the lowest pay in Pennsylvania be raised to $15 an hour right now?",
     "options": ["Support", "Oppose", "Neutral"],
     "weight": 1,
-    "relevantOfficeIds": ["governor", "u-s-house-district-3"]
+    "relevantOfficeIds": ["governor"],
+    "description": "Pennsylvania's current lowest pay is $7.25. Many people want it doubled.",
+    "whyItMatters": "This affects how much money the lowest-paid workers in Philly take home."
   },
   {
     "id": "q5",
-    "topic": "Political Reform",
+    "topic": "How We Vote",
     "scope": "state",
-    "text": "Do you support implementing Ranked-Choice Voting in Philadelphia to reduce the influence of party ward leaders?",
+    "text": "Should voters be allowed to rank their candidates (1st choice, 2nd choice) instead of picking just one?",
     "options": ["Support", "Oppose", "Neutral"],
     "weight": 1,
-    "relevantOfficeIds": ["governor"]
+    "relevantOfficeIds": ["governor"],
+    "description": "This is called 'Ranked-Choice Voting.' It lets you vote for more than one person in order of who you like best.",
+    "whyItMatters": "It could change which people win elections in Philadelphia."
   },
   {
     "id": "q6",
-    "topic": "Immigration",
+    "topic": "Immigration (ICE)",
     "scope": "federal",
-    "text": "Should the federal government abolish or fundamentally restructure ICE (Immigration and Customs Enforcement)?",
+    "text": "Should the government close or completely change the agency that handles immigration (ICE)?",
     "options": ["Support", "Oppose", "Neutral"],
     "weight": 1,
-    "relevantOfficeIds": ["u-s-house-district-3"]
+    "relevantOfficeIds": ["u-s-house-district-2", "u-s-house-district-3"],
+    "description": "Some people want to end the ICE agency. Others think it is necessary for safety.",
+    "whyItMatters": "This affects how the U.S. treats people coming into the country."
   },
   {
     "id": "q7",
-    "topic": "Student Debt",
+    "topic": "Student Loans",
     "scope": "federal",
-    "text": "Do you support the federal cancellation of student loan debt for families earning under $125,000 annually?",
+    "text": "Should the government erase student loan debt for people who make less than $125,000 a year?",
     "options": ["Support", "Oppose", "Neutral"],
     "weight": 1,
-    "relevantOfficeIds": ["u-s-house-district-3"]
+    "relevantOfficeIds": ["u-s-house-district-2", "u-s-house-district-3"],
+    "description": "This would cancel the money that many people still owe for their college education.",
+    "whyItMatters": "It helps many young people and families keep more of their paycheck."
   },
   {
     "id": "q8",
-    "topic": "Healthcare System",
+    "topic": "Health Insurance",
     "scope": "federal",
-    "text": "Should Congress transition the United States to a single-payer 'Medicare for All' system?",
+    "text": "Should the government provide one health insurance plan (Medicare) for everyone in the country?",
     "options": ["Support", "Oppose", "Neutral"],
     "weight": 1,
-    "relevantOfficeIds": ["u-s-house-district-3"]
+    "relevantOfficeIds": ["u-s-house-district-2", "u-s-house-district-3"],
+    "description": "This is often called 'Medicare for All.' It would replace private insurance with a government plan.",
+    "whyItMatters": "It would change how every person in Philly pays for their healthcare."
   }
 ]
