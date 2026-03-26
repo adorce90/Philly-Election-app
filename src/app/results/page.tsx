@@ -402,6 +402,33 @@ function ResultsPageInner() {
               })}
             </div>
           )}
+
+          <div style={{ marginTop: "2rem", textAlign: "center" }}>
+            <h3 style={{ fontSize: "1.2rem", fontWeight: 700 }}>
+              Want a more precise match?
+            </h3>
+
+            <p style={{ color: "#64748b", marginTop: "0.5rem" }}>
+              Answer a few more questions to refine your results.
+            </p>
+
+            <Link href={`/quiz?office=${officeId}&mode=extended`}>
+              <span
+                style={{
+                  display: "inline-block",
+                  marginTop: "1rem",
+                  padding: "0.75rem 1.25rem",
+                  background: "#2563eb",
+                  color: "#fff",
+                  borderRadius: "999px",
+                  fontWeight: 600,
+                  cursor: "pointer"
+                }}
+              >
+                Refine my results
+              </span>
+            </Link>
+          </div>
         </div>
       </section>
     </main>
