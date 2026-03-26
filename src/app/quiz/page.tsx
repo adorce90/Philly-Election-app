@@ -134,27 +134,31 @@ function QuizPageInner() {
           <div className="quiz-card">
             <div className="topic-label">{question.topic}</div>
             <h2 className="question-title">{question.text}</h2>
-            <p
-  style={{
-    marginTop: "0.75rem",
-    color: "#475569",
-    lineHeight: 1.6,
-    fontSize: "0.95rem"
-  }}
->
-  {question.description}
-</p>
+           {"description" in question && typeof question.description === "string" ? (
+  <p
+    style={{
+      marginTop: "0.75rem",
+      color: "#475569",
+      lineHeight: 1.6,
+      fontSize: "0.95rem"
+    }}
+  >
+    {question.description}
+  </p>
+) : null}
 
-<p
-  style={{
-    marginTop: "0.5rem",
-    color: "#1d4ed8",
-    fontWeight: 600,
-    fontSize: "0.9rem"
-  }}
->
-  Why it matters: {question.whyItMatters}
-</p>
+{"whyItMatters" in question && typeof question.whyItMatters === "string" ? (
+  <p
+    style={{
+      marginTop: "0.5rem",
+      color: "#1d4ed8",
+      fontWeight: 600,
+      fontSize: "0.9rem"
+    }}
+  >
+    Why it matters: {question.whyItMatters}
+  </p>
+) : null}
 
             <div className="chip-row">
               <span className="chip">Scope: {question.scope}</span>
