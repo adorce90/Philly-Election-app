@@ -28,23 +28,22 @@ function ResultsPageInner() {
   }, [questions]);
 
   return (
-  <main className="page-shell results-shell">
-    <section className="header-band">
-      <div className="container">
-        <span className="eyebrow">Results</span>
+    <main className="page-shell results-shell">
+      <section className="header-band">
+        <div className="container">
+          <span className="eyebrow">Results</span>
 
-        <h1 className="header-title">
-          Your Best Match
-        </h1>
+          <h1 className="header-title">Your Best Match</h1>
 
-        <p className="section-copy">
-          Based on your answers, here are the candidates who align most with your views for{" "}
-          {office?.name ?? officeId}.
-        </p>
+          <p className="section-copy">
+            Based on your answers, here are the candidates who align most with your
+            views for {office?.name ?? officeId}.
+          </p>
 
-        <p style={{ marginTop: "0.5rem", fontSize: "0.9rem", color: "#64748b" }}>
-          Rankings prioritize issues relevant to this office and are based on public positions and statements.
-        </p>
+          <p style={{ marginTop: "0.5rem", fontSize: "0.9rem", color: "#64748b" }}>
+            Rankings prioritize issues relevant to this office and are based on
+            public positions and statements.
+          </p>
 
           <div className="chip-row">
             <Link href={`/quiz?office=${officeId}`}>
@@ -77,37 +76,64 @@ function ResultsPageInner() {
                   .filter(Boolean)
                   .slice(0, 3);
 
+                const candidateInitials = candidate.name
+                  .split(" ")
+                  .map((n: string) => n[0])
+                  .join("")
+                  .slice(0, 2);
+
                 return (
-                  <div key={candidate.id} className="result-card">
+                  <div
+                    key={candidate.id}
+                    className="result-card"
+                    style={{
+                      border:
+                        idx === 0 ? "2px solid #93c5fd" : "1px solid #dbe3ef",
+                      boxShadow:
+                        idx === 0
+                          ? "0 14px 36px rgba(37, 99, 235, 0.12)"
+                          : undefined
+                    }}
+                  >
+                    {idx === 0 ? (
+                      <div
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          padding: "0.35rem 0.75rem",
+                          borderRadius: 999,
+                          background: "#dbeafe",
+                          color: "#1d4ed8",
+                          fontWeight: 800,
+                          fontSize: "0.8rem",
+                          marginBottom: "1rem"
+                        }}
+                      >
+                        Top Match
+                      </div>
+                    ) : null}
+
                     <div className="result-top">
                       <div style={{ flex: 1 }}>
                         <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
-                          {"image" in candidate &&
-                          typeof candidate.image === "string" &&
-                          candidate.image ? (
-                           <div
-  style={{
-    width: 72,
-    height: 72,
-    borderRadius: "50%",
-    background: "#e5e7eb",
-    border: "1px solid #dbe3ef",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontWeight: 800,
-    fontSize: "1.1rem",
-    color: "#374151",
-    flexShrink: 0
-  }}
->
-  {candidate.name
-    .split(" ")
-    .map((n: string) => n[0])
-    .join("")
-    .slice(0, 2)}
-</div>
-                          ) : null}
+                          <div
+                            style={{
+                              width: 72,
+                              height: 72,
+                              borderRadius: "50%",
+                              background: "#e5e7eb",
+                              border: "1px solid #dbe3ef",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              fontWeight: 800,
+                              fontSize: "1.1rem",
+                              color: "#374151",
+                              flexShrink: 0
+                            }}
+                          >
+                            {candidateInitials}
+                          </div>
 
                           <div style={{ flex: 1 }}>
                             <div className="rank-badge">#{idx + 1} Match</div>
@@ -151,6 +177,93 @@ function ResultsPageInner() {
                       <div className="match-box">
                         <div className="match-label">Match</div>
                         <div className="match-value">{result.percentage}%</div>
+                      </div>
+                    </div>
+
+                    <div
+                      style={{
+                        marginTop: "1rem",
+                        display: "grid",
+                        gap: "0.75rem",
+                        gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))"
+                      }}
+                    >
+                      <div
+                        style={{
+                          padding: "0.9rem 1rem",
+                          borderRadius: 14,
+                          background: "#f0fdf4",
+                          border: "1px solid #bbf7d0"
+                        }}
+                      >
+                        <div style={{ fontSize: "0.85rem", color: "#166534", fontWeight: 700 }}>
+                          Agreement
+                        </div>
+                        <div
+                          style={{
+                            marginTop: "0.35rem",
+                            fontSize: "1.4rem",
+                            fontWeight: 800,
+                            color: "#166534"
+                          }}
+                        >
+                          {result.agreements.length}
+                        </div>
+                        <div style={{ marginTop: "0.2rem", color: "#166534", fontSize: "0.85rem" }}>
+                          key issue matches
+                        </div>
+                      </div>
+
+                      <div
+                        style={{
+                          padding: "0.9rem 1rem",
+                          borderRadius: 14,
+                          background: "#fef2f2",
+                          border: "1px solid #fecaca"
+                        }}
+                      >
+                        <div style={{ fontSize: "0.85rem", color: "#991b1b", fontWeight: 700 }}>
+                          Differences
+                        </div>
+                        <div
+                          style={{
+                            marginTop: "0.35rem",
+                            fontSize: "1.4rem",
+                            fontWeight: 800,
+                            color: "#991b1b"
+                          }}
+                        >
+                          {result.differences.length}
+                        </div>
+                        <div style={{ marginTop: "0.2rem", color: "#991b1b", fontSize: "0.85rem" }}>
+                          major disagreements
+                        </div>
+                      </div>
+
+                      <div
+                        style={{
+                          padding: "0.9rem 1rem",
+                          borderRadius: 14,
+                          background: "#f8fafc",
+                          border: "1px solid #dbe3ef"
+                        }}
+                      >
+                        <div style={{ fontSize: "0.85rem", color: "#475569", fontWeight: 700 }}>
+                          Score
+                        </div>
+                        <div
+                          style={{
+                            marginTop: "0.35rem",
+                            fontSize: "1.4rem",
+                            fontWeight: 800,
+                            color: "#0f172a"
+                          }}
+                        >
+                          {result.score}
+                        </div>
+                        <div style={{ marginTop: "0.2rem", color: "#64748b", fontSize: "0.85rem" }}>
+                          weighted alignment points
+                        </div>
                       </div>
                     </div>
 
