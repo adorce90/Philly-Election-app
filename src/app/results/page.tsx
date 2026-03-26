@@ -85,25 +85,28 @@ function ResultsPageInner() {
                           {"image" in candidate &&
                           typeof candidate.image === "string" &&
                           candidate.image ? (
-                            <img
-                              src={candidate.image}
-                              alt={
-                                "imageAlt" in candidate &&
-                                typeof candidate.imageAlt === "string" &&
-                                candidate.imageAlt
-                                  ? candidate.imageAlt
-                                  : candidate.name
-                              }
-                              style={{
-                                width: 72,
-                                height: 72,
-                                borderRadius: "50%",
-                                objectFit: "cover",
-                                border: "1px solid #dbe3ef",
-                                background: "#f8fafc",
-                                flexShrink: 0
-                              }}
-                            />
+                           <div
+  style={{
+    width: 72,
+    height: 72,
+    borderRadius: "50%",
+    background: "#e5e7eb",
+    border: "1px solid #dbe3ef",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontWeight: 800,
+    fontSize: "1.1rem",
+    color: "#374151",
+    flexShrink: 0
+  }}
+>
+  {candidate.name
+    .split(" ")
+    .map((n: string) => n[0])
+    .join("")
+    .slice(0, 2)}
+</div>
                           ) : null}
 
                           <div style={{ flex: 1 }}>
