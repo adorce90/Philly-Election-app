@@ -17,6 +17,29 @@ function stanceClass(label?: string) {
   }
 }
 
+function confidenceTone(confidence?: string) {
+  switch (confidence) {
+    case "high":
+      return {
+        bg: "#ecfdf5",
+        border: "#a7f3d0",
+        text: "#065f46"
+      };
+    case "medium":
+      return {
+        bg: "#fffbeb",
+        border: "#fde68a",
+        text: "#92400e"
+      };
+    default:
+      return {
+        bg: "#f8fafc",
+        border: "#dbe3ef",
+        text: "#475569"
+      };
+  }
+}
+
 export default function CandidateDetailPage({
   params
 }: {
@@ -54,13 +77,49 @@ export default function CandidateDetailPage({
           <div className="detail-top">
             <div className="panel panel-lg">
               <span className="eyebrow">{office?.name ?? candidate.officeId}</span>
-              <h1 className="header-title" style={{ marginTop: "1rem" }}>
-                {candidate.name}
-              </h1>
 
-              <div className="chip-row">
-                <span className="chip">{candidate.party}</span>
-                <span className="chip">{office?.level ?? "office"}</span>
+              <div
+                style={{
+                  marginTop: "1rem",
+                  display: "flex",
+                  gap: "1rem",
+                  alignItems: "center",
+                  flexWrap: "wrap"
+                }}
+              >
+                {"image" in candidate &&
+                typeof candidate.image === "string" &&
+                candidate.image ? (
+                  <img
+                    src={candidate.image}
+                    alt={
+                      "imageAlt" in candidate &&
+                      typeof candidate.imageAlt === "string" &&
+                      candidate.imageAlt
+                        ? candidate.imageAlt
+                        : candidate.name
+                    }
+                    style={{
+                      width: 96,
+                      height: 96,
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      border: "1px solid #dbe3ef",
+                      background: "#f8fafc"
+                    }}
+                  />
+                ) : null}
+
+                <div>
+                  <h1 className="header-title" style={{ margin: 0 }}>
+                    {candidate.name}
+                  </h1>
+
+                  <div className="chip-row" style={{ marginTop: "0.75rem" }}>
+                    <span className="chip">{candidate.party}</span>
+                    <span className="chip">{office?.level ?? "office"}</span>
+                  </div>
+                </div>
               </div>
 
               <p className="section-copy" style={{ marginTop: "1rem" }}>
@@ -109,6 +168,9 @@ export default function CandidateDetailPage({
           <div className="position-list spacer-top">
             {candidateQuestions.map((question: any) => {
               const position = candidate.positions?.[question.id];
+              const confidenceStyle = confidenceTone(
+                "confidence" in position ? position.confidence : undefined
+              );
 
               const weightedForOffice =
                 (candidate.officeLevel === "state" && question.scope === "state") ||
@@ -122,7 +184,14 @@ export default function CandidateDetailPage({
                       <div className="chip-row">
                         <span className="chip">Scope: {question.scope}</span>
                         {weightedForOffice ? (
-                          <span className="chip" style={{ color: "#1d4ed8", background: "#eff6ff", borderColor: "#bfdbfe" }}>
+                          <span
+                            className="chip"
+                            style={{
+                              color: "#1d4ed8",
+                              background: "#eff6ff",
+                              borderColor: "#bfdbfe"
+                            }}
+                          >
                             Weighted 2x for this office
                           </span>
                         ) : null}
@@ -143,7 +212,7 @@ export default function CandidateDetailPage({
 
                     <div className="detail-card">
                       <div className="detail-kicker">Source</div>
-                      <div className="spacer-top" style={{ marginTop: "0.5rem", fontWeight: 700 }}>
+                      <div style={{ marginTop: "0.5rem", fontWeight: 700 }}>
                         {"sourceLabel" in position && typeof position.sourceLabel === "string"
                           ? position.sourceLabel
                           : "No source available"}
@@ -152,7 +221,7 @@ export default function CandidateDetailPage({
                       {"sourceUrl" in position &&
                       typeof position.sourceUrl === "string" &&
                       position.sourceUrl ? (
-                        <div className="spacer-top" style={{ marginTop: "0.65rem" }}>
+                        <div style={{ marginTop: "0.65rem" }}>
                           <a
                             href={position.sourceUrl}
                             target="_blank"
@@ -163,23 +232,77 @@ export default function CandidateDetailPage({
                           </a>
                         </div>
                       ) : null}
+
+                      {"confidence" in position &&
+                      typeof position.confidence === "string" ? (
+                        <div
+                          style={{
+                            marginTop: "0.75rem",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            padding: "0.35rem 0.7rem",
+                            borderRadius: 999,
+                            border: `1px solid ${confidenceStyle.border}`,
+                            background: confidenceStyle.bg,
+                            color: confidenceStyle.text,
+                            fontSize: "0.8rem",
+                            fontWeight: 800,
+                            textTransform: "capitalize"
+                          }}
+                        >
+                          Confidence: {position.confidence}
+                        </div>
+                      ) : null}
                     </div>
                   </div>
+
+                  {"quote" in position &&
+                  typeof position.quote === "string" &&
+                  position.quote ? (
+                    <div
+                      style={{
+                        marginTop: "1rem",
+                        padding: "1rem",
+                        borderRadius: 16,
+                        background: "#f8fafc",
+                        border: "1px solid #dbe3ef",
+                        color: "#475569",
+                        fontStyle: "italic",
+                        lineHeight: 1.7
+                      }}
+                    >
+                      “{position.quote}”
+                    </div>
+                  ) : null}
                 </div>
               );
             })}
           </div>
 
           <div className="panel panel-lg spacer-top" style={{ marginTop: "2rem" }}>
-            <h2 className="section-title" style={{ fontSize: "1.4rem" }}>Promise tracker</h2>
+            <h2 className="section-title" style={{ fontSize: "1.4rem" }}>
+              Promise tracker
+            </h2>
             <p className="section-copy">
               Placeholder for future tracking of promises, public actions, votes, and follow-through.
             </p>
 
             <div className="tracker-grid spacer-top">
-              <TrackerCard title="Promises collected" value="0" note="To be added from campaign platforms" />
-              <TrackerCard title="Tracked actions" value="0" note="Bills, statements, and executive actions" />
-              <TrackerCard title="Status" value="Coming soon" note="This module can grow into accountability tracking" />
+              <TrackerCard
+                title="Promises collected"
+                value="0"
+                note="To be added from campaign platforms"
+              />
+              <TrackerCard
+                title="Tracked actions"
+                value="0"
+                note="Bills, statements, and executive actions"
+              />
+              <TrackerCard
+                title="Status"
+                value="Coming soon"
+                note="This module can grow into accountability tracking"
+              />
             </div>
           </div>
         </div>
