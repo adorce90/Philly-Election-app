@@ -10,12 +10,11 @@ export default function HomePage() {
       <section className="hero">
         <div className="container hero-grid">
           <div className="panel panel-lg">
-            <span className="eyebrow">Philadelphia 2026 Demo</span>
-            <h1 className="hero-title">{election.title}</h1>
+            <span className="eyebrow">Philadelphia 2026</span>
+            <h1 className="hero-title">Philly 2026: Your City, Your Choice.</h1>
             <p className="hero-copy">
-              Answer a short issue-based assessment and see which candidates align
-              most closely with your priorities. Questions tied to the actual
-              power of each office count more heavily.
+              Matching you with candidates for Governor, U.S. House District 2,
+              and U.S. House District 3.
             </p>
 
             <div className="stat-grid">
@@ -40,30 +39,30 @@ export default function HomePage() {
 
           <div className="panel panel-lg">
             <h2 className="section-title" style={{ fontSize: "1.35rem" }}>
-              How matching works
+              How it works
             </h2>
-            <p className="section-copy" style={{ marginTop: "0.8rem" }}>
-              This tool compares your answers with candidate issue positions and
-              weights questions more heavily when they match the real authority
-              of the office you selected.
-            </p>
 
-            <div className="stat-grid">
+            <div style={{ marginTop: "1rem", display: "grid", gap: "1rem" }}>
               <div className="stat-card">
-                <div className="stat-label">Governor</div>
-                <div className="stat-value">State issues weighted 2x</div>
+                <div className="stat-label">1. Find Your District</div>
+                <div className="stat-value">
+                  Select your office—we now cover the full Northeast, River Wards,
+                  and West Philly areas.
+                </div>
               </div>
+
               <div className="stat-card">
-                <div className="stat-label">U.S. House</div>
-                <div className="stat-value">Federal issues weighted 2x</div>
+                <div className="stat-label">2. Take the Assessment</div>
+                <div className="stat-value">
+                  Answer localized questions on the 2026 budget, SEPTA, and federal equity.
+                </div>
               </div>
+
               <div className="stat-card">
-                <div className="stat-label">Polling hours</div>
-                <div className="stat-value">{election.pollingHours}</div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-label">Format</div>
-                <div className="stat-value">Quiz → match → explain</div>
+                <div className="stat-label">3. Get Your Match</div>
+                <div className="stat-value">
+                  Discover which candidate actually aligns with your life in Philadelphia.
+                </div>
               </div>
             </div>
           </div>
@@ -74,8 +73,8 @@ export default function HomePage() {
         <div className="container">
           <h2 className="section-title">Choose an office</h2>
           <p className="section-copy">
-            Start with one office. Each path uses a tailored question set and
-            match logic tied to the powers of that role.
+            Start with one office. Each assessment uses a question set tailored to
+            that office’s actual role and power.
           </p>
 
           <div className="card-grid">
