@@ -89,138 +89,87 @@ function QuizPageInner() {
 
   if (!hydrated) {
     return (
-      <main style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
-        <div>Loading quiz...</div>
+      <main className="page-shell quiz-shell">
+        <div className="container">
+          <div className="panel panel-lg">Loading quiz...</div>
+        </div>
       </main>
     );
   }
 
   if (!question) {
     return (
-      <main style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
-        <div>No questions found for this office.</div>
+      <main className="page-shell quiz-shell">
+        <div className="container">
+          <div className="panel panel-lg">No questions found for this office.</div>
+        </div>
       </main>
     );
   }
 
   return (
-    <main style={{ padding: "2rem", fontFamily: "Arial, sans-serif", maxWidth: 800 }}>
-      <p style={{ color: "#666", marginBottom: "0.5rem" }}>
-        {questions.length} questions for {office?.name ?? officeId}
-      </p>
-
-      <p style={{ color: "#666" }}>
-        Question {index + 1} of {questions.length}
-      </p>
-
-      <div
-        style={{
-          marginTop: "0.5rem",
-          marginBottom: "1.5rem",
-          height: 8,
-          width: "100%",
-          background: "#e5e5e5",
-          borderRadius: 999
-        }}
-      >
-        <div
-          style={{
-            height: 8,
-            width: `${progress}%`,
-            background: "#2563eb",
-            borderRadius: 999
-          }}
-        />
-      </div>
-
-      <div
-        style={{
-          border: "1px solid #ddd",
-          borderRadius: 16,
-          padding: "1.5rem",
-          background: "#fff"
-        }}
-      >
-        <p style={{ color: "#1d4ed8", fontWeight: 600 }}>{question.topic}</p>
-
-        <h1 style={{ fontSize: "1.5rem", marginTop: "0.5rem", lineHeight: 1.4 }}>
-          {question.text}
-        </h1>
-
-        <div style={{ marginTop: "0.75rem" }}>
-          <span
-            style={{
-              display: "inline-block",
-              padding: "0.35rem 0.75rem",
-              borderRadius: 999,
-              background: "#f3f4f6",
-              border: "1px solid #ddd",
-              fontSize: "0.8rem"
-            }}
-          >
-            Scope: {question.scope}
-          </span>
+    <main className="page-shell quiz-shell">
+      <section className="header-band">
+        <div className="container">
+          <span className="eyebrow">Assessment</span>
+          <h1 className="header-title">{office?.name ?? officeId}</h1>
+          <p className="section-copy">
+            Answer honestly. Your results will rank candidates by issue alignment
+            and weight office-relevant questions more heavily.
+          </p>
         </div>
+      </section>
 
-        <div style={{ marginTop: "1.5rem", display: "grid", gap: "0.75rem" }}>
-          {question.options.map((option: string) => {
-            const selected = answers[question.id] === optionMap[option];
+      <div className="container">
+        <div className="quiz-layout">
+          <div className="progress-meta">
+            <span>{questions.length} questions for {office?.name ?? officeId}</span>
+            <span>Question {index + 1} of {questions.length}</span>
+          </div>
 
-            return (
+          <div className="progress-track">
+            <div className="progress-bar" style={{ width: `${progress}%` }} />
+          </div>
+
+          <div className="quiz-card">
+            <div className="topic-label">{question.topic}</div>
+            <h2 className="question-title">{question.text}</h2>
+
+            <div className="chip-row">
+              <span className="chip">Scope: {question.scope}</span>
+            </div>
+
+            <div className="option-list">
+              {question.options.map((option: string) => {
+                const selected = answers[question.id] === optionMap[option];
+
+                return (
+                  <button
+                    key={option}
+                    onClick={() => setAnswer(optionMap[option])}
+                    className={`option-button ${selected ? "selected" : ""}`}
+                  >
+                    {option}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="row-actions">
               <button
-                key={option}
-                onClick={() => setAnswer(optionMap[option])}
-                style={{
-                  padding: "1rem",
-                  borderRadius: 12,
-                  border: selected ? "2px solid #2563eb" : "1px solid #ccc",
-                  background: selected ? "#eff6ff" : "#fff",
-                  textAlign: "left",
-                  cursor: "pointer"
-                }}
+                onClick={previousQuestion}
+                disabled={index === 0}
+                className="btn-secondary"
+                style={{ opacity: index === 0 ? 0.5 : 1 }}
               >
-                {option}
+                Back
               </button>
-            );
-          })}
-        </div>
 
-        <div
-          style={{
-            marginTop: "2rem",
-            display: "flex",
-            justifyContent: "space-between",
-            gap: "1rem"
-          }}
-        >
-          <button
-            onClick={previousQuestion}
-            disabled={index === 0}
-            style={{
-              padding: "0.75rem 1rem",
-              borderRadius: 8,
-              border: "1px solid #ccc",
-              background: "#fff",
-              opacity: index === 0 ? 0.5 : 1,
-              cursor: index === 0 ? "not-allowed" : "pointer"
-            }}
-          >
-            Back
-          </button>
-
-          <button
-            onClick={nextQuestion}
-            style={{
-              padding: "0.75rem 1rem",
-              borderRadius: 8,
-              border: "none",
-              background: "#2563eb",
-              color: "#fff",
-              cursor: "pointer"
-            }}
-          >
-            {index === questions.length - 1 ? "See Results" : "Next"}
-          </button>
+              <button onClick={nextQuestion} className="btn">
+                {index === questions.length - 1 ? "See Results" : "Next"}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -229,7 +178,7 @@ function QuizPageInner() {
 
 export default function QuizPage() {
   return (
-    <Suspense fallback={<main style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>Loading quiz...</main>}>
+    <Suspense fallback={<main className="page-shell quiz-shell"><div className="container"><div className="panel panel-lg">Loading quiz...</div></div></main>}>
       <QuizPageInner />
     </Suspense>
   );
