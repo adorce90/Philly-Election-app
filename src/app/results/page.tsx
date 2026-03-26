@@ -82,16 +82,33 @@ function ResultsPageInner() {
                   .join("")
                   .slice(0, 2);
 
+                const borderColor =
+                  candidate.partyColor === "blue"
+                    ? "#2563eb"
+                    : candidate.partyColor === "red"
+                    ? "#dc2626"
+                    : "#dbe3ef";
+
+                const badgeColor =
+                  candidate.partyColor === "blue"
+                    ? "#2563eb"
+                    : candidate.partyColor === "red"
+                    ? "#dc2626"
+                    : "#64748b";
+
                 return (
                   <div
                     key={candidate.id}
                     className="result-card"
                     style={{
                       border:
-                        idx === 0 ? "2px solid #93c5fd" : "1px solid #dbe3ef",
+                        idx === 0
+                          ? `2px solid ${borderColor}`
+                          : `1.5px solid ${borderColor}`,
+                      borderRadius: "16px",
                       boxShadow:
                         idx === 0
-                          ? "0 14px 36px rgba(37, 99, 235, 0.12)"
+                          ? "0 14px 36px rgba(15, 23, 42, 0.12)"
                           : undefined
                     }}
                   >
@@ -122,7 +139,7 @@ function ResultsPageInner() {
                               height: 72,
                               borderRadius: "50%",
                               background: "#e5e7eb",
-                              border: "1px solid #dbe3ef",
+                              border: `1px solid ${borderColor}`,
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
@@ -154,8 +171,7 @@ function ResultsPageInner() {
                                   alignItems: "center",
                                   padding: "0.28rem 0.65rem",
                                   borderRadius: 999,
-                                  background:
-                                    candidate.partyColor === "red" ? "#dc2626" : "#2563eb",
+                                  background: badgeColor,
                                   color: "#fff",
                                   fontSize: "0.78rem",
                                   fontWeight: 800
@@ -283,6 +299,7 @@ function ResultsPageInner() {
                       }}
                     >
                       <div style={{ fontWeight: 800, color: "#0f172a" }}>Why this match</div>
+
                       {result.agreements.length === 0 ? (
                         <p style={{ marginTop: "0.6rem", color: "#64748b" }}>
                           No strong agreement topics recorded yet.
@@ -297,13 +314,63 @@ function ResultsPageInner() {
                           }}
                         >
                           {result.agreements.slice(0, 2).map((id: string) => (
-                            <li key={id} style={{ marginBottom: "0.55rem" }}>
+                            <li key={id} style={{ marginBottom: "0.85rem" }}>
                               <strong>{questionMap[id]?.topic}</strong>
-                              {"quote" in candidate.positions?.[id] &&
-                              typeof candidate.positions?.[id]?.quote === "string" &&
-                              candidate.positions?.[id]?.quote
-                                ? ` — “${candidate.positions[id].quote}”`
-                                : ""}
+                              {questionMap[id]?.whyItMatters ? (
+                                <div
+                                  style={{
+                                    marginTop: "0.25rem",
+                                    color: "#1d4ed8",
+                                    fontSize: "0.9rem"
+                                  }}
+                                >
+                                  Why it matters: {questionMap[id].whyItMatters}
+                                </div>
+                              ) : null}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+
+                    <div
+                      style={{
+                        marginTop: "1rem",
+                        padding: "1rem",
+                        borderRadius: 16,
+                        background: "#fff7ed",
+                        border: "1px solid #fed7aa"
+                      }}
+                    >
+                      <div style={{ fontWeight: 800, color: "#9a3412" }}>Biggest differences</div>
+
+                      {result.differences.length === 0 ? (
+                        <p style={{ marginTop: "0.6rem", color: "#9a3412" }}>
+                          No major differences recorded yet.
+                        </p>
+                      ) : (
+                        <ul
+                          style={{
+                            marginTop: "0.75rem",
+                            paddingLeft: "1.15rem",
+                            color: "#7c2d12",
+                            lineHeight: 1.7
+                          }}
+                        >
+                          {result.differences.slice(0, 2).map((id: string) => (
+                            <li key={id} style={{ marginBottom: "0.85rem" }}>
+                              <strong>{questionMap[id]?.topic}</strong>
+                              {questionMap[id]?.whyItMatters ? (
+                                <div
+                                  style={{
+                                    marginTop: "0.25rem",
+                                    color: "#c2410c",
+                                    fontSize: "0.9rem"
+                                  }}
+                                >
+                                  Why it matters: {questionMap[id].whyItMatters}
+                                </div>
+                              ) : null}
                             </li>
                           ))}
                         </ul>
