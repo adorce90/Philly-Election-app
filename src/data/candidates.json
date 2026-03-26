@@ -92,6 +92,69 @@
     }
   },
   {
+    "id": "brendan-boyle",
+    "name": "Brendan Boyle",
+    "officeId": "u-s-house-district-2",
+    "officeLevel": "federal",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Incumbent and Ranking Member of the House Budget Committee, focused on labor rights and transit infrastructure.",
+    "website": "https://brendanboyle.com",
+    "image": "/images/candidates/placeholder.jpg",
+    "imageAlt": "Brendan Boyle in front of the Capitol",
+    "positions": {
+      "q1": { "stance": 1, "label": "Support", "sourceLabel": "Press Release - SEPTA Funding", "sourceUrl": "https://boyle.house.gov", "quote": "SEPTA is the lifeblood of our city; we must empower it through federal and local support.", "confidence": "high" },
+      "q2": { "stance": 1, "label": "Support", "sourceLabel": "ROAD to Housing Act Statement", "sourceUrl": "https://boyle.house.gov", "quote": "We face a severe housing shortage; density near transit is a generational necessity.", "confidence": "high" },
+      "q3": { "stance": 1, "label": "Support", "sourceLabel": "ACA Enhancement Support", "sourceUrl": "", "quote": "Protecting and expanding the ACA is how we reach every neighbor.", "confidence": "high" },
+      "q4": { "stance": 1, "label": "Support", "sourceLabel": "Budget Committee Record", "sourceUrl": "", "quote": "The minimum wage is a poverty wage. We need $15 now.", "confidence": "high" },
+      "q6": { "stance": 0, "label": "Neutral", "sourceLabel": "Compiled statements", "sourceUrl": "", "quote": "I support comprehensive reform that is humane but maintains safety.", "confidence": "medium" },
+      "q7": { "stance": 1, "label": "Support", "sourceLabel": "Debt Cancellation Policy", "sourceUrl": "", "quote": "Debt relief is the stimulus working families in Philly need.", "confidence": "high" },
+      "q8": { "stance": 0, "label": "Neutral", "sourceLabel": "ACA Focus", "sourceUrl": "", "quote": "My priority is strengthening the ACA as the quickest path to universal coverage.", "confidence": "high" }
+    }
+  },
+  {
+    "id": "jessica-arriaga",
+    "name": "Jessica Arriaga",
+    "officeId": "u-s-house-district-2",
+    "officeLevel": "federal",
+    "party": "Republican",
+    "partyColor": "red",
+    "bio": "Community health coordinator and ward leader running on safer streets and economic opportunity.",
+    "website": "https://www.phillygop.com/candidates",
+    "image": "/images/candidates/placeholder.jpg",
+    "imageAlt": "Jessica Arriaga campaign portrait",
+    "positions": {
+      "q1": { "stance": -1, "label": "Oppose", "sourceLabel": "GOP Platform on SEPTA", "sourceUrl": "", "quote": "No more blank checks for mismanaged agencies.", "confidence": "medium" },
+      "q2": { "stance": -1, "label": "Oppose", "sourceLabel": "Zoning Statements", "sourceUrl": "", "quote": "Communities deserve a voice in their own growth, not top-down mandates.", "confidence": "medium" },
+      "q3": { "stance": 0, "label": "Neutral", "sourceLabel": "Community Health Focus", "sourceUrl": "", "quote": "Care should be community-focused, not bureaucrat-focused.", "confidence": "medium" },
+      "q4": { "stance": -1, "label": "Oppose", "sourceLabel": "GOP Economic Policy", "sourceUrl": "", "quote": "Government mandates shouldn't tell small businesses what they can afford.", "confidence": "medium" },
+      "q6": { "stance": -1, "label": "Oppose", "sourceLabel": "Public Safety Platform", "sourceUrl": "", "quote": "We must enforce our laws and protect our borders to keep Philly safe.", "confidence": "high" },
+      "q7": { "stance": -1, "label": "Oppose", "sourceLabel": "Fiscal Responsibility Policy", "sourceUrl": "", "quote": "Canceling debt is unfair to those who paid theirs or didn't go to college.", "confidence": "high" },
+      "q8": { "stance": -1, "label": "Oppose", "sourceLabel": "Healthcare Choice Policy", "sourceUrl": "", "quote": "Government-run healthcare would be a disaster for quality and cost.", "confidence": "high" }
+    }
+  },
+  {
+    "id": "salem-snow",
+    "name": "Salem Snow",
+    "officeId": "u-s-house-district-2",
+    "officeLevel": "federal",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Progressive challenger focused on corporate accountability, climate action, and Medicaid expansion.",
+    "website": "https://ballotpedia.org/Salem_Snow",
+    "image": "/images/candidates/placeholder.jpg",
+    "imageAlt": "Salem Snow portrait",
+    "positions": {
+      "q1": { "stance": 1, "label": "Support", "sourceLabel": "Transit Justice Platform", "sourceUrl": "", "quote": "Public transit is a right. Fund it fully and make it free.", "confidence": "medium" },
+      "q2": { "stance": 1, "label": "Support", "sourceLabel": "Affordable Housing Plan", "sourceUrl": "", "quote": "We need density near transit to stop the housing crisis.", "confidence": "medium" },
+      "q3": { "stance": 1, "label": "Support", "sourceLabel": "Equity Policy Paper", "sourceUrl": "", "quote": "Move funding to the people, not the health insurance giants.", "confidence": "medium" },
+      "q4": { "stance": 1, "label": "Support", "sourceLabel": "Living Wage Platform", "sourceUrl": "", "quote": "$15 is the floor. We are fighting for a living wage for all.", "confidence": "high" },
+      "q6": { "stance": 1, "label": "Support", "sourceLabel": "Social Justice Campaign", "sourceUrl": "", "quote": "ICE has failed. We need a humane system that welcomes people.", "confidence": "high" },
+      "q7": { "stance": 1, "label": "Support", "sourceLabel": "Education Debt Policy", "sourceUrl": "", "quote": "Cancel all student debt and make college a public good.", "confidence": "high" },
+      "q8": { "stance": 1, "label": "Support", "sourceLabel": "Medicare for All Ad", "sourceUrl": "", "quote": "Universal, single-payer healthcare is the only moral option.", "confidence": "high" }
+    }
+  },
+  {
     "id": "ala-stanford",
     "name": "Dr. Ala Stanford",
     "officeId": "u-s-house-district-3",
