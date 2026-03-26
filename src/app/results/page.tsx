@@ -72,13 +72,69 @@ function ResultsPageInner() {
                 return (
                   <div key={candidate.id} className="result-card">
                     <div className="result-top">
-                      <div>
-                        <div className="rank-badge">#{idx + 1} Match</div>
-                        <h2 className="result-name">{candidate.name}</h2>
-                        <div className="party-line">
-                          {candidate.party} · {office?.name ?? candidate.officeId}
+                      <div style={{ flex: 1 }}>
+                        <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+                          {"image" in candidate &&
+                          typeof candidate.image === "string" &&
+                          candidate.image ? (
+                            <img
+                              src={candidate.image}
+                              alt={
+                                "imageAlt" in candidate &&
+                                typeof candidate.imageAlt === "string" &&
+                                candidate.imageAlt
+                                  ? candidate.imageAlt
+                                  : candidate.name
+                              }
+                              style={{
+                                width: 72,
+                                height: 72,
+                                borderRadius: "50%",
+                                objectFit: "cover",
+                                border: "1px solid #dbe3ef",
+                                background: "#f8fafc",
+                                flexShrink: 0
+                              }}
+                            />
+                          ) : null}
+
+                          <div style={{ flex: 1 }}>
+                            <div className="rank-badge">#{idx + 1} Match</div>
+                            <h2 className="result-name">{candidate.name}</h2>
+
+                            <div
+                              style={{
+                                marginTop: "0.45rem",
+                                display: "flex",
+                                gap: "0.5rem",
+                                alignItems: "center",
+                                flexWrap: "wrap"
+                              }}
+                            >
+                              <span
+                                style={{
+                                  display: "inline-flex",
+                                  alignItems: "center",
+                                  padding: "0.28rem 0.65rem",
+                                  borderRadius: 999,
+                                  background:
+                                    candidate.partyColor === "red" ? "#dc2626" : "#2563eb",
+                                  color: "#fff",
+                                  fontSize: "0.78rem",
+                                  fontWeight: 800
+                                }}
+                              >
+                                {candidate.party}
+                              </span>
+
+                              <span className="party-line">
+                                {office?.name ?? candidate.officeId}
+                              </span>
+                            </div>
+
+                            <p className="bio-copy">{candidate.bio}</p>
+                          </div>
                         </div>
-                        <p className="bio-copy">{candidate.bio}</p>
                       </div>
 
                       <div className="match-box">
@@ -91,6 +147,43 @@ function ResultsPageInner() {
                       <ScopeScoreCard title="State-power alignment" item={result.scopeBreakdown.state} />
                       <ScopeScoreCard title="Federal-power alignment" item={result.scopeBreakdown.federal} />
                       <ScopeScoreCard title="Shared/local issues" item={result.scopeBreakdown.local_shared} />
+                    </div>
+
+                    <div
+                      style={{
+                        marginTop: "1rem",
+                        padding: "1rem",
+                        borderRadius: 16,
+                        background: "#f8fafc",
+                        border: "1px solid #dbe3ef"
+                      }}
+                    >
+                      <div style={{ fontWeight: 800, color: "#0f172a" }}>Why this match</div>
+                      {result.agreements.length === 0 ? (
+                        <p style={{ marginTop: "0.6rem", color: "#64748b" }}>
+                          No strong agreement topics recorded yet.
+                        </p>
+                      ) : (
+                        <ul
+                          style={{
+                            marginTop: "0.75rem",
+                            paddingLeft: "1.15rem",
+                            color: "#475569",
+                            lineHeight: 1.7
+                          }}
+                        >
+                          {result.agreements.slice(0, 2).map((id: string) => (
+                            <li key={id} style={{ marginBottom: "0.55rem" }}>
+                              <strong>{questionMap[id]?.topic}</strong>
+                              {"quote" in candidate.positions?.[id] &&
+                              typeof candidate.positions?.[id]?.quote === "string" &&
+                              candidate.positions?.[id]?.quote
+                                ? ` — “${candidate.positions[id].quote}”`
+                                : ""}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
 
                     <div className="topic-grid">
@@ -126,7 +219,15 @@ function ResultsPageInner() {
 
 export default function ResultsPage() {
   return (
-    <Suspense fallback={<main className="page-shell results-shell"><div className="container"><div className="panel panel-lg">Loading results...</div></div></main>}>
+    <Suspense
+      fallback={
+        <main className="page-shell results-shell">
+          <div className="container">
+            <div className="panel panel-lg">Loading results...</div>
+          </div>
+        </main>
+      }
+    >
       <ResultsPageInner />
     </Suspense>
   );
