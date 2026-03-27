@@ -2,97 +2,124 @@
 
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { getQuestions, getUniqueTopics } from "../../lib/loadData";
-import { loadMatchedOffices, saveSelectedTopics } from "../../lib/quizStorage";
+import { getQuestions } from "../../lib/loadData";
+import { saveSelectedTopics } from "../../lib/quizStorage";
 
-const topicIcons: Record<string, string> = {
-  "Transit Funding": "🚌",
-  "Minimum Wage": "💵",
-  "Social Security": "🧓",
-  "Voting Rights": "🗳️",
-  "Gun Safety": "🛡️",
-  "Climate Action": "🌎"
-};
-
-export default function TopicsPage() {
+export default function TopicSelectionPage() {
   const router = useRouter();
-  const [selected, setSelected] = useState<string[]>([]);
-  const matchedOffices = loadMatchedOffices();
-  const allQuestions = getQuestions();
 
+  const questions = getQuestions();
+
+  // Extract unique topics
   const topics = useMemo(() => {
-    const filtered = allQuestions.filter((q: any) =>
-      q.relevantOfficeIds?.some((id: string) => matchedOffices.includes(id))
-    );
+    const set = new Set<string>();
+    questions.forEach((q: any) => set.add(q.topic));
+    return Array.from(set);
+  }, [questions]);
 
-    return Array.from(new Set(filtered.map((q: any) => q.topic)));
-  }, [allQuestions, matchedOffices]);
+  const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
 
-  function toggleTopic(topic: string) {
-    setSelected((prev) => {
-      if (prev.includes(topic)) {
-        return prev.filter((t) => t !== topic);
-      }
-      if (prev.length >= 3) return prev;
-      return [...prev, topic];
-    });
-  }
+  const toggleTopic = (topic: string) => {
+    if (selectedTopics.includes(topic)) {
+      setSelectedTopics(selectedTopics.filter((t) => t !== topic));
+      return;
+    }
 
-  function continueToQuiz() {
-    saveSelectedTopics(selected);
+    if (selectedTopics.length >= 3) return;
+
+    setSelectedTopics([...selectedTopics, topic]);
+  };
+
+  const handleContinue = () => {
+    if (selectedTopics.length === 0) return;
+
+    saveSelectedTopics(selectedTopics);
     router.push("/quiz");
-  }
+  };
 
   return (
     <main className="page-shell">
+      <section className="header-band">
+        <div className="container">
+          <span className="eyebrow">Step 2</span>
+          <h1 className="header-title">What matters most to you?</h1>
+          <p className="section-copy">
+            Select up to 3 topics. We’ll focus your match on what actually matters in your life.
+          </p>
+        </div>
+      </section>
+
       <section className="section">
         <div className="container">
-          <div className="panel panel-lg">
-            <span className="eyebrow">Step 2</span>
-            <h1 className="header-title">What matters most to you?</h1>
-            <p className="section-copy">
-              Pick up to 3 topics. We’ll personalize your assessment around the
-              issues you care about most.
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+              gap: "1rem"
+            }}
+          >
+            {topics.map((topic) => {
+              const selected = selectedTopics.includes(topic);
+
+              return (
+                <div
+                  key={topic}
+                  onClick={() => toggleTopic(topic)}
+                  style={{
+                    cursor: "pointer",
+                    padding: "1.2rem",
+                    borderRadius: "14px",
+                    border: selected
+                      ? "2px solid #2563eb"
+                      : "1px solid #dbe3ef",
+                    background: selected ? "#eff6ff" : "#fff",
+                    textAlign: "center",
+                    fontWeight: 600,
+                    transition: "all 0.2s ease"
+                  }}
+                >
+                  {topic}
+                </div>
+              );
+            })}
+          </div>
+
+          <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
+            <p style={{ fontSize: "0.9rem", color: "#64748b" }}>
+              {selectedTopics.length}/3 selected
             </p>
 
-            <div
+            {selectedTopics.length === 3 && (
+              <p
+                style={{
+                  marginTop: "0.3rem",
+                  fontSize: "0.85rem",
+                  color: "#dc2626"
+                }}
+              >
+                You can only select up to 3 topics
+              </p>
+            )}
+          </div>
+
+          <div style={{ marginTop: "2rem", textAlign: "center" }}>
+            <button
+              onClick={handleContinue}
+              disabled={selectedTopics.length === 0}
               style={{
-                marginTop: "1.5rem",
-                display: "grid",
-                gap: "1rem",
-                gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))"
+                padding: "0.75rem 1.5rem",
+                borderRadius: "10px",
+                background:
+                  selectedTopics.length === 0 ? "#cbd5f5" : "#2563eb",
+                color: "#fff",
+                fontWeight: 700,
+                border: "none",
+                cursor:
+                  selectedTopics.length === 0 ? "not-allowed" : "pointer"
               }}
             >
-              {topics.map((topic: string) => {
-                const active = selected.includes(topic);
-
-                return (
-                  <button
-                    key={topic}
-                    onClick={() => toggleTopic(topic)}
-                    style={{
-                      padding: "1rem",
-                      borderRadius: 16,
-                      border: active ? "2px solid #2563eb" : "1px solid #dbe3ef",
-                      background: active ? "#eff6ff" : "#fff",
-                      textAlign: "left",
-                      cursor: "pointer"
-                    }}
-                  >
-                    <div style={{ fontSize: "1.6rem" }}>{topicIcons[topic] || "📌"}</div>
-                    <div style={{ marginTop: "0.5rem", fontWeight: 800, color: "#0f172a" }}>
-                      {topic}
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="spacer-top">
-              <button className="btn" onClick={continueToQuiz}>
-                Continue to assessment
-              </button>
-            </div>
+              Continue to Questions
+            </button>
           </div>
         </div>
       </section>
