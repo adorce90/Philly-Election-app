@@ -7,7 +7,6 @@ import { saveSelectedTopics } from "../../lib/quizStorage";
 
 export default function TopicSelectionPage() {
   const router = useRouter();
-
   const questions = getQuestions();
 
   // Extract unique topics
@@ -18,6 +17,17 @@ export default function TopicSelectionPage() {
   }, [questions]);
 
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
+
+  // Emoji mapping (clean + scalable)
+  const topicIcons: Record<string, string> = {
+    "Transit Funding": "🚌",
+    "Housing": "🏠",
+    "Minimum Wage": "💰",
+    "Social Security": "👴",
+    "Voting Rights": "🗳️",
+    "Gun Safety": "🛑",
+    "Climate Action": "🌎"
+  };
 
   const toggleTopic = (topic: string) => {
     if (selectedTopics.includes(topic)) {
@@ -39,16 +49,18 @@ export default function TopicSelectionPage() {
 
   return (
     <main className="page-shell">
+      {/* Header */}
       <section className="header-band">
         <div className="container">
           <span className="eyebrow">Step 2</span>
           <h1 className="header-title">What matters most to you?</h1>
           <p className="section-copy">
-            Select up to 3 topics. We’ll focus your match on what actually matters in your life.
+            Select up to 3 topics. We’ll focus your match on what actually impacts your life.
           </p>
         </div>
       </section>
 
+      {/* Topics */}
       <section className="section">
         <div className="container">
           <div
@@ -74,16 +86,30 @@ export default function TopicSelectionPage() {
                       : "1px solid #dbe3ef",
                     background: selected ? "#eff6ff" : "#fff",
                     textAlign: "center",
-                    fontWeight: 600,
                     transition: "all 0.2s ease"
                   }}
                 >
-                  {topic}
+                  {/* Emoji */}
+                  <div style={{ fontSize: "1.8rem" }}>
+                    {topicIcons[topic] || "📌"}
+                  </div>
+
+                  {/* Topic label */}
+                  <div
+                    style={{
+                      marginTop: "0.5rem",
+                      fontWeight: 600,
+                      color: "#0f172a"
+                    }}
+                  >
+                    {topic}
+                  </div>
                 </div>
               );
             })}
           </div>
 
+          {/* Counter */}
           <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
             <p style={{ fontSize: "0.9rem", color: "#64748b" }}>
               {selectedTopics.length}/3 selected
@@ -102,6 +128,7 @@ export default function TopicSelectionPage() {
             )}
           </div>
 
+          {/* Button */}
           <div style={{ marginTop: "2rem", textAlign: "center" }}>
             <button
               onClick={handleContinue}
