@@ -18,20 +18,33 @@ const optionMap: Record<string, number> = {
 
 function QuizPageInner() {
   const router = useRouter();
-  const matchedOffices = loadMatchedOffices();
-  const selectedTopics = loadSelectedTopics();
 
-  const questions = useMemo(() => {
-    return getQuestionsByOfficesAndTopics(matchedOffices, selectedTopics);
-  }, [matchedOffices, selectedTopics]);
-
-  const [index, setIndex] = useState(0);
+  const [matchedOffices, setMatchedOffices] = useState<string[]>([]);
+  const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [index, setIndex] = useState(0);
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
+    const storedOffices = loadMatchedOffices();
+    const storedTopics = loadSelectedTopics();
     const storedAnswers = loadQuizAnswers();
+
+    setMatchedOffices(storedOffices);
+    setSelectedTopics(storedTopics);
     setAnswers(storedAnswers);
+    setHydrated(true);
+  }, []);
+
+  const questions = useMemo(() => {
+    if (!hydrated) return [];
+    return getQuestionsByOfficesAndTopics(matchedOffices, selectedTopics);
+  }, [hydrated, matchedOffices, selectedTopics]);
+
+  useEffect(() => {
+    if (!hydrated || questions.length === 0) return;
+
+    const storedAnswers = loadQuizAnswers();
 
     const firstUnansweredIndex = questions.findIndex(
       (question: any) =>
@@ -40,8 +53,7 @@ function QuizPageInner() {
     );
 
     setIndex(firstUnansweredIndex === -1 ? 0 : firstUnansweredIndex);
-    setHydrated(true);
-  }, [questions]);
+  }, [hydrated, questions]);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -49,12 +61,14 @@ function QuizPageInner() {
   }, [answers, hydrated]);
 
   const question = questions[index];
-  const progress = questions.length
-    ? Math.round(((index + 1) / questions.length) * 100)
-    : 0;
+  const progress =
+    questions.length > 0
+      ? Math.round(((index + 1) / questions.length) * 100)
+      : 0;
 
   function setAnswer(value: number) {
     if (!question) return;
+
     setAnswers((prev) => ({
       ...prev,
       [question.id]: value
@@ -74,7 +88,9 @@ function QuizPageInner() {
   }
 
   function previousQuestion() {
-    if (index > 0) setIndex((prev) => prev - 1);
+    if (index > 0) {
+      setIndex((prev) => prev - 1);
+    }
   }
 
   if (!hydrated) {
