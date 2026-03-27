@@ -30,7 +30,8 @@ export function getQuestionsByOfficesAndTopics(
 ) {
   return questions.filter((q: any) => {
     const officeMatch =
-      !q.relevantOfficeIds || q.relevantOfficeIds.some((id: string) => officeIds.includes(id));
+      !q.relevantOfficeIds ||
+      q.relevantOfficeIds.some((id: string) => officeIds.includes(id));
 
     const topicMatch =
       !topics || topics.length === 0 || topics.includes(q.topic);
@@ -64,4 +65,13 @@ export function getOfficesForZip(zip: string) {
     if (office.zipCodes?.includes("all")) return true;
     return office.zipCodes?.includes(zip);
   });
+}
+
+/* Temporary Promise Tracker stubs so candidate page keeps working */
+export function getPromises() {
+  return [];
+}
+
+export function getPromisesByCandidateId(_candidateId: string) {
+  return [];
 }
