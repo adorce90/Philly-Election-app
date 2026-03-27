@@ -1,36 +1,13 @@
 [
   {
     "id": "q1",
-    "topic": "Buses and Trains (SEPTA)",
+    "topic": "Transit Funding",
     "scope": "state",
     "text": "Should Philadelphia be allowed to pass its own taxes to pay for SEPTA?",
     "options": ["Support", "Oppose", "Neutral"],
-    "weight": 1,
-    "relevantOfficeIds": ["governor", "u-s-house-district-2", "u-s-house-district-3", "u-s-house-district-5", "state-senate-district-2", "state-senate-district-4", "state-senate-district-8", "state-senate-district-26"],
-    "description": "Right now, Philly must ask the state for transit money. This would let the city raise its own money to keep buses and trains running.",
-    "whyItMatters": "Without a new way to pay for it, SEPTA might have to cut many bus lines. This would make it harder for you to get to work or school."
-  },
-  {
-    "id": "q2",
-    "topic": "Housing",
-    "scope": "local_shared",
-    "text": "Should the government only give money to Philly if the city builds big apartment buildings near train stations?",
-    "options": ["Support", "Oppose", "Neutral"],
-    "weight": 1,
-    "relevantOfficeIds": ["governor", "u-s-house-district-2", "u-s-house-district-3", "u-s-house-district-5"],
-    "description": "This is about 'density.' Some say more apartments near trains make rent cheaper. Others want to keep neighborhoods the way they are.",
-    "whyItMatters": "This decides if your neighborhood gets more big apartment buildings or stays mostly houses."
-  },
-  {
-    "id": "q3",
-    "topic": "Neighborhood Doctors",
-    "scope": "federal",
-    "text": "Should the government give more money to small neighborhood clinics instead of big insurance companies?",
-    "options": ["Support", "Oppose", "Neutral"],
-    "weight": 1,
-    "relevantOfficeIds": ["u-s-house-district-2", "u-s-house-district-3", "u-s-house-district-5"],
-    "description": "This would put more doctors and health vans directly in Philly neighborhoods that don't have enough clinics.",
-    "whyItMatters": "It changes how easy it is for you to walk to a doctor instead of taking a long bus ride to a big hospital."
+    "relevantOfficeIds": ["governor", "u-s-house-district-2", "u-s-house-district-3", "u-s-house-district-5", "state-senate-district-2", "state-senate-district-4", "state-senate-district-8", "state-senate-district-26", "pa-house-10", "pa-house-170", "pa-house-172", "pa-house-173", "pa-house-174", "pa-house-175", "pa-house-177", "pa-house-179", "pa-house-180", "pa-house-181", "pa-house-182", "pa-house-184", "pa-house-185", "pa-house-186", "pa-house-188", "pa-house-190", "pa-house-191", "pa-house-192", "pa-house-194", "pa-house-195", "pa-house-197", "pa-house-198", "pa-house-200", "pa-house-201", "pa-house-202", "pa-house-203"],
+    "description": "Currently, Philly must ask Harrisburg for money. This would let the city raise its own transit funds.",
+    "whyItMatters": "This determines if SEPTA cuts your bus route or keeps it running."
   },
   {
     "id": "q4",
@@ -38,64 +15,48 @@
     "scope": "state",
     "text": "Should the lowest pay in Pennsylvania be raised to $15 an hour right now?",
     "options": ["Support", "Oppose", "Neutral"],
-    "weight": 1,
-    "relevantOfficeIds": ["governor", "state-senate-district-2", "state-senate-district-4", "state-senate-district-8", "state-senate-district-26"],
-    "description": "PA's minimum wage has been $7.25 for years. Raising it would double the pay for the city's lowest earners.",
-    "whyItMatters": "This directly affects your paycheck if you work in retail, fast food, or home care."
+    "relevantOfficeIds": ["governor", "state-senate-district-2", "state-senate-district-4", "state-senate-district-8", "state-senate-district-26", "pa-house-10", "pa-house-170", "pa-house-172", "pa-house-173", "pa-house-174", "pa-house-175", "pa-house-177", "pa-house-179", "pa-house-180", "pa-house-181", "pa-house-182", "pa-house-184", "pa-house-185", "pa-house-186", "pa-house-188", "pa-house-190", "pa-house-191", "pa-house-192", "pa-house-194", "pa-house-195", "pa-house-197", "pa-house-198", "pa-house-200", "pa-house-201", "pa-house-202", "pa-house-203"],
+    "description": "PA's minimum wage is $7.25. This doubles it.",
+    "whyItMatters": "Directly impacts the paycheck of Philly's service and retail workers."
   },
   {
-    "id": "q5",
-    "topic": "How We Vote",
-    "scope": "state",
-    "text": "Should voters be allowed to rank their candidates (1st choice, 2nd choice) instead of picking just one?",
-    "options": ["Support", "Oppose", "Neutral"],
-    "weight": 1,
-    "relevantOfficeIds": ["governor"],
-    "description": "This is 'Ranked-Choice Voting.' It lets you support your favorite person without 'wasting' your vote.",
-    "whyItMatters": "This could help 'outsider' candidates win against powerful political machines in Philly."
-  },
-  {
-    "id": "q6",
-    "topic": "Immigration (ICE)",
+    "id": "q10",
+    "topic": "Social Security",
     "scope": "federal",
-    "text": "Should the government close or completely change the agency that handles immigration (ICE)?",
+    "text": "Should high-earners pay more taxes to keep Social Security fully funded?",
     "options": ["Support", "Oppose", "Neutral"],
-    "weight": 1,
     "relevantOfficeIds": ["u-s-house-district-2", "u-s-house-district-3", "u-s-house-district-5"],
-    "description": "Some candidates want to end ICE because of how it treats people. Others think it is needed for safety.",
-    "whyItMatters": "This affects many families in Philly who have relatives from other countries."
+    "description": "Raises the tax cap for people making over $400k a year.",
+    "whyItMatters": "Determines the future stability of your retirement checks."
   },
   {
-    "id": "q7",
-    "topic": "Student Loans",
+    "id": "q11",
+    "topic": "Voting Rights",
     "scope": "federal",
-    "text": "Should the government erase student loan debt for people who make less than $125,000 a year?",
+    "text": "Should Congress pass a federal law protecting voting access regardless of state laws?",
     "options": ["Support", "Oppose", "Neutral"],
-    "weight": 1,
     "relevantOfficeIds": ["u-s-house-district-2", "u-s-house-district-3", "u-s-house-district-5"],
-    "description": "This would cancel the money people owe for college, giving them more money for rent or groceries.",
-    "whyItMatters": "If you or your kids have college debt, this could save you hundreds of dollars a month."
+    "description": "Sets national standards for mail-in and early voting.",
+    "whyItMatters": "Affects how easy it is to cast your vote for Congress or President."
   },
   {
-    "id": "q8",
-    "topic": "Health Insurance",
+    "id": "q12",
+    "topic": "Gun Safety",
     "scope": "federal",
-    "text": "Should the government provide one health insurance plan (Medicare) for every person in the country?",
+    "text": "Should the federal government ban 'assault-style' weapons nationwide?",
     "options": ["Support", "Oppose", "Neutral"],
-    "weight": 1,
     "relevantOfficeIds": ["u-s-house-district-2", "u-s-house-district-3", "u-s-house-district-5"],
-    "description": "This is 'Medicare for All.' It would replace private insurance with a government plan that has no bills.",
-    "whyItMatters": "It would change how you pay for medicine and see a dentist or doctor."
+    "description": "Stops the sale of semi-automatic firearms nationwide.",
+    "whyItMatters": "The central federal debate on reducing gun violence in Philly."
   },
   {
-    "id": "q9",
-    "topic": "School Vouchers",
-    "scope": "state",
-    "text": "Should the state give families tax money to help pay for private or religious schools?",
+    "id": "q13",
+    "topic": "Climate Action",
+    "scope": "federal",
+    "text": "Should the U.S. provide tax breaks for electric cars and solar panels?",
     "options": ["Support", "Oppose", "Neutral"],
-    "weight": 1,
-    "relevantOfficeIds": ["governor", "state-senate-district-4", "state-senate-district-8"],
-    "description": "This uses public money for private tuition. Some say it gives kids choices; others say it takes money from public schools.",
-    "whyItMatters": "This could change how much funding your local Philly neighborhood school receives."
+    "relevantOfficeIds": ["u-s-house-district-2", "u-s-house-district-3", "u-s-house-district-5"],
+    "description": "Uses tax money to make green energy cheaper for homeowners.",
+    "whyItMatters": "Lowers your energy bills and shifts the country away from oil."
   }
 ]
