@@ -35,9 +35,15 @@ function ResultsPageInner() {
     return matchedOffices
       .map((officeId) => {
         const officeCandidates = candidates.filter((c: any) => c.officeId === officeId);
+
         const officeQuestions = questions.filter((q: any) =>
           q.relevantOfficeIds?.includes(officeId)
         );
+
+        // Hide offices that have no relevant questions for the user's selected topics
+        if (officeQuestions.length === 0) {
+          return null;
+        }
 
         const ranked = rankCandidates(
           officeCandidates,
@@ -46,14 +52,20 @@ function ResultsPageInner() {
           selectedTopics
         );
 
+        // Hide offices that have no candidates
+        if (ranked.length === 0) {
+          return null;
+        }
+
         return {
           officeId,
           office: officeMap[officeId],
           officeCandidates,
+          officeQuestions,
           results: ranked
         };
       })
-      .filter((group) => group.results.length > 0);
+      .filter(Boolean) as any[];
   }, [matchedOffices, candidates, questions, answers, selectedTopics, officeMap]);
 
   return (
@@ -79,7 +91,7 @@ function ResultsPageInner() {
 
           <div className="chip-row">
             <Link href="/topics">
-              <span className="btn-secondary">Change top 3 issues</span>
+              <span className="btn-secondary">Change top issues</span>
             </Link>
             <Link href="/">
               <span className="btn-secondary">Start over</span>
@@ -92,7 +104,7 @@ function ResultsPageInner() {
         <div className="container">
           {resultsByOffice.length === 0 ? (
             <div className="panel panel-lg">
-              No candidates found for your matched offices yet.
+              No candidates found for the offices and issues currently selected.
             </div>
           ) : (
             <div style={{ display: "grid", gap: "2rem" }}>
@@ -315,91 +327,6 @@ function ResultsPageInner() {
                             <div
                               style={{
                                 marginTop: "1rem",
-                                display: "grid",
-                                gap: "0.75rem",
-                                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))"
-                              }}
-                            >
-                              <div
-                                style={{
-                                  padding: "0.9rem 1rem",
-                                  borderRadius: 14,
-                                  background: "#f0fdf4",
-                                  border: "1px solid #bbf7d0"
-                                }}
-                              >
-                                <div
-                                  style={{
-                                    fontSize: "0.85rem",
-                                    color: "#166534",
-                                    fontWeight: 700
-                                  }}
-                                >
-                                  Agreement
-                                </div>
-                                <div
-                                  style={{
-                                    marginTop: "0.35rem",
-                                    fontSize: "1.4rem",
-                                    fontWeight: 800,
-                                    color: "#166534"
-                                  }}
-                                >
-                                  {result.agreements.length}
-                                </div>
-                                <div
-                                  style={{
-                                    marginTop: "0.2rem",
-                                    color: "#166534",
-                                    fontSize: "0.85rem"
-                                  }}
-                                >
-                                  key issue matches
-                                </div>
-                              </div>
-
-                              <div
-                                style={{
-                                  padding: "0.9rem 1rem",
-                                  borderRadius: 14,
-                                  background: "#fef2f2",
-                                  border: "1px solid #fecaca"
-                                }}
-                              >
-                                <div
-                                  style={{
-                                    fontSize: "0.85rem",
-                                    color: "#991b1b",
-                                    fontWeight: 700
-                                  }}
-                                >
-                                  Differences
-                                </div>
-                                <div
-                                  style={{
-                                    marginTop: "0.35rem",
-                                    fontSize: "1.4rem",
-                                    fontWeight: 800,
-                                    color: "#991b1b"
-                                  }}
-                                >
-                                  {result.differences.length}
-                                </div>
-                                <div
-                                  style={{
-                                    marginTop: "0.2rem",
-                                    color: "#991b1b",
-                                    fontSize: "0.85rem"
-                                  }}
-                                >
-                                  major disagreements
-                                </div>
-                              </div>
-                            </div>
-
-                            <div
-                              style={{
-                                marginTop: "1rem",
                                 padding: "1rem",
                                 borderRadius: 16,
                                 background: "#f8fafc",
@@ -431,52 +358,6 @@ function ResultsPageInner() {
                                           style={{
                                             marginTop: "0.25rem",
                                             color: "#1d4ed8",
-                                            fontSize: "0.9rem"
-                                          }}
-                                        >
-                                          Why it matters: {questionMap[id].whyItMatters}
-                                        </div>
-                                      ) : null}
-                                    </li>
-                                  ))}
-                                </ul>
-                              )}
-                            </div>
-
-                            <div
-                              style={{
-                                marginTop: "1rem",
-                                padding: "1rem",
-                                borderRadius: 16,
-                                background: "#fff7ed",
-                                border: "1px solid #fed7aa"
-                              }}
-                            >
-                              <div style={{ fontWeight: 800, color: "#9a3412" }}>
-                                Biggest differences
-                              </div>
-
-                              {result.differences.length === 0 ? (
-                                <p style={{ marginTop: "0.6rem", color: "#9a3412" }}>
-                                  No major differences recorded yet.
-                                </p>
-                              ) : (
-                                <ul
-                                  style={{
-                                    marginTop: "0.75rem",
-                                    paddingLeft: "1.15rem",
-                                    color: "#7c2d12",
-                                    lineHeight: 1.7
-                                  }}
-                                >
-                                  {result.differences.slice(0, 3).map((id: string) => (
-                                    <li key={id} style={{ marginBottom: "0.85rem" }}>
-                                      <strong>{questionMap[id]?.topic}</strong>
-                                      {questionMap[id]?.whyItMatters ? (
-                                        <div
-                                          style={{
-                                            marginTop: "0.25rem",
-                                            color: "#c2410c",
                                             fontSize: "0.9rem"
                                           }}
                                         >
