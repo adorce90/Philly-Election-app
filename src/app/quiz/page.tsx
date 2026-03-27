@@ -1,13 +1,13 @@
 "use client";
 
 import { Suspense, useEffect, useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { getOffices, getQuestionsByOffice } from "../../lib/loadData";
+import { useRouter } from "next/navigation";
+import { getQuestionsByOfficesAndTopics } from "../../lib/loadData";
 import {
+  loadMatchedOffices,
   loadQuizAnswers,
-  loadSelectedOffice,
-  saveQuizAnswers,
-  saveSelectedOffice
+  loadSelectedTopics,
+  saveQuizAnswers
 } from "../../lib/quizStorage";
 
 const optionMap: Record<string, number> = {
@@ -18,22 +18,12 @@ const optionMap: Record<string, number> = {
 
 function QuizPageInner() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const queryOfficeId = searchParams.get("office");
-  const mode = searchParams.get("mode");
-  const rememberedOfficeId =
-    typeof window !== "undefined" ? loadSelectedOffice() : null;
-  const officeId = queryOfficeId || rememberedOfficeId || "governor";
-
-  const offices = getOffices();
-  const office = offices.find((item: any) => item.id === officeId);
-
-  const allQuestions = useMemo(() => getQuestionsByOffice(officeId), [officeId]);
+  const matchedOffices = loadMatchedOffices();
+  const selectedTopics = loadSelectedTopics();
 
   const questions = useMemo(() => {
-    return mode === "extended" ? allQuestions : allQuestions.slice(0, 5);
-  }, [allQuestions, mode]);
+    return getQuestionsByOfficesAndTopics(matchedOffices, selectedTopics);
+  }, [matchedOffices, selectedTopics]);
 
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
@@ -42,7 +32,6 @@ function QuizPageInner() {
   useEffect(() => {
     const storedAnswers = loadQuizAnswers();
     setAnswers(storedAnswers);
-    saveSelectedOffice(officeId);
 
     const firstUnansweredIndex = questions.findIndex(
       (question: any) =>
@@ -52,7 +41,7 @@ function QuizPageInner() {
 
     setIndex(firstUnansweredIndex === -1 ? 0 : firstUnansweredIndex);
     setHydrated(true);
-  }, [officeId, questions]);
+  }, [questions]);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -66,7 +55,6 @@ function QuizPageInner() {
 
   function setAnswer(value: number) {
     if (!question) return;
-
     setAnswers((prev) => ({
       ...prev,
       [question.id]: value
@@ -76,29 +64,24 @@ function QuizPageInner() {
   function nextQuestion() {
     if (!question) return;
 
-    const updatedAnswers = answers;
-
     if (index < questions.length - 1) {
       setIndex((prev) => prev + 1);
       return;
     }
 
-    saveQuizAnswers(updatedAnswers);
-    saveSelectedOffice(officeId);
-    router.push(`/results?office=${officeId}`);
+    saveQuizAnswers(answers);
+    router.push("/results");
   }
 
   function previousQuestion() {
-    if (index > 0) {
-      setIndex((prev) => prev - 1);
-    }
+    if (index > 0) setIndex((prev) => prev - 1);
   }
 
   if (!hydrated) {
     return (
       <main className="page-shell quiz-shell">
         <div className="container">
-          <div className="panel panel-lg">Loading quiz...</div>
+          <div className="panel panel-lg">Loading assessment...</div>
         </div>
       </main>
     );
@@ -108,7 +91,9 @@ function QuizPageInner() {
     return (
       <main className="page-shell quiz-shell">
         <div className="container">
-          <div className="panel panel-lg">No questions found for this office.</div>
+          <div className="panel panel-lg">
+            No questions found for your selected ZIP code and topics.
+          </div>
         </div>
       </main>
     );
@@ -119,30 +104,17 @@ function QuizPageInner() {
       <section className="header-band">
         <div className="container">
           <span className="eyebrow">Assessment</span>
-          <h1 className="header-title">{office?.name ?? officeId}</h1>
+          <h1 className="header-title">Your personalized ballot match</h1>
           <p className="section-copy">
-            Answer honestly. Your results will rank candidates by issue alignment
-            and weight office-relevant questions more heavily.
+            Answer a few questions based on your ZIP code and selected priorities.
           </p>
-
-          {mode === "extended" ? (
-            <p
-              style={{
-                marginTop: "0.75rem",
-                color: "#1d4ed8",
-                fontWeight: 700
-              }}
-            >
-              Extended mode: more questions for a more precise match.
-            </p>
-          ) : null}
         </div>
       </section>
 
       <div className="container">
         <div className="quiz-layout">
           <div className="progress-meta">
-            <span>{questions.length} questions for {office?.name ?? officeId}</span>
+            <span>{questions.length} personalized questions</span>
             <span>
               Question {index + 1} of {questions.length}
             </span>
@@ -153,16 +125,6 @@ function QuizPageInner() {
           </div>
 
           <div className="quiz-card">
-            <p
-              style={{
-                fontSize: "0.85rem",
-                color: "#64748b",
-                marginBottom: "0.5rem"
-              }}
-            >
-              Question {index + 1} of {questions.length}
-            </p>
-
             <div className="topic-label">{question.topic}</div>
             <h2 className="question-title">{question.text}</h2>
 
@@ -191,10 +153,6 @@ function QuizPageInner() {
                 Why it matters: {question.whyItMatters}
               </p>
             ) : null}
-
-            <div className="chip-row">
-              <span className="chip">Scope: {question.scope}</span>
-            </div>
 
             <div className="option-list">
               {question.options.map((option: string) => {
@@ -239,7 +197,7 @@ export default function QuizPage() {
       fallback={
         <main className="page-shell quiz-shell">
           <div className="container">
-            <div className="panel panel-lg">Loading quiz...</div>
+            <div className="panel panel-lg">Loading assessment...</div>
           </div>
         </main>
       }
