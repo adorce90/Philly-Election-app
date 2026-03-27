@@ -1,13 +1,10 @@
-
 export function getScopeMultiplier(candidate: any, question: any) {
   let multiplier = 1;
 
-  // Boost if question is explicitly relevant to this office
   if (question.relevantOfficeIds?.includes(candidate.officeId)) {
     multiplier *= 2;
   }
 
-  // Extra boost if scope matches actual power of office
   if (candidate.officeLevel === "state" && question.scope === "state") {
     multiplier *= 1.5;
   }
@@ -28,35 +25,27 @@ function createEmptyScopeBreakdown() {
 }
 
 function finalizeBreakdown(breakdown: any) {
-  return {
-    state: {
-      ...breakdown.state,
+  const keys = ["state", "federal", "local_shared"] as const;
+
+  const output: any = {};
+  for (const key of keys) {
+    output[key] = {
+      ...breakdown[key],
       percentage:
-        breakdown.state.possible === 0
+        breakdown[key].possible === 0
           ? 0
-          : Math.round((breakdown.state.earned / breakdown.state.possible) * 100)
-    },
-    federal: {
-      ...breakdown.federal,
-      percentage:
-        breakdown.federal.possible === 0
-          ? 0
-          : Math.round((breakdown.federal.earned / breakdown.federal.possible) * 100)
-    },
-    local_shared: {
-      ...breakdown.local_shared,
-      percentage:
-        breakdown.local_shared.possible === 0
-          ? 0
-          : Math.round((breakdown.local_shared.earned / breakdown.local_shared.possible) * 100)
-    }
-  };
+          : Math.round((breakdown[key].earned / breakdown[key].possible) * 100)
+    };
+  }
+
+  return output;
 }
 
 export function scoreCandidate(
   candidate: any,
   questions: any[],
-  userAnswers: Record<string, number>
+  userAnswers: Record<string, number>,
+  selectedTopics: string[] = []
 ) {
   let earned = 0;
   let possible = 0;
@@ -75,7 +64,10 @@ export function scoreCandidate(
 
     const baseWeight = question.weight ?? 1;
     const scopeMultiplier = getScopeMultiplier(candidate, question);
-    const totalWeight = baseWeight * scopeMultiplier;
+    const topicMultiplier =
+      selectedTopics.includes(question.topic) ? 2 : 1;
+
+    const totalWeight = baseWeight * scopeMultiplier * topicMultiplier;
 
     const gap = Math.abs(userAnswer - candidatePosition.stance);
     const points = Math.max(0, 2 - gap);
@@ -86,8 +78,13 @@ export function scoreCandidate(
     possible += questionPossible;
     earned += questionEarned;
 
-    scopeBreakdown[question.scope].possible += questionPossible;
-    scopeBreakdown[question.scope].earned += questionEarned;
+    const scopeKey =
+      question.scope === "state" || question.scope === "federal"
+        ? question.scope
+        : "local_shared";
+
+    scopeBreakdown[scopeKey].possible += questionPossible;
+    scopeBreakdown[scopeKey].earned += questionEarned;
 
     if (gap === 0) agreements.push(question.id);
     if (gap >= 2) differences.push(question.id);
@@ -110,9 +107,12 @@ export function scoreCandidate(
 export function rankCandidates(
   candidates: any[],
   questions: any[],
-  userAnswers: Record<string, number>
+  userAnswers: Record<string, number>,
+  selectedTopics: string[] = []
 ) {
   return candidates
-    .map((candidate) => scoreCandidate(candidate, questions, userAnswers))
+    .map((candidate) =>
+      scoreCandidate(candidate, questions, userAnswers, selectedTopics)
+    )
     .sort((a, b) => b.percentage - a.percentage || b.score - a.score);
 }
