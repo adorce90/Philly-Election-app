@@ -1,9 +1,57 @@
-import Link from "next/link";
-import { getElection, getOffices } from "../lib/loadData";
+"use client";
+
+import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import { getElection, getOfficesForZip } from "../lib/loadData";
+import {
+  clearQuizAnswers,
+  saveMatchedOffices,
+  saveSelectedTopics,
+  saveSelectedZip
+} from "../lib/quizStorage";
 
 export default function HomePage() {
+  const router = useRouter();
   const election = getElection();
-  const offices = getOffices();
+  const [zip, setZip] = useState("");
+  const [error, setError] = useState("");
+  const [matched, setMatched] = useState<any[]>([]);
+
+  const splitStateOffices = useMemo(() => {
+    const stateOnly = matched.filter(
+      (office: any) => office.id !== "governor" && office.level === "state"
+    );
+    return stateOnly.length > 1 ? stateOnly : [];
+  }, [matched]);
+
+  function lookupZip() {
+    setError("");
+
+    if (!/^\d{5}$/.test(zip)) {
+      setError("Please enter a valid 5-digit Philadelphia ZIP code.");
+      return;
+    }
+
+    const offices = getOfficesForZip(zip);
+
+    if (!offices || offices.length === 0) {
+      setError("No offices found for that ZIP yet.");
+      return;
+    }
+
+    setMatched(offices);
+  }
+
+  function continueWithOffices(officesToUse: any[]) {
+    const officeIds = officesToUse.map((o: any) => o.id);
+
+    clearQuizAnswers();
+    saveSelectedZip(zip);
+    saveMatchedOffices(officeIds);
+    saveSelectedTopics([]);
+
+    router.push("/topics");
+  }
 
   return (
     <main className="page-shell">
@@ -13,8 +61,9 @@ export default function HomePage() {
             <span className="eyebrow">Philadelphia 2026</span>
             <h1 className="hero-title">Philly 2026: Your City, Your Choice.</h1>
             <p className="hero-copy">
-              Matching you with candidates for Governor, U.S. House District 2,
-              and U.S. House District 3.
+              Enter your ZIP code to find the offices that apply to you, then
+              answer a short issue-based assessment to see which candidates align
+              with your priorities.
             </p>
 
             <div className="stat-grid">
@@ -26,71 +75,93 @@ export default function HomePage() {
                 <div className="stat-label">Location</div>
                 <div className="stat-value">{election.location}</div>
               </div>
-              <div className="stat-card">
-                <div className="stat-label">Registration deadline</div>
-                <div className="stat-value">{election.registrationDeadline}</div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-label">Mail-in deadline</div>
-                <div className="stat-value">{election.mailInDeadline}</div>
-              </div>
             </div>
           </div>
 
           <div className="panel panel-lg">
             <h2 className="section-title" style={{ fontSize: "1.35rem" }}>
-              How it works
+              Find your ballot
             </h2>
 
-            <div style={{ marginTop: "1rem", display: "grid", gap: "1rem" }}>
-              <div className="stat-card">
-                <div className="stat-label">1. Find Your District</div>
-                <div className="stat-value">
-                  Select your office—we now cover the full Northeast, River Wards,
-                  and West Philly areas.
-                </div>
-              </div>
+            <p className="section-copy">
+              Start with your Philadelphia ZIP code.
+            </p>
 
-              <div className="stat-card">
-                <div className="stat-label">2. Take the Assessment</div>
-                <div className="stat-value">
-                  Answer localized questions on the 2026 budget, SEPTA, and federal equity.
-                </div>
-              </div>
-
-              <div className="stat-card">
-                <div className="stat-label">3. Get Your Match</div>
-                <div className="stat-value">
-                  Discover which candidate actually aligns with your life in Philadelphia.
-                </div>
-              </div>
+            <div style={{ marginTop: "1rem" }}>
+              <input
+                value={zip}
+                onChange={(e) => setZip(e.target.value)}
+                placeholder="Enter 5-digit ZIP code"
+                maxLength={5}
+                style={{
+                  width: "100%",
+                  padding: "0.9rem 1rem",
+                  borderRadius: 12,
+                  border: "1px solid #cbd5e1",
+                  fontSize: "1rem"
+                }}
+              />
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="section">
-        <div className="container">
-          <h2 className="section-title">Choose an office</h2>
-          <p className="section-copy">
-            Start with one office. Each assessment uses a question set tailored to
-            that office’s actual role and power.
-          </p>
+            {error ? (
+              <p style={{ marginTop: "0.75rem", color: "#b91c1c" }}>{error}</p>
+            ) : null}
 
-          <div className="card-grid">
-            {offices.map((office: any) => (
-              <Link key={office.id} href={`/quiz?office=${office.id}`} className="office-card">
-                <span className="office-level">{office.level}</span>
-                <h3 className="office-name">{office.name}</h3>
-                <p className="office-copy">
-                  Take the assessment for {office.name} and compare your priorities
-                  against the candidates running for that office.
-                </p>
-                <div className="spacer-top">
-                  <span className="btn">Start assessment</span>
+            <div className="spacer-top">
+              <button className="btn" onClick={lookupZip}>
+                Find my districts
+              </button>
+            </div>
+
+            {matched.length > 0 ? (
+              <div style={{ marginTop: "1.5rem" }}>
+                <h3 style={{ fontSize: "1rem", fontWeight: 800 }}>Matched offices</h3>
+
+                <div style={{ marginTop: "0.75rem", display: "grid", gap: "0.5rem" }}>
+                  {matched.map((office: any) => (
+                    <div key={office.id} className="stat-card">
+                      <div className="stat-label">{office.level}</div>
+                      <div className="stat-value">{office.name}</div>
+                    </div>
+                  ))}
                 </div>
-              </Link>
-            ))}
+
+                {splitStateOffices.length > 0 ? (
+                  <div style={{ marginTop: "1rem" }}>
+                    <p className="section-copy">
+                      Your ZIP may cross multiple state districts. Pick the one that
+                      best matches your neighborhood for now.
+                    </p>
+
+                    <div style={{ marginTop: "0.75rem", display: "grid", gap: "0.5rem" }}>
+                      {splitStateOffices.map((office: any) => {
+                        const base = matched.filter(
+                          (item: any) =>
+                            item.id === "governor" || item.level === "federal"
+                        );
+
+                        return (
+                          <button
+                            key={office.id}
+                            className="btn-secondary"
+                            onClick={() => continueWithOffices([...base, office])}
+                            style={{ textAlign: "left" }}
+                          >
+                            Continue with {office.name}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="spacer-top">
+                    <button className="btn" onClick={() => continueWithOffices(matched)}>
+                      Continue
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : null}
           </div>
         </div>
       </section>
