@@ -58,5 +58,45 @@
     "relevantOfficeIds": ["u-s-house-district-2", "u-s-house-district-3", "u-s-house-district-5"],
     "description": "Uses tax money to make green energy cheaper for homeowners.",
     "whyItMatters": "Lowers your energy bills and shifts the country away from oil."
+  },
+  {
+    "id": "q14",
+    "topic": "Housing",
+    "scope": "state",
+    "text": "Should the state allow Philadelphia to pass laws that limit how much landlords can increase rent each year?",
+    "options": ["Support", "Oppose", "Neutral"],
+    "relevantOfficeIds": ["governor", "state-senate-district-2", "state-senate-district-4", "state-senate-district-8", "state-senate-district-26", "pa-house-10", "pa-house-170", "pa-house-172", "pa-house-173", "pa-house-174", "pa-house-175", "pa-house-177", "pa-house-179", "pa-house-180", "pa-house-181", "pa-house-182", "pa-house-184", "pa-house-185", "pa-house-186", "pa-house-188", "pa-house-190", "pa-house-191", "pa-house-192", "pa-house-194", "pa-house-195", "pa-house-197", "pa-house-198", "pa-house-200", "pa-house-201", "pa-house-202", "pa-house-203"],
+    "description": "Right now, only the state can decide rent rules. This would give Home Rule to Philly to control rent costs.",
+    "whyItMatters": "This directly affects how much your rent could go up next year."
+  },
+  {
+    "id": "q15",
+    "topic": "Housing",
+    "scope": "state",
+    "text": "Should the state increase funding for the 'Whole-Home Repairs' program to help low-income homeowners fix roofs and windows?",
+    "options": ["Support", "Oppose", "Neutral"],
+    "relevantOfficeIds": ["governor", "state-senate-district-2", "state-senate-district-4", "state-senate-district-8", "state-senate-district-26", "pa-house-10", "pa-house-170", "pa-house-172", "pa-house-173", "pa-house-174", "pa-house-175", "pa-house-177", "pa-house-179", "pa-house-180", "pa-house-181", "pa-house-182", "pa-house-184", "pa-house-185", "pa-house-186", "pa-house-188", "pa-house-190", "pa-house-191", "pa-house-192", "pa-house-194", "pa-house-195", "pa-house-197", "pa-house-198", "pa-house-200", "pa-house-201", "pa-house-202", "pa-house-203"],
+    "description": "This uses state grants to help people stay in their homes by fixing major safety issues.",
+    "whyItMatters": "It helps prevent blight in Philly neighborhoods and keeps long-time residents from being forced out."
+  },
+  {
+    "id": "q16",
+    "topic": "Education",
+    "scope": "state",
+    "text": "Should the state significantly increase funding for the Philadelphia School District to comply with the court order on fair funding?",
+    "options": ["Support", "Oppose", "Neutral"],
+    "relevantOfficeIds": ["governor", "state-senate-district-2", "state-senate-district-4", "state-senate-district-8", "state-senate-district-26", "pa-house-10", "pa-house-170", "pa-house-172", "pa-house-173", "pa-house-174", "pa-house-175", "pa-house-177", "pa-house-179", "pa-house-180", "pa-house-181", "pa-house-182", "pa-house-184", "pa-house-185", "pa-house-186", "pa-house-188", "pa-house-190", "pa-house-191", "pa-house-192", "pa-house-194", "pa-house-195", "pa-house-197", "pa-house-198", "pa-house-200", "pa-house-201", "pa-house-202", "pa-house-203"],
+    "description": "PA courts ruled the state funding system is unconstitutional. This would send billions more to underfunded districts.",
+    "whyItMatters": "This determines if your local school gets more teachers, newer books, and better facilities."
+  },
+  {
+    "id": "q17",
+    "topic": "Education",
+    "scope": "state",
+    "text": "Should Pennsylvania provide universal free preschool (Pre-K) for every 4-year-old in the state?",
+    "options": ["Support", "Oppose", "Neutral"],
+    "relevantOfficeIds": ["governor", "state-senate-district-2", "state-senate-district-4", "state-senate-district-8", "state-senate-district-26", "pa-house-10", "pa-house-170", "pa-house-172", "pa-house-173", "pa-house-174", "pa-house-175", "pa-house-177", "pa-house-179", "pa-house-180", "pa-house-181", "pa-house-182", "pa-house-184", "pa-house-185", "pa-house-186", "pa-house-188", "pa-house-190", "pa-house-191", "pa-house-192", "pa-house-194", "pa-house-195", "pa-house-197", "pa-house-198", "pa-house-200", "pa-house-201", "pa-house-202", "pa-house-203"],
+    "description": "Uses state tax money to ensure every child can start school early regardless of family income.",
+    "whyItMatters": "This would save Philly parents thousands of dollars in childcare and early education costs."
   }
 ]
