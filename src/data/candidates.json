@@ -1,6 +1,38 @@
 [
-  { "id": "josh-shapiro", "name": "Josh Shapiro", "officeId": "governor", "officeLevel": "state", "party": "Democratic", "partyColor": "blue", "bio": "Incumbent Governor; focus on budget deals and state growth.", "positions": { "q1": { "stance": 1, "label": "Support" }, "q4": { "stance": 1, "label": "Support" } } },
-  { "id": "stacy-garrity", "name": "Stacy Garrity", "officeId": "governor", "officeLevel": "state", "party": "Republican", "partyColor": "red", "bio": "State Treasurer; focused on fiscal accountability.", "positions": { "q1": { "stance": -1, "label": "Oppose" }, "q4": { "stance": -1, "label": "Oppose" } } },
+  {
+  "id": "josh-shapiro",
+  "name": "Josh Shapiro",
+  "officeId": "governor",
+  "officeLevel": "state",
+  "party": "Democratic",
+  "partyColor": "blue",
+  "bio": "Incumbent Governor; focus on budget deals and state growth.",
+  "positions": {
+    "q1": { "stance": 1, "label": "Support" },
+    "q4": { "stance": 1, "label": "Support" },
+    "q14": { "stance": 1, "label": "Support", "confidence": "medium" },
+    "q15": { "stance": 1, "label": "Support", "confidence": "high" },
+    "q16": { "stance": 1, "label": "Support", "confidence": "high" },
+    "q17": { "stance": 1, "label": "Support", "confidence": "high" }
+  }
+},
+ {
+  "id": "stacy-garrity",
+  "name": "Stacy Garrity",
+  "officeId": "governor",
+  "officeLevel": "state",
+  "party": "Republican",
+  "partyColor": "red",
+  "bio": "State Treasurer; focused on fiscal accountability.",
+  "positions": {
+    "q1": { "stance": -1, "label": "Oppose" },
+    "q4": { "stance": -1, "label": "Oppose" },
+    "q14": { "stance": -1, "label": "Oppose", "confidence": "high" },
+    "q15": { "stance": 0, "label": "Neutral", "confidence": "medium" },
+    "q16": { "stance": -1, "label": "Oppose", "confidence": "high" },
+    "q17": { "stance": -1, "label": "Oppose", "confidence": "high" }
+  }
+},
   { "id": "brendan-boyle", "name": "Brendan Boyle", "officeId": "u-s-house-district-2", "officeLevel": "federal", "party": "Democratic", "partyColor": "blue", "bio": "Incumbent; Budget Committee Ranking Member.", "positions": { "q1": { "stance": 1, "label": "Support" }, "q10": { "stance": 1, "label": "Support" }, "q11": { "stance": 1, "label": "Support" }, "q12": { "stance": 1, "label": "Support" }, "q13": { "stance": 1, "label": "Support" } } },
   { "id": "ala-stanford", "name": "Dr. Ala Stanford", "officeId": "u-s-house-district-3", "officeLevel": "federal", "party": "Democratic", "partyColor": "blue", "bio": "Physician and health equity advocate.", "positions": { "q1": { "stance": 1, "label": "Support" }, "q10": { "stance": 1, "label": "Support" }, "q11": { "stance": 1, "label": "Support" }, "q12": { "stance": 1, "label": "Support" }, "q13": { "stance": 1, "label": "Support" } } },
   { "id": "mary-gay-scanlon", "name": "Mary Gay Scanlon", "officeId": "u-s-house-district-5", "officeLevel": "federal", "party": "Democratic", "partyColor": "blue", "bio": "Incumbent; voting rights and tax relief advocate.", "positions": { "q1": { "stance": 1, "label": "Support" }, "q10": { "stance": 1, "label": "Support" }, "q11": { "stance": 1, "label": "Support" }, "q12": { "stance": 1, "label": "Support" }, "q13": { "stance": 1, "label": "Support" } } },
