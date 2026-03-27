@@ -2,7 +2,7 @@
 
 import { Suspense, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { getQuestionsByOfficesAndTopics } from "../../lib/loadData";
+import { getCandidatesByOffices, getQuestions } from "../../lib/loadData";
 import {
   loadMatchedOffices,
   loadQuizAnswers,
@@ -38,7 +38,31 @@ function QuizPageInner() {
 
   const questions = useMemo(() => {
     if (!hydrated) return [];
-    return getQuestionsByOfficesAndTopics(matchedOffices, selectedTopics);
+
+    const allQuestions = getQuestions();
+    const matchedCandidates = getCandidatesByOffices(matchedOffices);
+
+    const officeLevels = Array.from(
+      new Set(matchedCandidates.map((candidate: any) => candidate.officeLevel))
+    );
+
+    return allQuestions.filter((question: any) => {
+      const officeMatch =
+        question.relevantOfficeIds &&
+        question.relevantOfficeIds.some((id: string) =>
+          matchedOffices.includes(id)
+        );
+
+      const topicMatch =
+        selectedTopics.length === 0 || selectedTopics.includes(question.topic);
+
+      const scopeMatchesOfficeLevel =
+        (question.scope === "state" && officeLevels.includes("state")) ||
+        (question.scope === "federal" && officeLevels.includes("federal")) ||
+        question.scope === "local_shared";
+
+      return officeMatch && topicMatch && scopeMatchesOfficeLevel;
+    });
   }, [hydrated, matchedOffices, selectedTopics]);
 
   useEffect(() => {
@@ -122,7 +146,7 @@ function QuizPageInner() {
           <span className="eyebrow">Assessment</span>
           <h1 className="header-title">Your personalized ballot match</h1>
           <p className="section-copy">
-            Answer a few questions based on your ZIP code and selected priorities.
+            Answer a few questions based on your ZIP code and selected state and federal priorities.
           </p>
         </div>
       </section>
