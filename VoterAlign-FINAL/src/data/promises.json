@@ -1,0 +1,36 @@
+[
+  {
+    "candidateId": "brendan-boyle",
+    "promises": [
+      {
+        "id": "p2-b1",
+        "title": "Whole-Home Repairs Expansion",
+        "summary": "Secure federal funding to scale PA's whole-home repair program nationally.",
+        "sourceLabel": "ROAD to Housing Act Support",
+        "status": "in-progress",
+        "lastUpdated": "2026-03-16"
+      },
+      {
+        "id": "p2-b2",
+        "title": "SEPTA Modernization Grant",
+        "summary": "Secure $43M to replace aging bus fleet with electric hybrids.",
+        "sourceLabel": "FTA Grant Announcement",
+        "status": "in-progress",
+        "lastUpdated": "2025-11-20"
+      }
+    ]
+  },
+  {
+    "candidateId": "jessica-arriaga",
+    "promises": [
+      {
+        "id": "p2-a1",
+        "title": "Safe Streets Initiative",
+        "summary": "Lobby for federal grants to increase police patrols in high-crime PA-2 corridors.",
+        "sourceLabel": "Campaign Platform",
+        "status": "not-started",
+        "lastUpdated": "2026-01-26"
+      }
+    ]
+  }
+]

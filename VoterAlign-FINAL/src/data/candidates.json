@@ -1,0 +1,1720 @@
+[
+  {
+    "id": "josh-shapiro",
+    "name": "Josh Shapiro",
+    "officeId": "governor",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Incumbent Governor of Pennsylvania since 2023. Former Attorney General focused on budget deals, economic growth, and infrastructure investment.",
+    "website": "https://www.shapiroforpa.com",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "2024 State Budget Address"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Governor's Budget Proposal 2025"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Housing Policy Statement 2024"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Whole-Home Repairs Program Signing"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Funding Lawsuit Response"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion Budget Request 2025"
+      }
+    }
+  },
+  {
+    "id": "stacy-garrity",
+    "name": "Stacy Garrity",
+    "officeId": "governor",
+    "officeLevel": "state",
+    "party": "Republican",
+    "partyColor": "red",
+    "bio": "Pennsylvania State Treasurer since 2021. Army Reserve colonel focused on fiscal accountability, reducing government spending, and economic competitiveness.",
+    "positions": {
+      "q1": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Campaign Platform 2026"
+      },
+      "q4": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Economic Policy Statement"
+      },
+      "q14": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Housing Policy Statement"
+      },
+      "q15": {
+        "stance": 0,
+        "label": "Neutral",
+        "confidence": "medium",
+        "sourceLabel": "Campaign Q&A"
+      },
+      "q16": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Education Platform"
+      },
+      "q17": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Fiscal Priorities Statement"
+      }
+    }
+  },
+  {
+    "id": "brendan-boyle",
+    "name": "Brendan Boyle",
+    "officeId": "u-s-house-district-2",
+    "officeLevel": "federal",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Incumbent U.S. Representative for PA-2 since 2015 and House Budget Committee Ranking Member. Champion of Social Security protection and transit funding.",
+    "website": "https://boyle.house.gov",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Modernization Grant Press Release"
+      },
+      "q10": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Social Security 2100 Act Co-sponsor"
+      },
+      "q11": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Freedom to Vote Act Co-sponsor"
+      },
+      "q12": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Assault Weapons Ban Co-sponsor"
+      },
+      "q13": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Inflation Reduction Act Vote 2022"
+      }
+    }
+  },
+  {
+    "id": "ala-stanford",
+    "name": "Dr. Ala Stanford",
+    "officeId": "u-s-house-district-3",
+    "officeLevel": "federal",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Pediatric surgeon and health equity advocate. Founded Black Doctors COVID Consortium. Running to succeed retiring Rep. Dwight Evans in PA-3.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Campaign Platform 2026"
+      },
+      "q10": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Healthcare & Retirement Policy Statement"
+      },
+      "q11": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Voting Rights Platform"
+      },
+      "q12": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Public Safety Statement"
+      },
+      "q13": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Climate & Health Policy Statement"
+      }
+    }
+  },
+  {
+    "id": "sharif-street",
+    "name": "Sharif Street",
+    "officeId": "u-s-house-district-3",
+    "officeLevel": "federal",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Senator from the 3rd district since 2017, former chair of the Pennsylvania Democratic Party. Running in the Democratic primary for the PA-3 Congressional seat.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "State Senate Record on SEPTA"
+      },
+      "q10": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Retirement Security Platform"
+      },
+      "q11": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Voting Rights Record"
+      },
+      "q12": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Gun Violence Prevention Platform"
+      },
+      "q13": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Environmental Justice Platform"
+      }
+    }
+  },
+  {
+    "id": "mary-gay-scanlon",
+    "name": "Mary Gay Scanlon",
+    "officeId": "u-s-house-district-5",
+    "officeLevel": "federal",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Incumbent U.S. Representative for PA-5 since 2018. Former civil rights attorney on the House Judiciary Committee. Re-elected with 65% of the vote in 2024.",
+    "website": "https://scanlon.house.gov",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Letter to Congress"
+      },
+      "q10": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Social Security Protection Act Co-sponsor"
+      },
+      "q11": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "John Lewis Voting Rights Advancement Act"
+      },
+      "q12": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Assault Weapons Ban Vote"
+      },
+      "q13": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Inflation Reduction Act Vote 2022"
+      }
+    }
+  },
+  {
+    "id": "christine-tartaglione",
+    "name": "Christine Tartaglione",
+    "officeId": "state-senate-district-2",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Incumbent PA State Senator for District 2 since 1994. Labor rights champion and advocate for worker safety in North Philadelphia and Kensington.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Bill Co-sponsor"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Bill Support 2024"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Housing Committee Record"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Whole-Home Repairs Co-sponsor"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Funding Statement"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Pre-K Expansion Support"
+      }
+    }
+  },
+  {
+    "id": "greg-bankos",
+    "name": "Greg Bankos",
+    "officeId": "state-senate-district-2",
+    "officeLevel": "state",
+    "party": "Republican",
+    "partyColor": "red",
+    "bio": "Republican candidate for PA State Senate District 2. Focused on public safety, fiscal responsibility, and small business support in North Philadelphia.",
+    "positions": {
+      "q1": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "medium",
+        "sourceLabel": "Campaign Platform"
+      },
+      "q4": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Economic Policy Statement"
+      },
+      "q14": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Rent Control Opposition"
+      },
+      "q15": {
+        "stance": 0,
+        "label": "Neutral",
+        "confidence": "medium",
+        "sourceLabel": "Housing Program Statement"
+      },
+      "q16": {
+        "stance": 0,
+        "label": "Neutral",
+        "confidence": "medium",
+        "sourceLabel": "Education Platform"
+      },
+      "q17": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "medium",
+        "sourceLabel": "Fiscal Priorities Statement"
+      }
+    }
+  },
+  {
+    "id": "anthony-williams",
+    "name": "Anthony H. Williams",
+    "officeId": "state-senate-district-8",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Senator for District 8 since 1999. Veteran legislator focused on education reform, housing, and economic development in West Philadelphia.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Record"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Legislation Record"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Housing Committee Leadership"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program Support"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Equity Champion Record"
+      },
+      "q17": {
+        "stance": 0,
+        "label": "Neutral",
+        "confidence": "medium",
+        "sourceLabel": "Pre-K Funding Discussions"
+      }
+    }
+  },
+  {
+    "id": "nick-miller",
+    "name": "Nick Miller",
+    "officeId": "state-senate-district-26",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Senator representing parts of West Philadelphia. Progressive advocate for housing rights, transit access, and wage equity.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Transit Funding Senate Record"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Senate Vote"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Rent Control Advocacy"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Equity Record"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion Bill"
+      }
+    }
+  },
+  {
+    "id": "roni-green-10",
+    "name": "Roni Green",
+    "officeId": "pa-house-10",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative serving West Philadelphia. Healthcare advocate and community organizer focused on housing stability, transit access, and education equity.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Vote"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Bill Support"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Rent Stability Act"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program Vote"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Funding Bill"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion Support"
+      }
+    }
+  },
+  {
+    "id": "martina-white",
+    "name": "Martina White",
+    "officeId": "pa-house-170",
+    "officeLevel": "state",
+    "party": "Republican",
+    "partyColor": "red",
+    "bio": "PA State Representative for District 170 and House Republican Caucus Chair. Represents Far Northeast Philadelphia with focus on fiscal restraint and school choice.",
+    "positions": {
+      "q1": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Local Tax Authority Opposition"
+      },
+      "q4": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Vote Record"
+      },
+      "q14": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Rent Control Opposition"
+      },
+      "q15": {
+        "stance": 0,
+        "label": "Neutral",
+        "confidence": "medium",
+        "sourceLabel": "Home Repair Program Record"
+      },
+      "q16": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Education Funding Opposition"
+      },
+      "q17": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Opposition Statement"
+      }
+    }
+  },
+  {
+    "id": "sean-dougherty",
+    "name": "Sean Dougherty",
+    "officeId": "pa-house-172",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 172. Elected 2024. Serves Northeast Philadelphia neighborhoods and has focused on transit funding and housing affordability.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Commitment"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Position"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Housing Platform"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Advocacy"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "School Funding Statement"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Early Education Platform"
+      }
+    }
+  },
+  {
+    "id": "patrick-gallagher",
+    "name": "Patrick Gallagher",
+    "officeId": "pa-house-173",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 173. Advocate for working families, public schools, and transit access in Northeast Philadelphia.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Transit Funding Record"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Position"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Renter Protection Platform"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Bill"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "School Funding Advocacy"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Pre-K Statement"
+      }
+    }
+  },
+  {
+    "id": "ed-neilson",
+    "name": "Ed Neilson",
+    "officeId": "pa-house-174",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 174 since 2015. IBEW Local 98 member and former Deputy Secretary of Labor. Champion for Northeast Philly workers.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Co-sponsor"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Bill Prime Sponsor"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Rent Stability Position"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program Vote"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Funding Statement"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Pre-K Advocacy"
+      }
+    }
+  },
+  {
+    "id": "mary-isaacson",
+    "name": "Mary Isaacson",
+    "officeId": "pa-house-175",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 175 covering Old City, Northern Liberties, and Fishtown. Community organizer and former ward leader.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Position"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Support"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Tenant Protections Platform"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Whole-Home Repairs Vote"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Funding Record"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Platform"
+      }
+    }
+  },
+  {
+    "id": "joe-hohenstein",
+    "name": "Joe Hohenstein",
+    "officeId": "pa-house-177",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 177 since 2019. Immigration attorney and former Temple Law professor. Advocate for disability rights, housing, and the environment.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Vote"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Record"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Housing Bills Co-sponsor"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Bill Vote"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Funding Champion"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion Position"
+      }
+    }
+  },
+  {
+    "id": "jason-dawkins",
+    "name": "Jason Dawkins",
+    "officeId": "pa-house-179",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 179 in Northeast Philadelphia. Focused on community safety, transit access, and neighborhood investment.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Advocacy Record"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Bill"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Housing Platform"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Funding"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Pre-K Statement"
+      }
+    }
+  },
+  {
+    "id": "jose-giral",
+    "name": "Jose Giral",
+    "officeId": "pa-house-180",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 180 serving Kensington and Hunting Park. Focused on economic opportunity, community safety, and housing stability.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Position"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Bill Support"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Affordable Housing Platform"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "School Funding Record"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion"
+      }
+    }
+  },
+  {
+    "id": "malcolm-kenyatta",
+    "name": "Malcolm Kenyatta",
+    "officeId": "pa-house-181",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 181 since 2019. First openly LGBTQ+ candidate of color to win a PA legislative primary. Progressive champion for North Philly.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Advocacy"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Champion"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Renter Protection Bills"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Advocacy"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Equity Record"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Funding Position"
+      }
+    }
+  },
+  {
+    "id": "ben-waxman",
+    "name": "Benjamin Waxman",
+    "officeId": "pa-house-182",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 182 since 2022. Former senior advisor to DA Larry Krasner. Represents Center City, Society Hill, and parts of South Philly.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Bill Co-sponsor"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Record"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Tenant Protection Legislation"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Bill Vote"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Equity Statement"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion Platform"
+      }
+    }
+  },
+  {
+    "id": "elizabeth-fiedler",
+    "name": "Elizabeth Fiedler",
+    "officeId": "pa-house-184",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 184 since 2019. Daughter of two public school teachers. Advocate for housing, safe schools, and solar energy access in South Philly.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Transit Funding Record"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Bill"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Rent Stability Legislation"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program Sponsor"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "School Funding Champion"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Bill Co-sponsor"
+      }
+    }
+  },
+  {
+    "id": "regina-young",
+    "name": "Regina Young",
+    "officeId": "pa-house-185",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Incumbent PA State Representative for District 185 covering the Navy Yard and Southwest Philadelphia. Facing a 2026 primary challenge from Joe Sackor.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Vote"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Record"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Housing Platform"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Funding"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Pre-K Statement"
+      }
+    }
+  },
+  {
+    "id": "jordan-harris",
+    "name": "Jordan Harris",
+    "officeId": "pa-house-186",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 186 and House Democratic Whip. Serving South Philadelphia with focus on neighborhood investment, housing stability, and education.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Champion"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Leadership"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Rent Stability Platform"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Bill"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Equity Record"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion"
+      }
+    }
+  },
+  {
+    "id": "rick-krajewski",
+    "name": "Rick Krajewski",
+    "officeId": "pa-house-188",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 188. West Philadelphia progressive champion and co-founder of Reclaim Philadelphia. Focused on housing justice and economic equity. Facing a 2026 primary challenge.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Transit Justice Record"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Advocacy"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Rent Control Champion"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Bill"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Justice Record"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion Platform"
+      }
+    }
+  },
+  {
+    "id": "roni-green",
+    "name": "Roni Green",
+    "officeId": "pa-house-190",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 190 in West Philadelphia. Healthcare advocate and community organizer focused on housing stability and transit access.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Vote"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Bill"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Tenant Rights Platform"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Funding"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion"
+      }
+    }
+  },
+  {
+    "id": "joanna-mcclinton",
+    "name": "Joanna McClinton",
+    "officeId": "pa-house-191",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Speaker of the Pennsylvania House of Representatives. Represents Southwest Philadelphia. First woman and second Black person to serve as PA House Speaker.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Speaker's Transportation Priority"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Leadership Record"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Housing Justice Legislation"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Whole-Home Repairs Priority"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Funding Court Order Response"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Universal Pre-K Push"
+      }
+    }
+  },
+  {
+    "id": "morgan-cephas",
+    "name": "Morgan Cephas",
+    "officeId": "pa-house-192",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 192 since 2017. West Philadelphia champion for healthcare, housing equity, and transit. Facing a 2026 primary challenge.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Record"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Bill"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Rent Stability Legislation"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Equity Platform"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion Record"
+      }
+    }
+  },
+  {
+    "id": "tarik-khan",
+    "name": "Tarik Khan",
+    "officeId": "pa-house-194",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 194 covering Manayunk, Roxborough, and East Falls. Nurse and first openly gay man elected to PA legislature from a suburban-style district.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Position"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Support"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Housing Platform"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Bill"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "School Funding Record"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Statement"
+      }
+    }
+  },
+  {
+    "id": "keith-harris",
+    "name": "Keith Harris",
+    "officeId": "pa-house-195",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Incumbent PA State Representative for District 195 covering Fairmount, Brewerytown, and Spring Garden. Facing a 2026 primary challenge from Kenneth Walker Jr. and Sierra McNeil.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Transit Funding Vote"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Record"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Tenant Protection Bills"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "School Funding Advocacy"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion"
+      }
+    }
+  },
+  {
+    "id": "danilo-burgos",
+    "name": "Danilo Burgos",
+    "officeId": "pa-house-197",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 197 since 2018. First Dominican American in PA House. Chair of House Consumer Protection Committee. Entrepreneur and community leader in North Philadelphia.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Record"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Bill"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Renter Protection Legislation"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Bill Prime Sponsor"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Equity Record"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion Platform"
+      }
+    }
+  },
+  {
+    "id": "chris-rabb-198",
+    "name": "Chris Rabb",
+    "officeId": "pa-house-198",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative serving Northwest Philadelphia since 2017. Social entrepreneur and progressive champion for economic and racial equity in Germantown and surrounding neighborhoods.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Advocate"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Champion"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Rent Control Legislation"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Bill"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Justice Record"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Universal Pre-K Push"
+      }
+    }
+  },
+  {
+    "id": "chris-rabb-200",
+    "name": "Chris Rabb",
+    "officeId": "pa-house-200",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 200 in Northwest Philadelphia since 2017. Running in the 2026 Democratic primary for PA-3 Congressional seat while seat faces an open primary.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Advocate"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Champion"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Rent Control Legislation"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Bill"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Justice Record"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Universal Pre-K Push"
+      }
+    }
+  },
+  {
+    "id": "darisha-parker",
+    "name": "Darisha Parker",
+    "officeId": "pa-house-201",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 201 serving Northwest Philadelphia including Germantown and Mt. Airy. Focused on neighborhood safety, housing, and school investment.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Transit Funding Position"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Support"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Affordable Housing Platform"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "School Funding Record"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion"
+      }
+    }
+  },
+  {
+    "id": "jared-solomon",
+    "name": "Jared Solomon",
+    "officeId": "pa-house-202",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 202 covering parts of Northeast Philadelphia. Attorney focused on consumer protection, education funding, and transit access.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Record"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Bill"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Housing Platform"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Support"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Funding Advocacy"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Pre-K Statement"
+      }
+    }
+  },
+  {
+    "id": "ben-sanchez",
+    "name": "Ben Sanchez",
+    "officeId": "pa-house-203",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for District 203 covering parts of North Philadelphia and Oak Lane. Community advocate focused on housing stability, education equity, and economic opportunity.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Transit Funding Position"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Support"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Renter Protection Bills"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "School Funding Advocacy"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion"
+      }
+    }
+  },
+  {
+    "id": "art-haywood",
+    "name": "Art Haywood",
+    "officeId": "state-senate-district-4",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Senator for District 4 since 2014. Covers Northwest Philadelphia neighborhoods including Mt. Airy, Chestnut Hill, and Cheltenham. Consumer protection and housing equity advocate.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "SEPTA Funding Record"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Minimum Wage Senate Vote"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Rent Stability Legislation"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Home Repair Program Co-sponsor"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Equity Advocate"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion Support"
+      }
+    }
+  }
+]
