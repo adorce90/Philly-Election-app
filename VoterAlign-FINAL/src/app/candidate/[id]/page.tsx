@@ -1,302 +1,134 @@
 "use client";
 
-import Link from "next/link";
-import { notFound } from "next/navigation";
 import { useRouter } from "next/navigation";
-import {
-  getCandidateById,
-  getOffices,
-  getPromisesByCandidateId,
-  getQuestionsByOffice
-} from "../../../lib/loadData";
-import PromiseTracker from "../../../components/PromiseTracker";
+import { notFound } from "next/navigation";
+import { getCandidateById, getOffices, getQuestionsByOffice } from "../../../lib/loadData";
 
-function stanceClass(label?: string) {
-  switch (label) {
-    case "Support":
-      return "stance-pill support";
-    case "Oppose":
-      return "stance-pill oppose";
-    default:
-      return "stance-pill neutral";
-  }
-}
+const TOPIC_ICONS: Record<string,string> = { "Transit Funding":"🚌","Minimum Wage":"💰","Housing":"🏠","Education":"🎓","Social Security":"👴","Voting Rights":"🗳️","Gun Safety":"🛡️","Climate Action":"🌎" };
 
-function confidenceTone(confidence?: string) {
-  switch (confidence) {
-    case "high":
-      return {
-        bg: "#ecfdf5",
-        border: "#a7f3d0",
-        text: "#065f46"
-      };
-    case "medium":
-      return {
-        bg: "#fffbeb",
-        border: "#fde68a",
-        text: "#92400e"
-      };
-    default:
-      return {
-        bg: "#f8fafc",
-        border: "#dbe3ef",
-        text: "#475569"
-      };
-  }
-}
-
-export default function CandidateDetailPage({
-  params
-}: {
-  params: { id: string };
-}) {
-  const router = useRouter();
+export default function CandidateDetailPage({ params }: { params: { id: string } }) {
+  const router    = useRouter();
   const candidate = getCandidateById(params.id);
+  if (!candidate) notFound();
 
-  if (!candidate) {
-    notFound();
-  }
-
-  const offices = getOffices();
-  const office = offices.find((item: any) => item.id === candidate.officeId);
+  const offices   = getOffices();
+  const office    = offices.find((o: any) => o.id === candidate.officeId);
   const questions = getQuestionsByOffice(candidate.officeId);
-  const promises = getPromisesByCandidateId(candidate.id);
+  const positions = candidate.positions as Record<string,any> | undefined;
 
-  const positions = candidate.positions as Record<string, any> | undefined;
-  const candidateQuestions = questions.filter(
-    (question: any) => positions?.[question.id]
-  );
+  const isDem = candidate.partyColor === "blue";
+  const isRep = candidate.partyColor === "red";
+
+  const tracked   = questions.filter((q: any) => positions?.[q.id]);
+  const agrees    = tracked.filter((q: any) => positions?.[q.id]?.stance === 1).length;
+  const opposes   = tracked.filter((q: any) => positions?.[q.id]?.stance === -1).length;
+  const neutrals  = tracked.filter((q: any) => positions?.[q.id]?.stance === 0).length;
 
   return (
-    <main className="page-shell detail-shell">
-      <section className="header-band">
-        <div className="container">
-          <button
-            onClick={() => router.back()}
-            style={{
-              background: "none",
-              border: "none",
-              color: "#1d4ed8",
-              fontWeight: 700,
-              fontSize: "1rem",
-              cursor: "pointer",
-              padding: 0
-            }}
-          >
+    <main className="page-shell">
+      <div className="container bs-section">
+
+        {/* Back */}
+        <div style={{ marginBottom: "1rem" }}>
+          <button onClick={() => router.back()} style={{ fontFamily: "'DM Sans',sans-serif", fontSize: ".68rem", textTransform: "uppercase", letterSpacing: ".08em", color: "var(--gold)", background: "none", border: "none", cursor: "pointer", borderBottom: "1px solid var(--gold)", padding: 0 }}>
             ← Back to results
           </button>
         </div>
-      </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="detail-top">
-            <div className="panel panel-lg">
-              <span className="eyebrow">{office?.name ?? candidate.officeId}</span>
+        {/* Detail shell */}
+        <div className="bs-detail-shell">
+          {/* Top bar */}
+          <div className="bs-detail-topbar">
+            <div className="bs-detail-topbar-label">Candidate Record</div>
+            <div className="bs-detail-topbar-meta">{office?.name ?? candidate.officeId} · {office?.level ?? "Office"}</div>
+          </div>
 
-              <div
-                style={{
-                  marginTop: "1rem",
-                  display: "flex",
-                  gap: "1rem",
-                  alignItems: "center",
-                  flexWrap: "wrap"
-                }}
-              >
-                <div
-                  style={{
-                    width: 96,
-                    height: 96,
-                    borderRadius: "50%",
-                    background: "#e5e7eb",
-                    border: "1px solid #dbe3ef",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontWeight: 800,
-                    fontSize: "1.5rem",
-                    color: "#374151"
-                  }}
-                >
-                  {candidate.name
-                    .split(" ")
-                    .map((n: string) => n[0])
-                    .join("")
-                    .slice(0, 2)}
-                </div>
+          <div className="bs-detail-body">
+            {/* Hero */}
+            <div className="bs-detail-hero">
+              <div>
+                <div className="bs-detail-kicker">Full Name & Title</div>
 
-                <div>
-                  <h1 className="header-title" style={{ margin: 0 }}>
-                    {candidate.name}
-                  </h1>
+                {/* ✅ Clean upright name — DM Sans */}
+                <div className="bs-detail-cand-name">{candidate.name}</div>
 
-                  <div className="chip-row" style={{ marginTop: "0.75rem" }}>
-                    <span className="chip">{candidate.party}</span>
-                    <span className="chip">{office?.level ?? "office"}</span>
+                <div className="bs-detail-office">{office?.name ?? candidate.officeId}</div>
+                <div className={isDem ? "bs-detail-party-dem" : isRep ? "bs-detail-party-rep" : ""}>● {candidate.party}</div>
+                <div className="bs-detail-bio">{candidate.bio}</div>
+                {"website" in candidate && typeof (candidate as any).website === "string" && (candidate as any).website && (
+                  <div style={{ marginTop: "1rem" }}>
+                    <a href={(candidate as any).website} target="_blank" rel="noreferrer" className="bs-read-more">Campaign website →</a>
                   </div>
-                </div>
+                )}
               </div>
 
-              <p className="section-copy" style={{ marginTop: "1rem" }}>
-                {candidate.bio}
-              </p>
-
-              {"website" in candidate &&
-              typeof candidate.website === "string" &&
-              candidate.website ? (
-                <div className="spacer-top">
-                  <a
-                    href={candidate.website}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-secondary"
-                  >
-                    Visit campaign website
-                  </a>
-                </div>
-              ) : null}
-            </div>
-
-            <div className="panel panel-lg">
-              <div className="detail-kicker">Candidate ID</div>
-              <div className="metric-value" style={{ fontSize: "1.05rem", marginTop: "0.6rem" }}>
-                {candidate.id}
-              </div>
-
-              <div className="detail-card spacer-top">
-                <div className="detail-kicker">Demo note</div>
-                <p className="section-copy" style={{ marginTop: "0.5rem" }}>
-                  This page is designed for sourced, issue-by-issue candidate comparisons
-                  and future accountability tracking.
-                </p>
+              <div className="bs-detail-score-box">
+                <div className="bs-detail-score-label">Positions on Record</div>
+                <div className="bs-detail-score-num">{tracked.length}</div>
+                <div className="bs-detail-score-sub">{agrees} support · {opposes} oppose · {neutrals} neutral</div>
               </div>
             </div>
-          </div>
 
-          <div className="spacer-top" style={{ marginTop: "2rem" }}>
-            <h2 className="section-title">Position breakdown</h2>
-            <p className="section-copy">
-              These are the quiz questions currently mapped to this candidate.
-            </p>
-          </div>
+            {/* Stats */}
+            <div className="bs-detail-stats">
+              <div className="bs-stat-box">
+                <div className="bs-stat-num">{tracked.length}</div>
+                <div className="bs-stat-lbl">Tracked</div>
+              </div>
+              <div className="bs-stat-box" style={{ background: "var(--agree-bg)", borderColor: "var(--agree-rule)" }}>
+                <div className="bs-stat-num" style={{ color: "var(--agree)" }}>{agrees}</div>
+                <div className="bs-stat-lbl" style={{ color: "var(--agree)" }}>Supports</div>
+              </div>
+              <div className="bs-stat-box" style={{ background: "var(--oppose-bg)", borderColor: "var(--oppose-rule)" }}>
+                <div className="bs-stat-num" style={{ color: "var(--oppose)" }}>{opposes}</div>
+                <div className="bs-stat-lbl" style={{ color: "var(--oppose)" }}>Opposes</div>
+              </div>
+            </div>
 
-          <div className="position-list spacer-top">
-            {candidateQuestions.map((question: any) => {
-              const position = positions?.[question.id];
-              const confidenceStyle = confidenceTone(
-                "confidence" in position ? position.confidence : undefined
-              );
-
-              const weightedForOffice =
-                (candidate.officeLevel === "state" && question.scope === "state") ||
-                (candidate.officeLevel === "federal" && question.scope === "federal");
-
-              return (
-                <div key={question.id} className="position-card">
-                  <div className="position-head">
+            {/* Issue record */}
+            <div className="bs-issue-section-title">Position Record — Issue by Issue</div>
+            <div style={{ marginBottom: "1.25rem" }}>
+              {tracked.map((q: any) => {
+                const pos    = positions?.[q.id];
+                const stance = pos?.stance ?? 0;
+                return (
+                  <div key={q.id} className="bs-issue-row">
+                    <span className="bs-issue-icon">{TOPIC_ICONS[q.topic] || "📌"}</span>
                     <div>
-                      <div className="topic-label">{question.topic}</div>
-                      <div className="chip-row">
-                        <span className="chip">Scope: {question.scope}</span>
-                        {weightedForOffice ? (
-                          <span
-                            className="chip"
-                            style={{
-                              color: "#1d4ed8",
-                              background: "#eff6ff",
-                              borderColor: "#bfdbfe"
-                            }}
-                          >
-                            Weighted 2x for this office
-                          </span>
-                        ) : null}
-                      </div>
-                      <h3 className="position-title">{question.text}</h3>
-                    </div>
-
-                    <div className={stanceClass(position?.label)}>
-                      {position?.label ?? "No stance"}
-                    </div>
-                  </div>
-
-                  <div className="tracker-grid spacer-top">
-                    <div className="detail-card">
-                      <div className="detail-kicker">Stored stance value</div>
-                      <div className="metric-value">{position?.stance ?? "N/A"}</div>
-                    </div>
-
-                    <div className="detail-card">
-                      <div className="detail-kicker">Source</div>
-                      <div style={{ marginTop: "0.5rem", fontWeight: 700 }}>
-                        {"sourceLabel" in position && typeof position.sourceLabel === "string"
-                          ? position.sourceLabel
-                          : "No source available"}
-                      </div>
-
-                      {"sourceUrl" in position &&
-                      typeof position.sourceUrl === "string" &&
-                      position.sourceUrl ? (
-                        <div style={{ marginTop: "0.65rem" }}>
-                          <a
-                            href={position.sourceUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            style={{ color: "#1d4ed8", fontWeight: 700 }}
-                          >
-                            Open source →
-                          </a>
+                      <div className="bs-issue-q">{q.text}</div>
+                      {pos?.sourceLabel && <div className="bs-issue-source">Source: {pos.sourceLabel}</div>}
+                      {pos?.quote && (
+                        <div style={{ fontFamily: "'EB Garamond',serif", fontStyle: "italic", fontSize: ".85rem", color: "var(--ink-mid)", marginTop: ".3rem", borderLeft: "2px solid var(--gold)", paddingLeft: ".6rem" }}>
+                          "{pos.quote}"
                         </div>
-                      ) : null}
-
-                      {"confidence" in position &&
-                      typeof position.confidence === "string" ? (
-                        <div
-                          style={{
-                            marginTop: "0.75rem",
-                            display: "inline-flex",
-                            alignItems: "center",
-                            padding: "0.35rem 0.7rem",
-                            borderRadius: 999,
-                            border: `1px solid ${confidenceStyle.border}`,
-                            background: confidenceStyle.bg,
-                            color: confidenceStyle.text,
-                            fontSize: "0.8rem",
-                            fontWeight: 800,
-                            textTransform: "capitalize"
-                          }}
-                        >
-                          Confidence: {position.confidence}
-                        </div>
-                      ) : null}
+                      )}
                     </div>
+                    <span className={`bs-verdict ${stance === 1 ? "agree" : stance === -1 ? "oppose" : "neutral"}`}>
+                      {stance === 1 ? "✓ Supports" : stance === -1 ? "✕ Opposes" : "~ Neutral"}
+                    </span>
                   </div>
+                );
+              })}
+            </div>
 
-                  {"quote" in position &&
-                  typeof position.quote === "string" &&
-                  position.quote ? (
-                    <div
-                      style={{
-                        marginTop: "1rem",
-                        padding: "1rem",
-                        borderRadius: 16,
-                        background: "#f8fafc",
-                        border: "1px solid #dbe3ef",
-                        color: "#475569",
-                        fontStyle: "italic",
-                        lineHeight: 1.7
-                      }}
-                    >
-                      “{position.quote}”
-                    </div>
-                  ) : null}
-                </div>
-              );
-            })}
+            {/* Record footer */}
+            <div className="bs-record-footer">
+              <div className="bs-record-footer-note">End of record — {tracked.length} positions documented</div>
+              <div className="bs-record-tally">{agrees} ✓ · {opposes} ✕ · {neutrals} ~</div>
+            </div>
+
+            {/* Coming soon */}
+            <div className="bs-coming-soon">
+              <div style={{ fontFamily: "'DM Sans',sans-serif", fontSize: ".6rem", textTransform: "uppercase", letterSpacing: ".1em", color: "var(--gold)", marginBottom: ".3rem" }}>Coming Soon</div>
+              <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.1rem", fontWeight: 700, color: "var(--ink)", marginBottom: ".3rem" }}>Promise Tracker</div>
+              <div style={{ fontFamily: "'EB Garamond',serif", fontStyle: "italic", fontSize: ".9rem", color: "var(--gold)" }}>
+                A record of what candidates promise versus how they actually vote — published after the election.
+              </div>
+            </div>
+
           </div>
-
-          <PromiseTracker promises={promises} />
         </div>
-      </section>
+      </div>
     </main>
   );
 }
