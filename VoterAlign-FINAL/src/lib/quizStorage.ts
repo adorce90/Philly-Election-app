@@ -73,3 +73,15 @@ export function saveMatchedOffices(offices: string[]) {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(MATCHED_OFFICES_KEY, JSON.stringify(offices));
 }
+
+const LANG_KEY = "philly-election-lang";
+
+export function loadLanguage(): string {
+  if (typeof window === "undefined") return "en";
+  return window.localStorage.getItem(LANG_KEY) ?? "en";
+}
+
+export function saveLanguage(lang: string) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(LANG_KEY, lang);
+}
