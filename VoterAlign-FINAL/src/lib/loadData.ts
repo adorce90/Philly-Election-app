@@ -61,7 +61,10 @@ export function getUniqueTopics() {
 }
 
 export function getOfficesForZip(zip: string) {
+  // Charter questions are shown separately on results page — exclude from quiz flow
+  const QUIZ_EXCLUDED = ["charter-question-1", "charter-question-2"];
   return offices.filter((office: any) => {
+    if (QUIZ_EXCLUDED.includes(office.id)) return false;
     if (office.zipCodes?.includes("all")) return true;
     return office.zipCodes?.includes(zip);
   });
@@ -74,4 +77,11 @@ export function getPromises() {
 
 export function getPromisesByCandidateId(_candidateId: string) {
   return [];
+}
+
+import ballotQuestionsData from "../data/ballotquestions.json";
+const ballotQuestions: any[] = ballotQuestionsData as any[];
+
+export function getBallotQuestions() {
+  return ballotQuestions;
 }
