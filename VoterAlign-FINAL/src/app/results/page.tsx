@@ -6,10 +6,12 @@ import { getCandidatesByOffices, getOffices, getQuestionsByOfficesAndTopics } fr
 import { loadMatchedOffices, loadQuizAnswers, loadSelectedTopics } from "../../lib/quizStorage";
 import { rankCandidates } from "../../lib/match";
 import ShareButton from "../../components/ShareButton";
+import { getBallotQuestions } from "../../lib/loadData";
 
 const TOPIC_ICONS: Record<string,string> = { "Transit Funding":"🚌","Minimum Wage":"💰","Housing":"🏠","Education":"🎓","Social Security":"👴","Voting Rights":"🗳️","Gun Safety":"🛡️","Climate Action":"🌎" };
 
 function ResultsInner() {
+  const ballotQuestions = getBallotQuestions();
   const answers        = useMemo(() => loadQuizAnswers(), []);
   const matchedOffices = useMemo(() => loadMatchedOffices(), []);
   const selectedTopics = useMemo(() => loadSelectedTopics(), []);
@@ -85,16 +87,19 @@ function ResultsInner() {
                   <div className="bs-card" style={{ padding: 0, marginBottom: 0 }}>
                     {/* Two-col for 2 candidates, single col otherwise */}
                     {group.results.length === 2 ? (
-                      <div style={{ padding: "1.25rem" }}>
-                        <div className="bs-grid">
-                          {group.results.map((result: any, idx: number) => {
-                            const c = candidates.find((x: any) => x.id === result.candidateId);
-                            if (!c) return null;
-                            const isDem = c.partyColor === "blue";
-                            const isRep = c.partyColor === "red";
-                            const positions = c.positions as Record<string,any> | undefined;
-                            return (
-                              <div key={c.id} className="bs-col">
+                      <div style={{ padding: "1.25rem", display: "flex", gap: 0, alignItems: "stretch" }}>
+                        {group.results.map((result: any, idx: number) => {
+                          const c = candidates.find((x: any) => x.id === result.candidateId);
+                          if (!c) return null;
+                          const isDem = c.partyColor === "blue";
+                          const isRep = c.partyColor === "red";
+                          const positions = c.positions as Record<string,any> | undefined;
+                          return (
+                            <>
+                              {idx === 1 && (
+                                <div key="rule" style={{ width: 1, flexShrink: 0, background: "repeating-linear-gradient(to bottom, var(--ink) 0, var(--ink) 4px, transparent 4px, transparent 8px)", margin: "0 1.25rem" }} />
+                              )}
+                              <div key={c.id} style={{ flex: 1, minWidth: 0 }}>
                                 {idx === 0 && <div className="bs-best-banner">✦ Best Match</div>}
                                 <div className="bs-cand-head">
                                   <div className="bs-cand-name">{c.name}</div>
@@ -125,10 +130,9 @@ function ResultsInner() {
                                 </table>
                                 <Link href={`/candidate/${c.id}`}><span className="bs-read-more">Read full record →</span></Link>
                               </div>
-                            );
-                          })}
-                          <div className="bs-col-rule" />
-                        </div>
+                            </>
+                          );
+                        })}
                       </div>
                     ) : (
                       // Single candidate
@@ -177,6 +181,42 @@ function ResultsInner() {
                 </div>
               );
             })}
+          </div>
+        )}
+
+        {/* ── Charter Questions ── */}
+        {ballotQuestions.length > 0 && (
+          <div style={{ marginTop: "2.5rem" }}>
+            <div className="bs-race-header">
+              <div className="bs-race-title">Philadelphia Charter Questions</div>
+              <div className="bs-race-meta">On every ballot · May 19, 2026</div>
+            </div>
+            <div className="bs-card" style={{ padding: 0, marginBottom: 0 }}>
+              {ballotQuestions.map((q: any, idx: number) => (
+                <div key={q.id} style={{ padding: "1.25rem", borderBottom: idx < ballotQuestions.length - 1 ? "1px solid var(--rule)" : "none" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: ".5rem", flexWrap: "wrap", marginBottom: ".4rem" }}>
+                    <div className="bs-cand-name" style={{ fontSize: "1.1rem" }}>Question {idx + 1} — {q.title}</div>
+                    <div style={{ fontFamily: "'DM Sans',sans-serif", fontSize: ".62rem", textTransform: "uppercase", letterSpacing: ".08em", color: "var(--gold)", background: "rgba(139,105,20,.08)", padding: ".18rem .55rem", flexShrink: 0 }}>Bill No. {q.billNumber}</div>
+                  </div>
+                  <div className="bs-byline" style={{ marginBottom: ".75rem" }}>
+                    <span>Philadelphia Home Rule Charter Amendment</span>
+                    <span>·</span>
+                    <span>All registered voters</span>
+                  </div>
+                  <p className="bs-body" style={{ marginBottom: ".75rem" }}>{q.plainEnglish}</p>
+                  <div style={{ borderLeft: "2px solid var(--gold)", paddingLeft: ".75rem", marginBottom: ".85rem" }}>
+                    <div style={{ fontFamily: "'EB Garamond',serif", fontStyle: "italic", fontSize: ".9rem", color: "var(--ink-mid)", lineHeight: 1.65 }}>{q.whyItMatters}</div>
+                  </div>
+                  <table className="bs-issue-table" style={{ marginTop: ".5rem" }}>
+                    <tr><td>✓ Yes</td><td className="td-agree">{q.yesLabel}</td></tr>
+                    <tr><td>✕ No</td><td className="td-oppose">{q.noLabel}</td></tr>
+                  </table>
+                  <div style={{ marginTop: ".65rem", fontFamily: "'EB Garamond',serif", fontStyle: "italic", fontSize: ".82rem", color: "var(--ink-muted)" }}>
+                    Official language: "{q.officialText.slice(0, 120)}…"
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
