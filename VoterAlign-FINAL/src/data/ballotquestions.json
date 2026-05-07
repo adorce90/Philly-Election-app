@@ -1,0 +1,24 @@
+[
+  {
+    "id": "charter-q1",
+    "billNumber": "250950",
+    "title": "Retirement Savings Board",
+    "officialText": "Shall the Philadelphia Home Rule Charter be amended to provide for the creation of the Philadelphia Retirement Savings Board to oversee a defined contribution retirement program for the benefit of eligible private-sector workers, and to authorize City Council to determine the composition, powers and duties of the board?",
+    "plainEnglish": "This would create a new city board to run a retirement savings program for private-sector workers in Philadelphia who don't have access to a 401(k) or pension through their employer. Workers would be automatically enrolled but could opt out. The program would be similar to state-level programs already running in Oregon, California, and Illinois.",
+    "whyItMatters": "About 600,000 Philadelphia workers — mostly in retail, food service, and care work — have no workplace retirement plan. This would give them an option without requiring employers to set one up.",
+    "yesLabel": "Create the board and retirement program",
+    "noLabel": "Keep current system, no new board",
+    "scope": "local"
+  },
+  {
+    "id": "charter-q2",
+    "billNumber": "251098",
+    "title": "Office of the Youth Ombudsperson",
+    "officialText": "Shall the Philadelphia Home Rule Charter be amended to provide for the creation of the Office of the Youth Ombudsperson to improve the safety and quality of services for youth placed in juvenile justice, child welfare, and behavioral health residential care facilities, and to authorize City Council to determine additional powers and duties of the Youth Ombudsperson as needed to carry out this mission?",
+    "plainEnglish": "This would create an independent watchdog office to monitor conditions for young people placed in Philadelphia's juvenile detention centers, foster care facilities, and behavioral health programs. The Ombudsperson would investigate complaints, visit facilities, and report publicly on what they find.",
+    "whyItMatters": "Philadelphia youth in institutional care have historically had limited avenues to report abuse or unsafe conditions. An independent ombudsperson creates an accountable third-party oversight role.",
+    "yesLabel": "Create the Youth Ombudsperson office",
+    "noLabel": "Keep current oversight system",
+    "scope": "local"
+  }
+]
