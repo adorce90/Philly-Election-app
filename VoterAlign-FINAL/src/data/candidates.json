@@ -143,37 +143,38 @@
     "officeLevel": "federal",
     "party": "Democratic",
     "partyColor": "blue",
-    "bio": "Pediatric surgeon and health equity advocate. Founded Black Doctors COVID Consortium. Running to succeed retiring Rep. Dwight Evans in PA-3.",
+    "bio": "Pediatric surgeon and public health advocate. Founded the Black Doctors COVID Consortium during COVID-19 and served as Biden's HHS Regional Director for the Mid-Atlantic. Endorsed by Dwight Evans, Michael Nutter, Madeleine Dean, and 314 Action Fund. Running on healthcare equity, housing, and federal investment in Philadelphia communities.",
     "positions": {
       "q1": {
         "stance": 1,
         "label": "Support",
         "confidence": "medium",
-        "sourceLabel": "Campaign Platform 2026"
+        "sourceLabel": "PA-3 Forum \u2014 Transit Platform"
       },
       "q10": {
         "stance": 1,
         "label": "Support",
         "confidence": "high",
-        "sourceLabel": "Healthcare & Retirement Policy Statement"
+        "sourceLabel": "Universal Healthcare Platform",
+        "quote": "I do support universal health care and Medicare for All. I practice it at 21st and Lehigh. If you have no insurance, we see you."
       },
       "q11": {
         "stance": 1,
         "label": "Support",
         "confidence": "high",
-        "sourceLabel": "Voting Rights Platform"
+        "sourceLabel": "Voting Rights Forum Statement"
       },
       "q12": {
         "stance": 1,
         "label": "Support",
         "confidence": "high",
-        "sourceLabel": "Public Safety Statement"
+        "sourceLabel": "PA-3 Debate \u2014 Gun Safety Statement"
       },
       "q13": {
         "stance": 1,
         "label": "Support",
         "confidence": "high",
-        "sourceLabel": "Climate & Health Policy Statement"
+        "sourceLabel": "Climate & Health Policy"
       }
     }
   },
@@ -184,37 +185,39 @@
     "officeLevel": "federal",
     "party": "Democratic",
     "partyColor": "blue",
-    "bio": "PA State Senator from the 3rd district since 2017, former chair of the Pennsylvania Democratic Party. Running in the Democratic primary for the PA-3 Congressional seat.",
+    "bio": "PA State Senator since 2017 and former chair of the Pennsylvania Democratic Party \u2014 first Black Muslim to hold that role. Son of former Mayor John Street. Endorsed by Mayor Cherelle Parker, Philadelphia building trades, and the city Democratic committee. Running on healthcare, housing, and progressive pragmatism.",
     "positions": {
       "q1": {
         "stance": 1,
         "label": "Support",
         "confidence": "high",
-        "sourceLabel": "State Senate Record on SEPTA"
+        "sourceLabel": "PA-3 Forum \u2014 Transit Platform",
+        "quote": "I told them we could deliver Democratic votes for Sunday hunting if moms in our community didn't have to bury their children."
       },
       "q10": {
         "stance": 1,
         "label": "Support",
         "confidence": "high",
-        "sourceLabel": "Retirement Security Platform"
+        "sourceLabel": "ACA Subsidies & Pennie Champion",
+        "quote": "500,000 people are getting health care through Pennie. When I go to Congress, I will work to restore ACA tax credits."
       },
       "q11": {
         "stance": 1,
         "label": "Support",
         "confidence": "high",
-        "sourceLabel": "Voting Rights Record"
+        "sourceLabel": "PA-3 Debate \u2014 Voting Rights"
       },
       "q12": {
         "stance": 1,
         "label": "Support",
         "confidence": "high",
-        "sourceLabel": "Gun Violence Prevention Platform"
+        "sourceLabel": "Gun Safety Forum PA-3"
       },
       "q13": {
         "stance": 1,
         "label": "Support",
         "confidence": "high",
-        "sourceLabel": "Environmental Justice Platform"
+        "sourceLabel": "Climate Platform"
       }
     }
   },
@@ -1436,100 +1439,6 @@
     }
   },
   {
-    "id": "chris-rabb-198",
-    "name": "Chris Rabb",
-    "officeId": "pa-house-198",
-    "officeLevel": "state",
-    "party": "Democratic",
-    "partyColor": "blue",
-    "bio": "PA State Representative serving Northwest Philadelphia since 2017. Social entrepreneur and progressive champion for economic and racial equity in Germantown and surrounding neighborhoods.",
-    "positions": {
-      "q1": {
-        "stance": 1,
-        "label": "Support",
-        "confidence": "high",
-        "sourceLabel": "SEPTA Funding Advocate"
-      },
-      "q4": {
-        "stance": 1,
-        "label": "Support",
-        "confidence": "high",
-        "sourceLabel": "Minimum Wage Champion"
-      },
-      "q14": {
-        "stance": 1,
-        "label": "Support",
-        "confidence": "high",
-        "sourceLabel": "Rent Control Legislation"
-      },
-      "q15": {
-        "stance": 1,
-        "label": "Support",
-        "confidence": "high",
-        "sourceLabel": "Home Repair Bill"
-      },
-      "q16": {
-        "stance": 1,
-        "label": "Support",
-        "confidence": "high",
-        "sourceLabel": "Education Justice Record"
-      },
-      "q17": {
-        "stance": 1,
-        "label": "Support",
-        "confidence": "high",
-        "sourceLabel": "Universal Pre-K Push"
-      }
-    }
-  },
-  {
-    "id": "chris-rabb-200",
-    "name": "Chris Rabb",
-    "officeId": "pa-house-200",
-    "officeLevel": "state",
-    "party": "Democratic",
-    "partyColor": "blue",
-    "bio": "PA State Representative for District 200 in Northwest Philadelphia since 2017. Running in the 2026 Democratic primary for PA-3 Congressional seat while seat faces an open primary.",
-    "positions": {
-      "q1": {
-        "stance": 1,
-        "label": "Support",
-        "confidence": "high",
-        "sourceLabel": "SEPTA Funding Advocate"
-      },
-      "q4": {
-        "stance": 1,
-        "label": "Support",
-        "confidence": "high",
-        "sourceLabel": "Minimum Wage Champion"
-      },
-      "q14": {
-        "stance": 1,
-        "label": "Support",
-        "confidence": "high",
-        "sourceLabel": "Rent Control Legislation"
-      },
-      "q15": {
-        "stance": 1,
-        "label": "Support",
-        "confidence": "high",
-        "sourceLabel": "Home Repair Bill"
-      },
-      "q16": {
-        "stance": 1,
-        "label": "Support",
-        "confidence": "high",
-        "sourceLabel": "Education Justice Record"
-      },
-      "q17": {
-        "stance": 1,
-        "label": "Support",
-        "confidence": "high",
-        "sourceLabel": "Universal Pre-K Push"
-      }
-    }
-  },
-  {
     "id": "darisha-parker",
     "name": "Darisha Parker",
     "officeId": "pa-house-201",
@@ -1677,7 +1586,7 @@
     "officeLevel": "state",
     "party": "Democratic",
     "partyColor": "blue",
-    "bio": "PA State Senator for District 4 since 2014. Covers Northwest Philadelphia neighborhoods including Mt. Airy, Chestnut Hill, and Cheltenham. Consumer protection and housing equity advocate.",
+    "bio": "PA State Senator for District 4 since 2014. Covers Northwest Philadelphia neighborhoods including Mt. Airy, Chestnut Hill, and parts of Cheltenham. Consumer protection advocate and chair of Senate Democratic Policy Committee. Running unopposed in the Democratic primary.",
     "positions": {
       "q1": {
         "stance": 1,
@@ -1714,6 +1623,317 @@
         "label": "Support",
         "confidence": "high",
         "sourceLabel": "Pre-K Expansion Support"
+      }
+    }
+  },
+  {
+    "id": "austin-davis",
+    "name": "Austin Davis",
+    "officeId": "lieutenant-governor",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Incumbent Lieutenant Governor since 2023. Former Pennsylvania State Representative from McKeesport. First Black Lieutenant Governor in Pennsylvania history. Chairs the Governor's Action Team on drug and alcohol programs.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Shapiro-Davis Administration Platform"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Labor & Economic Policy 2024"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Housing Policy Statement"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Whole-Home Repairs Program"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Education Funding Reform 2024"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Expansion Budget 2025"
+      }
+    }
+  },
+  {
+    "id": "john-ventre",
+    "name": "John Ventre",
+    "officeId": "lieutenant-governor",
+    "officeLevel": "state",
+    "party": "Republican",
+    "partyColor": "red",
+    "bio": "Republican candidate for Lieutenant Governor from Westmoreland County. Former law enforcement officer focused on public safety, reducing government spending, and restoring confidence in Pennsylvania elections.",
+    "positions": {
+      "q1": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Campaign Platform 2026"
+      },
+      "q4": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Economic Policy Statement"
+      },
+      "q14": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Housing Policy Statement"
+      },
+      "q15": {
+        "stance": 0,
+        "label": "Neutral",
+        "confidence": "medium",
+        "sourceLabel": "Campaign Q&A"
+      },
+      "q16": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Education Platform"
+      },
+      "q17": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Fiscal Priorities Statement"
+      }
+    }
+  },
+  {
+    "id": "jason-richey",
+    "name": "Jason Richey",
+    "officeId": "lieutenant-governor",
+    "officeLevel": "state",
+    "party": "Republican",
+    "partyColor": "red",
+    "bio": "Republican candidate for Lieutenant Governor from Allegheny County. Attorney and former Republican gubernatorial candidate. Focused on economic growth, school choice, and reducing state regulations on businesses.",
+    "positions": {
+      "q1": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Campaign Platform 2026"
+      },
+      "q4": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Economic Policy Statement"
+      },
+      "q14": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Rent Control Opposition"
+      },
+      "q15": {
+        "stance": 0,
+        "label": "Neutral",
+        "confidence": "medium",
+        "sourceLabel": "Housing Program Record"
+      },
+      "q16": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Education Platform"
+      },
+      "q17": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Pre-K Opposition Statement"
+      }
+    }
+  },
+  {
+    "id": "jessica-arriaga",
+    "name": "Jessica Arriaga",
+    "officeId": "u-s-house-district-2",
+    "officeLevel": "federal",
+    "party": "Republican",
+    "partyColor": "red",
+    "bio": "Republican candidate for U.S. House District 2. Northeast Philadelphia community advocate focused on public safety, fiscal accountability, and reducing federal government overreach.",
+    "positions": {
+      "q1": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Campaign Platform 2026"
+      },
+      "q10": {
+        "stance": 0,
+        "label": "Neutral",
+        "confidence": "medium",
+        "sourceLabel": "Social Security Statement"
+      },
+      "q11": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Election Integrity Platform"
+      },
+      "q12": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Second Amendment Statement"
+      },
+      "q13": {
+        "stance": -1,
+        "label": "Oppose",
+        "confidence": "high",
+        "sourceLabel": "Energy Policy Platform"
+      }
+    }
+  },
+  {
+    "id": "chris-rabb",
+    "name": "Chris Rabb",
+    "officeId": "u-s-house-district-3",
+    "officeLevel": "federal",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Representative for Northwest Philadelphia since 2017. Democratic Socialist endorsed by AOC, Ilhan Omar, and the Philadelphia Inquirer. Running on Medicare for All, free transit, guaranteed housing, and a federal jobs guarantee. Gave up his House seat to focus solely on this race.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Debate: SEPTA & Free Transit Platform"
+      },
+      "q10": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Medicare for All Champion"
+      },
+      "q11": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "John Lewis Voting Rights Act Co-sponsor"
+      },
+      "q12": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Gun Safety Forum PA-3 Debate"
+      },
+      "q13": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Green New Deal Endorser"
+      }
+    }
+  },
+  {
+    "id": "shaun-griffith",
+    "name": "Shaun Griffith",
+    "officeId": "u-s-house-district-3",
+    "officeLevel": "federal",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "Tax attorney and political newcomer from Roxborough. Worked in state government before opening his own firm. Running on Medicare for All, a $20/hour minimum wage, universal basic income, and community protections from data centers.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "PA-3 Forum \u2014 Transit Platform"
+      },
+      "q10": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Medicare for All Platform"
+      },
+      "q11": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "Voting Rights Forum Statement"
+      },
+      "q12": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Gun Safety Forum Statement"
+      },
+      "q13": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Climate Platform"
+      }
+    }
+  },
+  {
+    "id": "state-senate-district-1-dem",
+    "name": "Larry Farnese",
+    "officeId": "state-senate-district-1",
+    "officeLevel": "state",
+    "party": "Democratic",
+    "partyColor": "blue",
+    "bio": "PA State Senator for District 1 covering South Philadelphia. Attorney focused on neighborhood development, housing stability, and labor rights. Former ward leader with deep roots in the South Philly community.",
+    "positions": {
+      "q1": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "SEPTA Funding Record"
+      },
+      "q4": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Labor Support Statement"
+      },
+      "q14": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "high",
+        "sourceLabel": "South Philly Housing Plan"
+      },
+      "q15": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Home Repair Initiative"
+      },
+      "q16": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Education Policy"
+      },
+      "q17": {
+        "stance": 1,
+        "label": "Support",
+        "confidence": "medium",
+        "sourceLabel": "Early Childhood Statement"
       }
     }
   }
